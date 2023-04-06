@@ -6,13 +6,13 @@ public class ItemPickUp : MonoBehaviour
 {
     public Item Item;
 
-    public void PickUp()
+     void PickUp()
     {
         InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
     }
 
-    private void OnMouseDown()
+     private void OnMouseDown()
     {
         PickUp();
     }

@@ -16,3 +16,4 @@ MonoBehaviour:
   ItemName: Block
   Icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   ItemDescription: Das ist ein Block
+  itemType: 1

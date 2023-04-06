@@ -10,4 +10,13 @@ public class Item : ScriptableObject
     public string ItemName;
     public Sprite Icon;
     public string ItemDescription;
+    public ItemType itemType;
+
+    public enum ItemType
+    {
+        Key,
+        Tip,
+        Waste,
+        Example
+    }
 }
