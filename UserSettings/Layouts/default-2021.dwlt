@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 64
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,14 +120,14 @@ MonoBehaviour:
     y: 578
     width: 1467
     height: 369
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 65
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 66
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 1192
     height: 578
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -329,9 +329,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 17c1459c
+    m_SelectedIDs: d516b19f
+    m_LastClickedID: -1615784235
+    m_ExpandedIDs: 08e7468217c1459cd516b19f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -358,6 +358,9 @@ MonoBehaviour:
       - itemId: 656259478
         selectedIndex: 0
         scroll: {x: 0, y: 0}
+      - itemId: 403810634
+        selectedIndex: 0
+        scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
     m_AssetObjectForEditing: {fileID: 0}
@@ -382,6 +385,14 @@ MonoBehaviour:
       },\n                {\n                    \"name\": \"Sprint\",\n                   
       \"type\": \"PassThrough\",\n                    \"id\": \"980e881e-182c-404c-8cbf-3d09fdb48fef\",\n                   
       \"expectedControlType\": \"\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"Interact\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"a622533e-3a94-4c3b-85d8-948dfaa73cf8\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"Inventory\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"14f865f6-185c-4f29-9ad6-2136384cb6ef\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
       \"name\": \"WASD\",\n                    \"id\": \"b7594ddb-26c9-4ba2-bd5a-901468929edc\",\n                   
@@ -469,9 +480,20 @@ MonoBehaviour:
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"Gamepad\",\n                    \"action\": \"Sprint\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      }\n            ]\n        }\n    ],\n    \"controlSchemes\": [\n        {\n           
-      \"name\": \"KeyboardMouse\",\n            \"bindingGroup\": \"KeyboardMouse\",\n           
-      \"devices\": [\n                {\n                    \"devicePath\": \"<Keyboard>\",\n                   
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"8653de26-4b4e-488e-a964-e598cbf2fbce\",\n                    \"path\":
+      \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"Interact\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"c6792630-b4ed-4ab3-b2ba-ee81e01b9f04\",\n                   
+      \"path\": \"<Keyboard>/i\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
+      \"action\": \"Inventory\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
+      ],\n    \"controlSchemes\": [\n        {\n            \"name\": \"KeyboardMouse\",\n           
+      \"bindingGroup\": \"KeyboardMouse\",\n            \"devices\": [\n               
+      {\n                    \"devicePath\": \"<Keyboard>\",\n                   
       \"isOptional\": false,\n                    \"isOR\": false\n               
       },\n                {\n                    \"devicePath\": \"<Mouse>\",\n                   
       \"isOptional\": false,\n                    \"isOR\": false\n               
@@ -566,22 +588,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Items
+    - Assets/Prefabs/2D
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Items
+  - Assets/Prefabs/2D
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Studium\Semester 4\Project Final\Semester-4
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 766f0000
-    m_LastClickedID: 28534
-    m_ExpandedIDs: 000000005c6f00005e6f00006e6f000000ca9a3b
+    m_SelectedIDs: da740000
+    m_LastClickedID: 29914
+    m_ExpandedIDs: 00000000ae740000b0740000b2740000de74000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -609,7 +631,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c6f00005e6f0000
+    m_ExpandedIDs: 00000000ae740000b0740000b2740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -634,8 +656,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: b2a50000
+    m_LastClickedInstanceID: 42418
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -739,20 +761,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 826d0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 665bffffea5dffff7465ffff0469ffff0670ffff1474ffff0c7dffffb482ffffa0c2ffffa8c2ffff58f4ffff16fbffff8270000094700000a4700000ae700000b6700000
+      m_SelectedIDs: 5a85ffff
+      m_LastClickedID: -31398
+      m_ExpandedIDs: 8448ffffc059ffff1e88ffff648cffff6298ffff349bffff8ef3ffff16fbffff46a50000c0a50000d2a50000e2a50000eca50000fca50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Label
-        m_OriginalName: Label
+        m_Name: InteractionBox
+        m_OriginalName: InteractionBox
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -15732
+        m_UserData: 42418
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1019,14 +1041,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 954.3745, y: 352.89093, z: -0.9463341}
+    m_Target: {x: -0.45336762, y: 1.5533096, z: 3.5176315}
     speed: 2
-    m_Value: {x: -1.9, y: 0.97, z: 5.12}
+    m_Value: {x: -0.45336762, y: 1.5533096, z: 3.5176315}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1055,7 +1077,7 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -1063,9 +1085,9 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1073,21 +1095,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.117749654, y: -0.60093236, z: 0.090091206, w: 0.78543395}
     speed: 2
-    m_Value: {x: -0.000000029310776, y: 0.000000073183166, z: -0.000000021466168,
-      w: -1}
+    m_Value: {x: 0.118018955, y: -0.5985711, z: 0.089737214, w: 0.78723025}
   m_Size:
-    m_Target: 160.22968
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 0.86602545
+    m_Value: 0.8660254
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.0005
-    m_SpeedNormalized: 0.49999997
+    m_Speed: 0.82058996
+    m_SpeedNormalized: 0.40999997
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1098,7 +1119,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.22707443, y: 0.5669596, z: -0.16630122, w: -0.7741863}
+  m_LastSceneViewRotation: {x: 0.06440332, y: -0.1051756, z: 0.006826656, w: 0.99234486}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
