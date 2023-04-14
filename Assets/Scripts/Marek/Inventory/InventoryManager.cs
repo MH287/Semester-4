@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,10 @@ public class InventoryManager : MonoBehaviour
     public Toggle EnableRemove;
 
     public InventoryItemController[] InventoryItems;
+
+    //Test für OnClick
+    public event EventHandler<Item> OnItemSelected;
+    public GameObject ItemDescription;
 
     private void Awake()
     {
@@ -46,16 +51,27 @@ public class InventoryManager : MonoBehaviour
             var itemName = obj.transform.Find("ItemName").GetComponent <TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+            //Test
+            obj.GetComponent<Button>().onClick.AddListener(() => { SelectItem(item); });
+            //
 
             itemName.text = item.ItemName;
             itemIcon.sprite = item.Icon;
 
             if (EnableRemove.isOn)
                 removeButton.gameObject.SetActive(true);
+
+
         }
 
         SetInventoryItems();
     }
+    //Test
+    private void SelectItem(Item selectedItem)
+    {
+        ItemDescription.SetActive(true);
+    }
+    //
 
     public void EnableItemRemove()
     {

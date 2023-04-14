@@ -15,4 +15,6 @@ MonoBehaviour:
   ID: 2
   ItemName: Zylinder
   Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 7587627865818154146, guid: 6698dbe03cb838d4bbfc357d9a313590, type: 3}
   ItemDescription: Das its ein Zylinder
+  itemType: 0
