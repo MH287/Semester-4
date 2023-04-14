@@ -15,10 +15,12 @@ public class InventoryManager : MonoBehaviour
     public Toggle EnableRemove;
 
     public InventoryItemController[] InventoryItems;
+
     private void Awake()
     {
         Instance = this;
     }
+
 
     public void Add(Item item)
     {
