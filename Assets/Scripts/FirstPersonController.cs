@@ -59,6 +59,9 @@ namespace StarterAssets
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		//Marek
+		private bool _isClimbingLadder;
+		private Vector3 _lastGrabLadderDirection;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -194,10 +197,76 @@ namespace StarterAssets
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
 			}
 
+			//Marek -> Ladderclimbing
+			if (!_isClimbingLadder)
+			{
+				//not climbing any ladder
+				float avoidFloorDistance = .1f;
+				float ladderGrabDistance = .75f;
+				if (Physics.Raycast(transform.position + Vector3.up * avoidFloorDistance, inputDirection, out RaycastHit raycastHit, ladderGrabDistance))
+				{
+					if (raycastHit.transform.TryGetComponent(out Ladder ladder))
+					{
+						GrabLadder(inputDirection);
+					}
+				}
+            }
+            else
+            {
+				//Climbing the ladder
+				float avoidFloorDistance = .1f;
+				float ladderGrabDistance = .75f;
+				if (Physics.Raycast(transform.position + Vector3.up * avoidFloorDistance, _lastGrabLadderDirection, out RaycastHit raycastHit, ladderGrabDistance))
+				{
+					if (!raycastHit.transform.TryGetComponent(out Ladder ladder))
+					{
+						DropLadder();
+						_verticalVelocity = 4f;
+					}
+                }
+                else
+                {
+					DropLadder();
+					_verticalVelocity = 4f;
+				}
+
+				if(Vector3.Dot(inputDirection, _lastGrabLadderDirection) < 0)
+                {
+					//Climbing down the ladder
+					float ladderFloorDropDistance = 0.1f;
+					if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit floorRaycastHit, ladderFloorDropDistance))
+					{
+						DropLadder();
+                    }
+                }
+			}
+
+			if(_isClimbingLadder)
+            {
+				inputDirection.x = 0f;
+				inputDirection.y = inputDirection.z;
+				inputDirection.z = 0f;
+				_verticalVelocity = 0f;
+				Grounded = true;
+				_speed = targetSpeed;
+			}
+			//Marek Ende
+
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
 
+		//Marek
+		private void GrabLadder(Vector3 lastGrabLadderDirection)
+        {
+			_isClimbingLadder = true;
+			this._lastGrabLadderDirection = lastGrabLadderDirection;
+		}
+		private void DropLadder()
+        {
+			_isClimbingLadder = false;
+		}
+		//Marek Ende
 		private void JumpAndGravity()
 		{
 			if (Grounded)
