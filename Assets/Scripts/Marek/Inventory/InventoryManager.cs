@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
+    public InputActionReference reference;
+
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
+
+    public GameObject InventoryObj;
+
+    private MouseController _mouseController;
 
     public Transform ItemContent;
     public GameObject InventoryItem;
@@ -24,6 +31,9 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        reference.action.Enable();
+        reference.action.performed += _ => Inventory();
+        InventoryObj.SetActive(false);
     }
 
 
@@ -98,6 +108,22 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < Items.Count; i++)
         {
             InventoryItems[i].AddItem(Items[i]);
+        }
+    }
+
+    public void Inventory()
+    {
+        if(!InventoryObj.activeSelf)
+        {
+            Debug.Log("Inventory öffnen.");
+            InventoryObj.SetActive(true);
+            _mouseController.FreeMouse();
+        }
+        else
+        {
+            Debug.Log("Inventory closed.");
+            InventoryObj.SetActive(false);
+            _mouseController.LockMouse();
         }
     }
 }

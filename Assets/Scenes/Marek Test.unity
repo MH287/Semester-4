@@ -3406,7 +3406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e066f3c20a1e6a14c80102c180545f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: {fileID: -3270514727364331924, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
   Items: []
+  InventoryObj: {fileID: 922934284}
   ItemContent: {fileID: 1340350125}
   InventoryItem: {fileID: 5036109525259201446, guid: 8f0b880b32052ba4c913a8b058db968d,
     type: 3}
@@ -4813,12 +4816,12 @@ PrefabInstance:
     - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: cursorLocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: cursorInputForLook
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
