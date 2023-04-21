@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject InventoryObj;
 
-    private MouseController _mouseController;
+    [SerializeField] private MouseController _mouseController;
 
     private void Awake()
     {

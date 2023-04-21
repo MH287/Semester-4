@@ -9,7 +9,7 @@ public class Item : ScriptableObject
     public int ID;
     public string ItemName;
     public Sprite Icon;
-    public Transform Prefab;
+    public GameObject Prefab;
     public string ItemDescription;
     public ItemType itemType;
 

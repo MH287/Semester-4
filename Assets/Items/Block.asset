@@ -15,6 +15,6 @@ MonoBehaviour:
   ID: 1
   ItemName: Block
   Icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  Prefab: {fileID: 123115633888771295, guid: 23b5236d817428c4fa30cbb9f979a535, type: 3}
+  Prefab: {fileID: 123115633888771299, guid: 23b5236d817428c4fa30cbb9f979a535, type: 3}
   ItemDescription: Das ist ein Block
   itemType: 1

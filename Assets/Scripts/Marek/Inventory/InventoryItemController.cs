@@ -35,10 +35,13 @@ public class InventoryItemController : MonoBehaviour
                 InventoryManager.Instance.Remove(item);
                 break;
             case Item.ItemType.Example:
+                Debug.Log("Example");
                 break;
             case Item.ItemType.Tip:
+                Debug.Log("Tip");
                 break;
             case Item.ItemType.Waste:
+                Debug.Log("Waste");
                 break;
         }
 

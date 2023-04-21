@@ -6,11 +6,13 @@ public class MouseController : MonoBehaviour
 {
     public void LockMouse()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void FreeMouse()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }

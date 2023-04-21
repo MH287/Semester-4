@@ -1212,6 +1212,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a653491b40c9674cae4e937d5b5fd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &388917272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388917274}
+  - component: {fileID: 388917273}
+  m_Layer: 0
+  m_Name: MouseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388917273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388917272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975d49aa51042814493ecfe96dfff6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &388917274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388917272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8661978, y: -4.5777354, z: 18.747686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405544181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,6 +4930,7 @@ MonoBehaviour:
   EnableRemove: {fileID: 1735793201}
   InventoryItems: []
   InventoryObj: {fileID: 922934284}
+  _mouseController: {fileID: 388917273}
 --- !u!4 &1774854551
 Transform:
   m_ObjectHideFlags: 0
@@ -6383,12 +6428,12 @@ PrefabInstance:
     - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: cursorLocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: cursorInputForLook
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
