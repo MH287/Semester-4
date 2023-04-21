@@ -13,10 +13,6 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
 
-    public GameObject InventoryObj;
-
-    private MouseController _mouseController;
-
     public Transform ItemContent;
     public GameObject InventoryItem;
 
@@ -24,9 +20,9 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController[] InventoryItems;
 
-    //Test für OnClick
-    public event EventHandler<Item> OnItemSelected;
-    public GameObject ItemDescription;
+    public GameObject InventoryObj;
+
+    private MouseController _mouseController;
 
     private void Awake()
     {
@@ -35,7 +31,6 @@ public class InventoryManager : MonoBehaviour
         reference.action.performed += _ => Inventory();
         InventoryObj.SetActive(false);
     }
-
 
     public void Add(Item item)
     {
@@ -49,45 +44,40 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
-        //Clean Content befor open -> nur das gepickte Item hinzufügen, nicht alles löschen und neu hinzufügen
-        foreach(Transform item in ItemContent)
-        {
-            Destroy(item.gameObject);
-        }
+        CleanList();
 
-        foreach(var item in Items)
+        foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent <TextMeshProUGUI>();
+            var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
-            //Test
-            obj.GetComponent<Button>().onClick.AddListener(() => { SelectItem(item); });
-            //
 
             itemName.text = item.ItemName;
             itemIcon.sprite = item.Icon;
 
             if (EnableRemove.isOn)
                 removeButton.gameObject.SetActive(true);
-
-
         }
 
         SetInventoryItems();
     }
-    //Test
-    private void SelectItem(Item selectedItem)
-    {
-        ItemDescription.SetActive(true);
+
+    public void CleanList()
+    {        
+        //Clean Content befor open -> nur das gepickte Item hinzufügen, nicht alles löschen und neu hinzufügen
+        foreach (Transform item in ItemContent)
+        {
+            Destroy(item.gameObject);
+        }
+
     }
-    //
 
     public void EnableItemRemove()
     {
         if (EnableRemove.isOn)
         {
-            foreach(Transform item in ItemContent)
+            foreach (Transform item in ItemContent)
             {
                 item.Find("RemoveButton").gameObject.SetActive(true);
             }
@@ -104,8 +94,8 @@ public class InventoryManager : MonoBehaviour
     public void SetInventoryItems()
     {
         InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
-        
-        for(int i = 0; i < Items.Count; i++)
+
+        for (int i = 0; i < Items.Count; i++)
         {
             InventoryItems[i].AddItem(Items[i]);
         }
@@ -113,9 +103,10 @@ public class InventoryManager : MonoBehaviour
 
     public void Inventory()
     {
-        if(!InventoryObj.activeSelf)
+        if (!InventoryObj.activeSelf)
         {
             Debug.Log("Inventory öffnen.");
+            ListItems();
             InventoryObj.SetActive(true);
             _mouseController.FreeMouse();
         }
