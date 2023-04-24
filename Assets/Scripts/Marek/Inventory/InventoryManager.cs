@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
@@ -23,13 +24,15 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryObj;
 
     [SerializeField] private MouseController _mouseController;
-
+    
     private void Awake()
     {
         Instance = this;
         reference.action.Enable();
         reference.action.performed += _ => Inventory();
         InventoryObj.SetActive(false);
+
+
     }
 
     public void Add(Item item)
@@ -62,7 +65,7 @@ public class InventoryManager : MonoBehaviour
 
         SetInventoryItems();
     }
-
+    
     public void CleanList()
     {        
         //Clean Content befor open -> nur das gepickte Item hinzufügen, nicht alles löschen und neu hinzufügen

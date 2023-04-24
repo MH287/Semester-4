@@ -9,6 +9,7 @@ public class InventoryItemController : MonoBehaviour
     Item item;
 
     public Button RemoveButton;
+    //[SerializeField] private GameObject _itemViewer;
     public void RemoveItem()
     {
         InventoryManager.Instance.Remove(item);
@@ -44,10 +45,11 @@ public class InventoryItemController : MonoBehaviour
                 Debug.Log("Waste");
                 break;
         }
-
-        /*
-        DropItem();
-        InventoryManager.Instance.Remove(item);
-        */
     }
+
+    /*public void OpenItemViewer()
+    {
+        _itemViewer.SetActive(true);
+        Instantiate(item.Prefab);
+    }*/
 }
