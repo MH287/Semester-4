@@ -6,15 +6,15 @@ using UnityEngine.Events;
 
 public class InteractableObject : MonoBehaviour
 {
-    private Outline _Outline;
+    //(private Outline _Outline;
 
-    [SerializeField] private float _FadeFactor = 2f;
+    //[SerializeField] private float _FadeFactor = 2f;
 
     public bool IsHighlighted;
 
     [SerializeField] private UnityEvent _onInteractionEvent = new UnityEvent();
 
-    [SerializeField] private Color _outlineColor = Color.white;
+    //[SerializeField] private Color _outlineColor = Color.white;
 
     void Start()
     {
