@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,6 +10,8 @@ using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _itemViewer;
+
     public InputActionReference reference;
 
     public static InventoryManager Instance;
@@ -31,8 +34,6 @@ public class InventoryManager : MonoBehaviour
         reference.action.Enable();
         reference.action.performed += _ => Inventory();
         InventoryObj.SetActive(false);
-
-
     }
 
     public void Add(Item item)
@@ -54,16 +55,21 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+            var Button = obj.transform.GetComponent<Button>();
+            Button.onClick.AddListener(InspectObject);
 
             itemName.text = item.ItemName;
             itemIcon.sprite = item.Icon;
 
-            if (EnableRemove.isOn)
-                removeButton.gameObject.SetActive(true);
         }
 
         SetInventoryItems();
+    }
+
+    public void InspectObject()
+    {
+        _itemViewer.SetActive(true);
+        FindObjectOfType<ItemViewer>().Spawn3DItem();
     }
     
     public void CleanList()
