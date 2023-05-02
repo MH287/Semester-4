@@ -9,6 +9,7 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
 
+
     public void Spawn3DItem()
      {
          if(_itemPrefab != null)
