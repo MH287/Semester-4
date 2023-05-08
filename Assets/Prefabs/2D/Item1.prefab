@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -3990752689524855698}
   - component: {fileID: 4836040646070876183}
   - component: {fileID: -87703162690787233}
-  - component: {fileID: 5692324155134216533}
-  m_Layer: 0
+  - component: {fileID: 2019746335187376575}
+  m_Layer: 17
   m_Name: Item1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 0a69c930b717fa748bf198ee739922cc, type: 2}
---- !u!114 &5692324155134216533
+--- !u!114 &2019746335187376575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 123115633888771299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc8d1fb6d27cf14a98625dd78413615, type: 3}
+  m_Script: {fileID: 11500000, guid: c6052f53b6083d14ca881fedb4d5bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsHighlighted: 0
-  _onInteractionEvent:
+  ItemReference: {fileID: 11400000, guid: 8a5531c04d70a6044b3d4efcdcce1768, type: 2}
+  InteractionType: 2
+  OnInteract:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -87703162690787233}

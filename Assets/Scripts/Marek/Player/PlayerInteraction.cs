@@ -11,18 +11,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private InteractableObject _CurrentObj = null;
     public bool CanInteract = true; //HINZUGEFÜGT VON TIM
-    public static PlayerInteraction instance;
-
-    void Awake()
-    {
-        instance = this;
-    }
-    //BIS HIER
-
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

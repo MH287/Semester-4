@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1765548727106228954}
   - component: {fileID: 8110864396093080236}
   - component: {fileID: -6498705012648170388}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc8d1fb6d27cf14a98625dd78413615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeFactor: 2
   IsHighlighted: 0
   _onInteractionEvent:
     m_PersistentCalls:
@@ -156,4 +155,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _outlineColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,57 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bookshelf : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private string _animation;
-    private bool _pressedBookOne;
-    private bool _pressedBookTwo;
-    private bool _pressedBookThree;
-    private bool _pressedBookFour;
+    [SerializeField] private int[] _solution;
+    private int _index;
 
-    public void CheckCorrectBooks()
+    public UnityEvent OnSolved;
+
+    public void PressBook(int bookIndex)
     {
-        if (_pressedBookOne && _pressedBookTwo && _pressedBookThree && _pressedBookFour)
+        if (_solution[_index] == bookIndex)
         {
-            _animator.Play(_animation);
-            Debug.Log("Bookshelf open");
-            //_openBookshelf;
+            Debug.Log("Correct");
+            if (_index == _solution.Length - 1)
+            {
+                OnSolved.Invoke();
+            }
+            _index++;
         }
         else
         {
-            Debug.Log("Falscher Code");
+            Debug.Log("Wrong");
+            _index = 0;
         }
-    }
-
-    public void PressCorrectBook1()
-    {
-        _pressedBookOne = true;
-        CheckCorrectBooks();
-    }
-    public void PressCorrectBook2()
-    {
-        _pressedBookTwo = true;
-        CheckCorrectBooks();
-    }
-    public void PressCorrectBook3()
-    {
-        _pressedBookThree = true;
-        CheckCorrectBooks();
-    }
-    public void PressCorrectBook4()
-    {
-        _pressedBookFour = true;
-        CheckCorrectBooks();
-    }
-
-    public void PressedWrongBook()
-    {
-        Debug.Log("Books resettet!");
-        _pressedBookOne = false;
-        _pressedBookTwo = false;
-        _pressedBookThree = false;
-        _pressedBookFour = false;
     }
 }

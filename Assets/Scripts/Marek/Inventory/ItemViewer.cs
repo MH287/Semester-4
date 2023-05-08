@@ -9,6 +9,13 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
 
+    public void InspectItem(Item target)
+    {
+        _item = target;
+        Spawn3DItem();
+        gameObject.SetActive(true);
+        Manager.Use<MouseController>().FreeMouse();
+    }
 
     public void Spawn3DItem()
      {

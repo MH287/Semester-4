@@ -12,7 +12,7 @@ public class InteractableObject : MonoBehaviour
 
     public bool IsHighlighted;
 
-    [SerializeField] private UnityEvent _onInteractionEvent = new UnityEvent();
+    [SerializeField] private UnityEvent _onInteractionEvent;
 
     //[SerializeField] private Color _outlineColor = Color.white;
 

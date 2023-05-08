@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 
-public class MouseController : MonoBehaviour
+public class MouseController : ManagerModule
 {
     [SerializeField] private StarterAssetsInputs _starterAssetsInputs;
 
