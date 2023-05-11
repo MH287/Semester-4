@@ -222,13 +222,13 @@ namespace StarterAssets
 					{
 						DropLadder();
 						_verticalVelocity = 4f;
-					}
+                    }
                 }
                 else
                 {
 					DropLadder();
 					_verticalVelocity = 4f;
-				}
+                }
 
 				if(Vector3.Dot(inputDirection, _lastGrabLadderDirection) < 0)
                 {
@@ -249,7 +249,8 @@ namespace StarterAssets
 				_verticalVelocity = 0f;
 				Grounded = true;
 				_speed = targetSpeed;
-			}
+                Debug.Log("Climbing");
+            }
 			//Marek Ende
 
 			// move the player

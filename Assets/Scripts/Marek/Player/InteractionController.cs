@@ -33,7 +33,10 @@ public class InteractionController : MonoBehaviour
             _interactableUI.SetActive(true);
             //TODO highlighting -> doesnt Work
             _targetOutline = hit.transform.gameObject.GetComponent<Outline>();
-            _targetOutline.enabled = true;
+            if (_targetOutline != null)
+            {
+                _targetOutline.enabled = true;
+            }
 
             _interactionTarget = hit.transform.gameObject.GetComponent<Interactable>();
         }
