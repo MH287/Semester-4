@@ -8,12 +8,14 @@ using UnityEngine.InputSystem;
 public class InteractionController : MonoBehaviour
 {
     [SerializeField] private LayerMask _interactionLayerMask;
-    [SerializeField] private float _interactionRange = 2.0f;
+    [SerializeField] private float _interactionRange = 1.5f;
     [SerializeField] private InputActionReference _interactionAction;
     [SerializeField] private ItemViewer _itemViewer;
+    [SerializeField] private GameObject _interactableUI;
     [SerializeField] private ItemPickUp _itemPickUp;
 
     private Interactable _interactionTarget;
+    private Outline _targetOutline;
     private Camera _camera;
 
     void Awake()
@@ -28,11 +30,20 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out RaycastHit hit, _interactionRange,
                 _interactionLayerMask))
         {
-            //TODO highlighting
+            _interactableUI.SetActive(true);
+            //TODO highlighting -> doesnt Work
+            _targetOutline = hit.transform.gameObject.GetComponent<Outline>();
+            _targetOutline.enabled = true;
+
             _interactionTarget = hit.transform.gameObject.GetComponent<Interactable>();
         }
         else
         {
+            _interactableUI.SetActive(false);
+            if(_targetOutline != null)
+                _targetOutline.enabled = false;
+
+            _targetOutline = null;
             _interactionTarget = null;
         }
     }
