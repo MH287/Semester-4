@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class CheckInputfield : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _codeInputField;
-    [SerializeField] private int _inputAsInteger;
-    [SerializeField] private int _uVCode;
+    [SerializeField] private int _inputAsInteger; 
+    public int UVCode;
 
     void Awake()
     {
-        _codeInputField.characterLimit = _uVCode.ToString().Length;
+        _codeInputField.characterLimit = UVCode.ToString().Length;
     }
 
     public void OpenKeypad()
@@ -25,8 +25,10 @@ public class CheckInputfield : MonoBehaviour
     {
         _inputAsInteger = int.Parse(_codeInputField.text);
 
-        if (_inputAsInteger == _uVCode)
+        if (_inputAsInteger == UVCode)
         {
+            gameObject.SetActive(false);
+            Manager.Use<MouseController>().LockMouse();
             Debug.Log("Richtiger Code -> Tür öffnet");
         }
         else

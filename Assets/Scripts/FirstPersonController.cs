@@ -63,7 +63,7 @@ namespace StarterAssets
 		private bool _isClimbingLadder;
 		private Vector3 _lastGrabLadderDirection;
 
-		// timeout deltatime
+        // timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
@@ -208,12 +208,12 @@ namespace StarterAssets
 					if (raycastHit.transform.TryGetComponent(out Ladder ladder))
 					{
 						GrabLadder(inputDirection);
-					}
+                    }
 				}
             }
             else
             {
-				//Climbing the ladder
+                //Climbing the ladder
 				float avoidFloorDistance = .1f;
 				float ladderGrabDistance = .75f;
 				if (Physics.Raycast(transform.position + Vector3.up * avoidFloorDistance, _lastGrabLadderDirection, out RaycastHit raycastHit, ladderGrabDistance))
@@ -249,7 +249,6 @@ namespace StarterAssets
 				_verticalVelocity = 0f;
 				Grounded = true;
 				_speed = targetSpeed;
-                Debug.Log("Climbing");
             }
 			//Marek Ende
 
@@ -260,7 +259,7 @@ namespace StarterAssets
 		//Marek
 		private void GrabLadder(Vector3 lastGrabLadderDirection)
         {
-			_isClimbingLadder = true;
+            _isClimbingLadder = true;
 			this._lastGrabLadderDirection = lastGrabLadderDirection;
 		}
 		private void DropLadder()
