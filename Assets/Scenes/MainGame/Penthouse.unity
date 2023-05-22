@@ -1321,6 +1321,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: a025e80bfa2c54d48a0c31421b953333, type: 2}
+--- !u!224 &535848912 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1368240073497916603, guid: 7f1c214152add0c4aa39da17bec52e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 435840920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &539798917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1671,7 @@ GameObject:
   - component: {fileID: 621598868}
   - component: {fileID: 621598867}
   - component: {fileID: 621598869}
+  - component: {fileID: 621598870}
   m_Layer: 5
   m_Name: HUD_blockout_pnl
   m_TagString: Untagged
@@ -1759,6 +1766,28 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &621598870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621598865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e066f3c20a1e6a14c80102c180545f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemViewer: {fileID: 535848904}
+  reference: {fileID: 0}
+  Items: []
+  ItemContent: {fileID: 535848912}
+  InventoryItem: {fileID: 535848904}
+  EnableRemove: {fileID: 0}
+  InventoryItems:
+  - {fileID: 0}
+  InventoryObj: {fileID: 535848904}
+  _mouseController: {fileID: 0}
 --- !u!1001 &636386493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2532,7 +2561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895925914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.235095, y: -12.01, z: -16.989609}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
