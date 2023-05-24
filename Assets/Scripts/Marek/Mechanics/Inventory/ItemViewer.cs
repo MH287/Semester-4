@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ItemViewer : MonoBehaviour, IDragHandler
 {
+    [SerializeField] private GameObject _itemCamera;
+    [SerializeField] private int _offset = 1;
     [SerializeField] private Item _item;
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
@@ -24,7 +26,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
              Destroy(_itemPrefab.gameObject);
          }
 
-         _itemPrefab = Instantiate(_item.Prefab, new Vector3(1000, 1000, 1000), Quaternion.identity);
+         _itemPrefab = Instantiate(_item.Prefab, _itemCamera.transform);
+        _itemPrefab.transform.localPosition = new Vector3(0,0,_offset);
      }
 
      public void OnDrag(PointerEventData eventData)

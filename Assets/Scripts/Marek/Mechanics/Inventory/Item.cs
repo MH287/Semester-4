@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    public int ID;
     public string ItemName;
     public Sprite Icon;
     public GameObject Prefab;
@@ -17,7 +16,6 @@ public class Item : ScriptableObject
     {
         Key,
         Tip,
-        Waste,
-        Example
+        Story,
     }
 }

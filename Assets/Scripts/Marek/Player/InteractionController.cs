@@ -12,7 +12,6 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private InputActionReference _interactionAction;
     [SerializeField] private ItemViewer _itemViewer;
     [SerializeField] private GameObject _interactableUI;
-    [SerializeField] private ItemPickUp _itemPickUp;
 
     private Interactable _interactionTarget;
     private Outline _targetOutline;
@@ -31,7 +30,6 @@ public class InteractionController : MonoBehaviour
                 _interactionLayerMask))
         {
             _interactableUI.SetActive(true);
-            //TODO highlighting -> doesnt Work
             _targetOutline = hit.transform.gameObject.GetComponent<Outline>();
             if (_targetOutline != null)
             {
@@ -67,7 +65,8 @@ public class InteractionController : MonoBehaviour
                 _interactionTarget.OnInteract.Invoke();
                 break;
             case InteractionType.Item:
-                _itemPickUp.PickUp();
+                Manager.Use<InventoryManager>().AddItem(_interactionTarget.ItemReference);
+                Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

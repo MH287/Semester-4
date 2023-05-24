@@ -8,7 +8,7 @@ public class ShowUVCode : MonoBehaviour
 {
     [SerializeField] private GameObject _uVCode;
     [SerializeField] private GameObject _light;
-    [SerializeField] private InventoryManager _inventoryManager;
+    //durch Managerupdate neu machen: [SerializeField] private InventoryManager _inventoryManager;
     [SerializeField] private Item _key;
 
     [SerializeField] private CheckInputfield _inputfield;
@@ -22,7 +22,7 @@ public class ShowUVCode : MonoBehaviour
 
     void Update()
     {
-        CheckFuse();
+        //CheckFuse();
     }
     public void ShowCode()
     {
@@ -31,7 +31,7 @@ public class ShowUVCode : MonoBehaviour
         _light.SetActive(true);
     }
 
-    public void CheckFuse()
+   /* public void CheckFuse()
     {
         if (!_inventoryManager.Items.Contains(_key))
         {
@@ -50,5 +50,5 @@ public class ShowUVCode : MonoBehaviour
         {
             Debug.Log("Key nicht vorhanden!");
         }
-    }
+    }*/
 }
