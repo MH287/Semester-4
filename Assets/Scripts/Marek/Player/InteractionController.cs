@@ -11,7 +11,6 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private float _interactionRange = 1.5f;
     [SerializeField] private InputActionReference _interactionAction;
     [SerializeField] private ItemViewer _itemViewer;
-    [SerializeField] private GameObject _interactableUI;
 
     private Interactable _interactionTarget;
     private Outline _targetOutline;
@@ -29,7 +28,7 @@ public class InteractionController : MonoBehaviour
         if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out RaycastHit hit, _interactionRange,
                 _interactionLayerMask))
         {
-            _interactableUI.SetActive(true);
+            Manager.Use<UIManager>().ShowInteractWithE();
             _targetOutline = hit.transform.gameObject.GetComponent<Outline>();
             if (_targetOutline != null)
             {
@@ -40,7 +39,7 @@ public class InteractionController : MonoBehaviour
         }
         else
         {
-            _interactableUI.SetActive(false);
+            Manager.Use<UIManager>().HideInteractWithE();
             if(_targetOutline != null)
                 _targetOutline.enabled = false;
 

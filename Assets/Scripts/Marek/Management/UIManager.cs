@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : ManagerModule
 {
     [SerializeField] private GameObject _quizCanvas;
+    [SerializeField] private GameObject _interactWithE;
 
     public void OpenWindow()
     {
@@ -14,5 +15,13 @@ public class UIManager : MonoBehaviour
     public void CloseButton()
     {
         _quizCanvas.SetActive(false);
+    }
+    public void ShowInteractWithE()
+    {
+        _interactWithE.SetActive(true);
+    }
+    public void HideInteractWithE()
+    {
+        _interactWithE.SetActive(false);
     }
 }
