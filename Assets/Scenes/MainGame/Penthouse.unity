@@ -933,7 +933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &283555641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1120,8 +1120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bae76944352ca499f4d68338da89d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionAction: {fileID: 6948834927735382035, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
   _slotHolder: {fileID: 621598865}
   InventoryItems: []
 --- !u!4 &350888092 stripped
@@ -2329,7 +2327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &694599819
 RectTransform:
   m_ObjectHideFlags: 0

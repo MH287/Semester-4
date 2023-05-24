@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,6 @@ using static UnityEditor.Progress;
 
 public class InventoryManager : ManagerModule
 {
-    //[SerializeField] private StarterAssetsInputs _starterAssetsInputs;
-    [SerializeField] private InputActionReference _interactionAction;
-
     [SerializeField] private GameObject _slotHolder;
 
     public List<Item> InventoryItems = new List<Item>();
@@ -26,10 +24,6 @@ public class InventoryManager : ManagerModule
         }
 
         RefreshUI();
-
-        //nur zum testen
-        //AddItem(itemToAdd);
-        //RemoveItem(itemToRemove);
     }
 
     public void RefreshUI()
@@ -63,13 +57,13 @@ public class InventoryManager : ManagerModule
         RefreshUI();
     }
 
-    public void UseItem(Item item)
+    public void UseItem(InputActionReference action)
     {
-        InventoryItems.Remove(item);
         RefreshUI();
     }
     public void DestroyItemInWorld(GameObject item)
     {
         Destroy(item);
     }
+
 }
