@@ -7104,11 +7104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed5214201481804d98ed04e3966a8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemCamera: {fileID: 0}
+  _itemCamera: {fileID: 3011476099811901501}
   _offset: 3
   _item: {fileID: 0}
   _itemPrefab: {fileID: 0}
   _rotateSensetivity: 0.5
+  _interactionAction: {fileID: 455917025679247091, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
 --- !u!1 &1236972325217925040
 GameObject:
   m_ObjectHideFlags: 0

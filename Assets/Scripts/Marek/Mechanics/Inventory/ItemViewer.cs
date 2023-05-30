@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class ItemViewer : MonoBehaviour, IDragHandler
 {
@@ -10,6 +11,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] private Item _item;
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
+
+    [SerializeField] private InputActionReference _interactionAction;
 
     public void InspectItem(Item target)
     {
@@ -32,8 +35,6 @@ public class ItemViewer : MonoBehaviour, IDragHandler
 
      public void OnDrag(PointerEventData eventData)
      {
-         Debug.Log("OnDrag");
-         //_itemPrefab.transform.eulerAngles += new Vector3(-eventData.delta.y, -eventData.delta.x);
          _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
          _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
     }

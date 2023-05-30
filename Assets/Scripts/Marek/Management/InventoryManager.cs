@@ -87,14 +87,17 @@ public class InventoryManager : ManagerModule
         switch (_interactionTarget.InteractionTypInv)
         {
             case InteractionTypInv.View:
-                //_itemViewer.InspectItem(_interactionTarget.ItemReference);
+                Debug.Log("Item View");
+                _itemViewer.InspectItem(_interactionTarget.ItemReference);
                 break;
             case InteractionTypInv.InvokeEvent:
-                _interactionTarget.OnInteract.Invoke();
+                Debug.Log("Event Invoke");
+                //_interactionTarget.OnInteract.Invoke();
                 break;
             case InteractionTypInv.Useable:
-                Manager.Use<InventoryManager>().UseItem();
-                Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
+                Debug.Log("Item Use");
+                //Manager.Use<InventoryManager>().UseItem();
+                //Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -115,13 +118,14 @@ public class InventoryManager : ManagerModule
             else if (CurrentSlot == 2 && InventoryItems.Count > 1)
             {
                 _interactionTarget = InventoryItems[1].Prefab.GetComponent<Interactable>();
-            InteractWithInvItem(InventoryItems[1]);
+                InteractWithInvItem(InventoryItems[1]);
                 //RemoveItem(InventoryItems[1]);
                 CurrentSlot = 0;
                 RefreshUI();
             }
             else if(CurrentSlot == 3 && InventoryItems.Count > 2)
             {
+                _interactionTarget = InventoryItems[2].Prefab.GetComponent<Interactable>();
                 InteractWithInvItem(InventoryItems[2]);
                 //RemoveItem(InventoryItems[2]);
                 CurrentSlot = 0;

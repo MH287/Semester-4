@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7521017028516043693}
   - component: {fileID: 402097316786939023}
   m_Layer: 17
-  m_Name: ItemPrefab
+  m_Name: ItemPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 2
+  InteractionTypeWorld: 0
+  InteractionTypInv: 2
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
