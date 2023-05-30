@@ -5,9 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : ManagerModule
 {
-    
-    public void Load()
-    {
-        SceneManager.LoadScene(1);
-    }
+
 }

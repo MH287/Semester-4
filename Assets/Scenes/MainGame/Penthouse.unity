@@ -1500,6 +1500,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slotHolder: {fileID: 621598865}
+  _keyOne: {fileID: 3409371333616110576, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _keyTwo: {fileID: 101874857241803583, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _keyThree: {fileID: -5192212092548536411, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
+  _itemViewer: {fileID: 1236972324612537807}
   InventoryItems: []
 --- !u!4 &350888092 stripped
 Transform:
@@ -2357,7 +2362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 22128e23a9edb6d43b0b5faa1b19d9cb, type: 2}
-  InteractionType: 2
+  InteractionTypeWorld: 2
+  InteractionTypInv: 2
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4331,7 +4337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: a025e80bfa2c54d48a0c31421b953333, type: 2}
-  InteractionType: 2
+  InteractionTypeWorld: 2
+  InteractionTypInv: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4448,7 +4455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 69178caf56ff5a5498b691ca84a23085, type: 2}
-  InteractionType: 2
+  InteractionTypeWorld: 2
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -6622,7 +6630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -391.11}
+  m_AnchoredPosition: {x: 0, y: -391.11}
   m_SizeDelta: {x: -1016.4395, y: -1028.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964586182

@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hotbar",
-                    "type": "Button",
-                    "id": "7f7198be-18de-4d2f-a875-bc753280cf21",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Item1",
                     "type": "Button",
                     "id": "967b098c-503c-4533-8e14-627ac24ec68a",
@@ -261,39 +252,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Maus Anzeigen",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4cc17010-2323-473c-bb19-197a45d0fca3",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "96d07855-8fe1-4800-8a26-6690d4ff6ef1",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hotbar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "eb185d60-fb49-48b9-8d0c-479a58c133d3",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hotbar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

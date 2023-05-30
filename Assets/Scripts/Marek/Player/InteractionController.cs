@@ -25,6 +25,9 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
+        Manager.Use<InventoryManager>().UseItem();
+        Manager.Use<InventoryManager>().ResetCurrentSlot();
+
         if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out RaycastHit hit, _interactionRange,
                 _interactionLayerMask))
         {
@@ -55,15 +58,15 @@ public class InteractionController : MonoBehaviour
             return;
         }
 
-        switch (_interactionTarget.InteractionType)
+        switch (_interactionTarget.InteractionTypeWorld)
         {
-            case InteractionType.View:
+            case InteractionTypeWorld.View:
                 _itemViewer.InspectItem(_interactionTarget.ItemReference);
                 break;
-            case InteractionType.InvokeEvent:
+            case InteractionTypeWorld.InvokeEvent:
                 _interactionTarget.OnInteract.Invoke();
                 break;
-            case InteractionType.Item:
+            case InteractionTypeWorld.Item:
                 Manager.Use<InventoryManager>().AddItem(_interactionTarget.ItemReference);
                 Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
                 break;
