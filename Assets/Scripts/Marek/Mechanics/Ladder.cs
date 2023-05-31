@@ -18,10 +18,12 @@ public class Ladder : MonoBehaviour
     [SerializeField] private Vector3 _moveDirection;
     [SerializeField] private InputActionReference _ladder;
 
+    [SerializeField] private InteractionController _controller;
+
     public void Start()
     {
-        //_ladder.action.Enable();
-        //_ladder.action.performed += MoveLedder;
+        _ladder.action.Enable();
+        _ladder.action.performed += MoveLedder;
     }
 
     public void MoveLedderFixPosition()
@@ -47,19 +49,18 @@ public class Ladder : MonoBehaviour
             _lastPosition = _ladderPos3;
         }
     }
-    /*
+    
     public void MoveLedderFree()
     {
-        Debug.Log("LadderMove");
-        transform.Translate(_moveDirection, Space.Self);
+        if(_controller._interactionTarget.GetComponent<Ladder>() != null)
+        {
+            Debug.Log("LadderMove");
+            transform.Translate(_moveDirection, Space.Self);
+        }
+
     }
     public void MoveLedder(InputAction.CallbackContext obj)
     {
-
-        while (!_ladder.action.IsPressed() == false)
-        {
-            Debug.Log("Move Ledder aktiviert");
-            MoveLedderFree();
-        }
-    }*/
+        //während E gedrückt ist (Move Leddder Free)
+    }
 }

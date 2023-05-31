@@ -276,6 +276,10 @@ MonoBehaviour:
   _itemViewer: {fileID: 0}
   _audioAdviceItem: {fileID: 0}
   InventoryItems: []
+  _picMoveSpeed: 0
+  _picTransform: {fileID: 0}
+  _startPosition: 0
+  _endPosition: 0
 --- !u!1 &70416767
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +988,7 @@ MonoBehaviour:
   _ladderSpeed: 0
   _moveDirection: {x: 0, y: 0, z: 0}
   _ladder: {fileID: 0}
+  _controller: {fileID: 0}
 --- !u!65 &171903448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1480,6 +1485,7 @@ MonoBehaviour:
   _ladderSpeed: 0
   _moveDirection: {x: 0, y: 0, z: 0}
   _ladder: {fileID: 0}
+  _controller: {fileID: 0}
 --- !u!1 &320225144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,8 +2235,9 @@ MonoBehaviour:
   _ladderPos2: {x: 0.39, y: 3.64, z: 6.98}
   _ladderPos3: {x: -2.39, y: 3.64, z: 6.98}
   _ladderSpeed: 2
-  _moveDirection: {x: 0.1, y: 0, z: 0}
+  _moveDirection: {x: -0.1, y: 0, z: 0}
   _ladder: {fileID: 8817098655932344860, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _controller: {fileID: 670281115}
 --- !u!65 &419609909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2329,7 +2336,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419609908}
         m_TargetAssemblyTypeName: Ladder, Assembly-CSharp
-        m_MethodName: MoveLedder
+        m_MethodName: MoveLedderFree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3348,6 +3355,7 @@ MonoBehaviour:
   _interactionAction: {fileID: -5593323959137350953, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _itemViewer: {fileID: 898361104078103007}
+  _interactionTarget: {fileID: 0}
 --- !u!1 &676353153
 GameObject:
   m_ObjectHideFlags: 0

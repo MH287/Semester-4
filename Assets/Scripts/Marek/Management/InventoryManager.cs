@@ -6,10 +6,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using DG.Tweening;
 using static UnityEditor.Progress;
 
 public class InventoryManager : ManagerModule
 {
+    [Header("Hotbar")]
     [SerializeField] private GameObject _slotHolder;
     [SerializeField] private InputActionReference _keyOne;
     [SerializeField] private InputActionReference _keyTwo;
@@ -20,9 +22,17 @@ public class InventoryManager : ManagerModule
 
     public List<Item> InventoryItems = new List<Item>();
 
+    [Header("Wimmelbild")]
+    [SerializeField] private float _picMoveSpeed;
+    [SerializeField] private Transform _picTransform;
+    [SerializeField] private float _startPosition;
+    [SerializeField] private float _endPosition;
+
     private GameObject[] _slots;
     private Interactable _interactionTarget;
-    private int CurrentSlot = 0;
+
+    private bool _isActive = false;
+    
 
     public void Start()
     {
@@ -74,13 +84,7 @@ public class InventoryManager : ManagerModule
         InventoryItems.Remove(item);
         RefreshUI();
     }
-    public void ResetCurrentSlot()
-    {
-        if (InventoryItems.Count < CurrentSlot)
-        {
-            CurrentSlot = 0;
-        }
-    }
+
     private void InteractWithInvItem(Item item)
     {
         _interactionTarget = item.Prefab.GetComponent<Interactable>();
@@ -94,7 +98,8 @@ public class InventoryManager : ManagerModule
         {
             case InteractionTypInv.View:
                 Debug.Log("Item View");
-                _itemViewer.InspectItem(_interactionTarget.ItemReference);
+                ShowPicture();
+                //_itemViewer.InspectItem(_interactionTarget.ItemReference);
                 break;
             case InteractionTypInv.InvokeEvent:
                 Debug.Log("Event Invoke");
@@ -111,6 +116,28 @@ public class InventoryManager : ManagerModule
         }
 
 
+    }
+
+    public void ShowPicture()
+    {
+        if (_isActive == false)
+        {
+            _picTransform.gameObject.SetActive(true);
+            _picTransform.DOLocalMoveY(_endPosition, _picMoveSpeed);
+            _isActive = true;
+        }
+        else
+        {
+            StartCoroutine(HidePicture());
+        }        
+    }
+
+    IEnumerator HidePicture()
+    {
+        Tween tween = _picTransform.DOLocalMoveY(_startPosition, _picMoveSpeed);
+        yield return tween.WaitForCompletion();
+        _picTransform.gameObject.SetActive(false);
+        _isActive = false;
     }
 
     public void PlayWalkieTalkie()
