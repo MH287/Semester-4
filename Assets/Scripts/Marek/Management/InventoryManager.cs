@@ -96,8 +96,6 @@ public class InventoryManager : ManagerModule
                 break;
             case InteractionTypInv.Useable:
                 Debug.Log("Item Use");
-                //Manager.Use<InventoryManager>().UseItem();
-                //Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
