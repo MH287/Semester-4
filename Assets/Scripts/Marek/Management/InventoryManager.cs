@@ -27,9 +27,9 @@ public class InventoryManager : ManagerModule
         _keyOne.action.Enable();
         _keyTwo.action.Enable();
         _keyThree.action.Enable();
-        _keyOne.action.performed += ctx => CurrentSlot = 1;
-        _keyTwo.action.performed += ctx => CurrentSlot = 2;
-        _keyThree.action.performed += ctx => CurrentSlot = 3;
+        _keyOne.action.performed += UseItem;
+        _keyTwo.action.performed += UseItem;
+        _keyThree.action.performed += UseItem;
 
         _slots = new GameObject[_slotHolder.transform.childCount];
         for(int i = 0; i < _slotHolder.transform.childCount; i++) //_slotHolder.transform.childCount == _slots.Lenght
@@ -79,6 +79,8 @@ public class InventoryManager : ManagerModule
     }
     private void InteractWithInvItem(Item item)
     {
+        _interactionTarget = item.Prefab.GetComponent<Interactable>();
+
         if (_interactionTarget == null)
         {
             return;
@@ -103,32 +105,20 @@ public class InventoryManager : ManagerModule
 
 
     }
-    public void UseItem()
+    public void UseItem(InputAction.CallbackContext obj)
     {
-            if (CurrentSlot == 1 && InventoryItems.Count > 0)
-            {
-                _interactionTarget = InventoryItems[0].Prefab.GetComponent<Interactable>();
-                InteractWithInvItem(InventoryItems[0]);
-                //RemoveItem(InventoryItems[0]);
-                CurrentSlot = 0;
-                RefreshUI();
-            }
-            else if (CurrentSlot == 2 && InventoryItems.Count > 1)
-            {
-                _interactionTarget = InventoryItems[1].Prefab.GetComponent<Interactable>();
-                InteractWithInvItem(InventoryItems[1]);
-                //RemoveItem(InventoryItems[1]);
-                CurrentSlot = 0;
-                RefreshUI();
-            }
-            else if(CurrentSlot == 3 && InventoryItems.Count > 2)
-            {
-                _interactionTarget = InventoryItems[2].Prefab.GetComponent<Interactable>();
-                InteractWithInvItem(InventoryItems[2]);
-                //RemoveItem(InventoryItems[2]);
-                CurrentSlot = 0;
-                RefreshUI();
-            } 
+        if(_keyOne.action.IsPressed())
+        {
+            InteractWithInvItem(InventoryItems[0]);
+        }
+        else if(_keyTwo.action.IsPressed())
+        {
+            InteractWithInvItem(InventoryItems[1]);
+        }
+        else if (_keyThree.action.IsPressed())
+        {
+            InteractWithInvItem(InventoryItems[2]);
+        }
     }
     public void DestroyItemInWorld(GameObject item)
     {

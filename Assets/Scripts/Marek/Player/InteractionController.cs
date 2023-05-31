@@ -25,9 +25,6 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
-        Manager.Use<InventoryManager>().UseItem();
-        Manager.Use<InventoryManager>().ResetCurrentSlot();
-
         if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out RaycastHit hit, _interactionRange,
                 _interactionLayerMask))
         {

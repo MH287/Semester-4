@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
     {
         if (ModuleRegistered(module.GetType()))
             throw new InvalidOperationException();
-
+        Debug.Log(module.GetType().Name);
         _modules.Add(module.GetType(), module);
     }
     public void Unregister(ManagerModule module)

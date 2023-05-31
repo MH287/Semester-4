@@ -223,6 +223,57 @@ Transform:
   m_Father: {fileID: 861791452}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &61214530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61214531}
+  - component: {fileID: 61214532}
+  m_Layer: 0
+  m_Name: InvManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &61214531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61214530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1278817729}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61214532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61214530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90bae76944352ca499f4d68338da89d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotHolder: {fileID: 731146590}
+  _keyOne: {fileID: 3409371333616110576, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _keyTwo: {fileID: 101874857241803583, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  _keyThree: {fileID: -5192212092548536411, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
+  _itemViewer: {fileID: 0}
+  InventoryItems: []
 --- !u!1 &70416767
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1456,7 +1508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1759,6 +1812,52 @@ Transform:
   m_Father: {fileID: 1278817729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &398907240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398907241}
+  - component: {fileID: 398907242}
+  m_Layer: 0
+  m_Name: Manager 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &398907241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398907240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1278817729}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &398907242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398907240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf2185a43438ea4589b9ed2ec19e825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quizCanvas: {fileID: 0}
+  _interactWithE: {fileID: 1566446119}
 --- !u!1 &405544181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -2214,7 +2314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -2343,7 +2444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 8a5531c04d70a6044b3d4efcdcce1768, type: 2}
-  InteractionType: 0
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2574,7 +2676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -3237,7 +3340,6 @@ MonoBehaviour:
   _interactionAction: {fileID: -5593323959137350953, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _itemViewer: {fileID: 898361104078103007}
-  _interactableUI: {fileID: 1566446119}
 --- !u!1 &676353153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5834,6 +5936,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388917274}
+  - {fileID: 61214531}
+  - {fileID: 398907241}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6156,7 +6260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -7410,7 +7515,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -7771,7 +7877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionType: 1
+  InteractionTypeWorld: 0
+  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -8487,6 +8594,7 @@ MonoBehaviour:
   _item: {fileID: 0}
   _itemPrefab: {fileID: 0}
   _rotateSensetivity: 0.5
+  _interactionAction: {fileID: 0}
 --- !u!1 &898361104546458528
 GameObject:
   m_ObjectHideFlags: 0
