@@ -12,7 +12,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private InputActionReference _interactionAction;
     [SerializeField] private ItemViewer _itemViewer;
 
-    private Interactable _interactionTarget;
+    public  Interactable _interactionTarget;
     private Outline _targetOutline;
     private Camera _camera;
 
