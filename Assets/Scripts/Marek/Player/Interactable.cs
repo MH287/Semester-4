@@ -14,6 +14,7 @@ public enum InteractionTypInv
     View,
     InvokeEvent,
     Useable,
+    Audio
 }
 public class Interactable : MonoBehaviour
 {

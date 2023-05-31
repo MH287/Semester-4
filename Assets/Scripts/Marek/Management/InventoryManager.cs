@@ -14,7 +14,9 @@ public class InventoryManager : ManagerModule
     [SerializeField] private InputActionReference _keyOne;
     [SerializeField] private InputActionReference _keyTwo;
     [SerializeField] private InputActionReference _keyThree;
+    [SerializeField] private InputActionReference _audioAdvice;
     [SerializeField] private ItemViewer _itemViewer;
+    [SerializeField] private Item _audioAdviceItem;
 
     public List<Item> InventoryItems = new List<Item>();
 
@@ -27,9 +29,11 @@ public class InventoryManager : ManagerModule
         _keyOne.action.Enable();
         _keyTwo.action.Enable();
         _keyThree.action.Enable();
+        _audioAdvice.action.Enable();
         _keyOne.action.performed += UseItem;
         _keyTwo.action.performed += UseItem;
         _keyThree.action.performed += UseItem;
+        _audioAdvice.action.performed += UseItem;
 
         _slots = new GameObject[_slotHolder.transform.childCount];
         for(int i = 0; i < _slotHolder.transform.childCount; i++) //_slotHolder.transform.childCount == _slots.Lenght
@@ -94,16 +98,24 @@ public class InventoryManager : ManagerModule
                 break;
             case InteractionTypInv.InvokeEvent:
                 Debug.Log("Event Invoke");
-                //_interactionTarget.OnInteract.Invoke();
+                _interactionTarget.OnInteract.Invoke();
                 break;
             case InteractionTypInv.Useable:
                 Debug.Log("Item Use");
+                break;
+            case InteractionTypInv.Audio:
+                PlayWalkieTalkie();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
 
 
+    }
+
+    public void PlayWalkieTalkie()
+    {
+        Debug.Log("Play Audio");
     }
     public void UseItem(InputAction.CallbackContext obj)
     {
@@ -118,6 +130,10 @@ public class InventoryManager : ManagerModule
         else if (_keyThree.action.IsPressed())
         {
             InteractWithInvItem(InventoryItems[2]);
+        }
+        else if (_audioAdvice.action.IsPressed())
+        {
+            InteractWithInvItem(_audioAdviceItem);
         }
     }
     public void DestroyItemInWorld(GameObject item)

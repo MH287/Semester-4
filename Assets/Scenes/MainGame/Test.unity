@@ -272,7 +272,9 @@ MonoBehaviour:
   _keyTwo: {fileID: 101874857241803583, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   _keyThree: {fileID: -5192212092548536411, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  _audioAdvice: {fileID: 0}
   _itemViewer: {fileID: 0}
+  _audioAdviceItem: {fileID: 0}
   InventoryItems: []
 --- !u!1 &70416767
 GameObject:
@@ -980,6 +982,8 @@ MonoBehaviour:
   _ladderPos2: {x: 0, y: 0, z: 0}
   _ladderPos3: {x: 0, y: 0, z: 0}
   _ladderSpeed: 0
+  _moveDirection: {x: 0, y: 0, z: 0}
+  _ladder: {fileID: 0}
 --- !u!65 &171903448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1474,6 +1478,8 @@ MonoBehaviour:
   _ladderPos2: {x: 0, y: 0, z: 0}
   _ladderPos3: {x: 0, y: 0, z: 0}
   _ladderSpeed: 0
+  _moveDirection: {x: 0, y: 0, z: 0}
+  _ladder: {fileID: 0}
 --- !u!1 &320225144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2229,8 @@ MonoBehaviour:
   _ladderPos2: {x: 0.39, y: 3.64, z: 6.98}
   _ladderPos3: {x: -2.39, y: 3.64, z: 6.98}
   _ladderSpeed: 2
+  _moveDirection: {x: 0.1, y: 0, z: 0}
+  _ladder: {fileID: 8817098655932344860, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
 --- !u!65 &419609909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2314,7 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
+  InteractionTypeWorld: 1
   InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:

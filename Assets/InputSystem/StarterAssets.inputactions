@@ -76,6 +76,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AudioAdvice",
+                    "type": "Button",
+                    "id": "a3b1535c-2e4f-4833-b3a3-174f478b2da3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ladder",
+                    "type": "Button",
+                    "id": "6f7865bd-da0f-4437-ab42-558c24903622",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -285,6 +303,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Item3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ba0f2a0-6111-4029-bb65-338c78fe2f53",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AudioAdvice",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c0f1ab8-0953-4088-bc8a-ff27fabe2464",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ladder",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEngine.InputSystem;
 using UnityEngine;
 using DG.Tweening;
+using StarterAssets;
 
 public class Ladder : MonoBehaviour
 {
@@ -13,11 +15,16 @@ public class Ladder : MonoBehaviour
     [SerializeField] private Vector3 _ladderPos3;
     [SerializeField] private float _ladderSpeed;
 
-    void Awake()
-    {
+    [SerializeField] private Vector3 _moveDirection;
+    [SerializeField] private InputActionReference _ladder;
 
+    public void Start()
+    {
+        //_ladder.action.Enable();
+        //_ladder.action.performed += MoveLedder;
     }
-    public void MoveLedder()
+
+    public void MoveLedderFixPosition()
     {
         if (transform.position == _ladderPos1)
         {
@@ -39,6 +46,20 @@ public class Ladder : MonoBehaviour
             transform.DOMove(_ladderPos2, _ladderSpeed);
             _lastPosition = _ladderPos3;
         }
-
     }
+    /*
+    public void MoveLedderFree()
+    {
+        Debug.Log("LadderMove");
+        transform.Translate(_moveDirection, Space.Self);
+    }
+    public void MoveLedder(InputAction.CallbackContext obj)
+    {
+
+        while (!_ladder.action.IsPressed() == false)
+        {
+            Debug.Log("Move Ledder aktiviert");
+            MoveLedderFree();
+        }
+    }*/
 }
