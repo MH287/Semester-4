@@ -52,7 +52,7 @@ public class Ladder : MonoBehaviour
     
     public void MoveLedderFree()
     {
-        if(_controller._interactionTarget.GetComponent<Ladder>() != null)
+        if(_controller.InteractionTarget.GetComponent<Ladder>() != null)
         {
             Debug.Log("LadderMove");
             transform.Translate(_moveDirection, Space.Self);

@@ -12,7 +12,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private InputActionReference _interactionAction;
     [SerializeField] private ItemViewer _itemViewer;
 
-    public  Interactable _interactionTarget;
+    public  Interactable InteractionTarget;
     private Outline _targetOutline;
     private Camera _camera;
     private RaycastHit hit;
@@ -37,7 +37,7 @@ public class InteractionController : MonoBehaviour
                 _targetOutline.enabled = true;
             }
 
-            _interactionTarget = hit.transform.gameObject.GetComponent<Interactable>();
+            InteractionTarget = hit.transform.gameObject.GetComponent<Interactable>();
         }
         else
         {
@@ -46,28 +46,28 @@ public class InteractionController : MonoBehaviour
                 _targetOutline.enabled = false;
 
             _targetOutline = null;
-            _interactionTarget = null;
+            InteractionTarget = null;
         }
     }
 
     private void InteractWithTarget(InputAction.CallbackContext obj)
     {
-        if (_interactionTarget == null)
+        if (InteractionTarget == null)
         {
             return;
         }
 
-        switch (_interactionTarget.InteractionTypeWorld)
+        switch (InteractionTarget.InteractionTypeWorld)
         {
             case InteractionTypeWorld.View:
-                _itemViewer.InspectItem(_interactionTarget.ItemReference);
+                _itemViewer.InspectItem(InteractionTarget.ItemReference);
                 break;
             case InteractionTypeWorld.InvokeEvent:
-                _interactionTarget.OnInteract.Invoke();
+                InteractionTarget.OnInteract.Invoke();
                 break;
             case InteractionTypeWorld.Item:
-                Manager.Use<InventoryManager>().AddItem(_interactionTarget.ItemReference);
-                Manager.Use<InventoryManager>().DestroyItemInWorld(_interactionTarget.gameObject);
+                Manager.Use<InventoryManager>().AddItem(InteractionTarget.ItemReference);
+                Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
