@@ -14,8 +14,7 @@ public class Item : ScriptableObject
 
     public enum ItemType
     {
-        Key,
-        Tip,
-        Story,
+        Collectable,
+        NotCollectable
     }
 }

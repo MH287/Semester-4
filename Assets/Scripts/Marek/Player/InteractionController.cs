@@ -15,6 +15,7 @@ public class InteractionController : MonoBehaviour
     public  Interactable _interactionTarget;
     private Outline _targetOutline;
     private Camera _camera;
+    private RaycastHit hit;
 
     void Awake()
     {
@@ -25,7 +26,8 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
-        if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out RaycastHit hit, _interactionRange,
+        Debug.DrawRay(_camera.transform.position, _camera.transform.forward, Color.red);
+        if (Physics.Raycast(_camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)), out hit, _interactionRange,
                 _interactionLayerMask))
         {
             Manager.Use<UIManager>().ShowInteractWithE();
