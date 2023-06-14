@@ -422,8 +422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1164,9 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6052f53b6083d14ca881fedb4d5bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
+  ItemReference: {fileID: 11400000, guid: 34e142872b2061340b03f8e76317ea78, type: 2}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -1669,8 +1665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 2
-  InteractionTypInv: 2
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -2227,8 +2221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -2480,8 +2472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -2626,8 +2616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 8a5531c04d70a6044b3d4efcdcce1768, type: 2}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2858,8 +2846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -6002,9 +5988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6052f53b6083d14ca881fedb4d5bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
+  ItemReference: {fileID: 11400000, guid: 34e142872b2061340b03f8e76317ea78, type: 2}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -6149,9 +6133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6052f53b6083d14ca881fedb4d5bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
+  ItemReference: {fileID: 11400000, guid: 34e142872b2061340b03f8e76317ea78, type: 2}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -6537,8 +6519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -7669,8 +7649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -8031,8 +8009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -8081,9 +8057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6052f53b6083d14ca881fedb4d5bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemReference: {fileID: 0}
-  InteractionTypeWorld: 1
-  InteractionTypInv: 0
+  ItemReference: {fileID: 11400000, guid: 34e142872b2061340b03f8e76317ea78, type: 2}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
