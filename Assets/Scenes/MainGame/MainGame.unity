@@ -17016,8 +17016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 0}
-  InteractionTypeWorld: 2
-  InteractionTypInv: 2
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -24881,12 +24879,12 @@ PrefabInstance:
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.122
+      value: -4.67
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
@@ -24896,17 +24894,17 @@ PrefabInstance:
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: -0.69989514
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.7142456
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
@@ -24921,7 +24919,7 @@ PrefabInstance:
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 268.837
       objectReference: {fileID: 0}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
