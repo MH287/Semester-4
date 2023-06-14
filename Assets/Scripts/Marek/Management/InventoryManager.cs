@@ -23,6 +23,11 @@ public class InventoryManager : ManagerModule
 
     public List<Item> InventoryItems = new List<Item>();
 
+    [Header("Fuse + Console")]
+    [SerializeField] private Item _fuse;
+    [SerializeField] private GameObject _fuseOne;
+    [SerializeField] private GameObject _fuseTwo;
+
     [Header("Wimmelbild")]
     [SerializeField] private float _picMoveSpeed;
     [SerializeField] private Transform _picTransform;
@@ -207,6 +212,35 @@ public class InventoryManager : ManagerModule
     public void DestroyItemInWorld(GameObject item)
     {
         Destroy(item);
+    }
+
+    public bool CheckInvForFuse()
+    {
+        if (InventoryItems.Contains(_fuse))
+        {
+            return true;
+        }
+        else { return false; }
+    }
+
+    public void UseFuseInConsole()
+    {
+        if(CheckInvForFuse() && _fuseOne.activeSelf == false)
+        {
+            _fuseOne.SetActive(true);
+            InventoryItems.Remove(_fuse);
+            Debug.Log("Fuse vorhanden");
+        }
+        else if(CheckInvForFuse() && _fuseOne.activeSelf)
+        {
+            _fuseTwo.SetActive(true);
+            InventoryItems.Remove(_fuse);
+            Debug.Log("Fuse vorhanden");
+        }
+        else
+        {
+            Debug.Log("Keine Fuse vorhanden");
+        }
     }
 
 }

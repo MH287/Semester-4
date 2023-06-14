@@ -33,6 +33,7 @@ public class Item : ScriptableObject
         InvokeEvent,
         Useable,
         Audio,
-        SpecialView //für das Wimmelbild
+        SpecialView, //für das Wimmelbild
+        NotNeeded
     }
 }
