@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum InteractionTypeWorld
+//Auskommentieren, falls Teständerung nicht klappt.
+
+/*public enum InteractionTypeWorld 
 {
-    View,
+    Inspectable,
     InvokeEvent,
-    Item
+    Collectable
 }
 public enum InteractionTypInv
 {
-    View,
+    Inspectable,
     InvokeEvent,
     Useable,
-    Audio
-}
+    Audio,
+    SpecialView
+}*/
 public class Interactable : MonoBehaviour
 {
+
+    //public InteractionTypeWorld InteractionWorld;
+    //public InteractionTypInv InteractionInv;
+
     public Item ItemReference;
-    public InteractionTypeWorld InteractionTypeWorld;
-    public InteractionTypInv InteractionTypInv;
     public UnityEvent OnInteract;
 
 }

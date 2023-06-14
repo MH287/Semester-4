@@ -10,11 +10,29 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public GameObject Prefab;
     public string ItemDescription;
-    public ItemType itemType;
+    //public ItemType itemType;
+    public IntTypeWorld InteractionWorld;
+    public IntTypeInv InteractionInv;
+    
 
-    public enum ItemType
+    /*public enum ItemType
     {
         Collectable,
         NotCollectable
+    }*/
+    public enum IntTypeWorld
+    {
+        Inspectable,
+        InvokeEvent,
+        Collectable,
+        SpecialView
+    }
+    public enum IntTypeInv
+    {
+        Inspectable,
+        InvokeEvent,
+        Useable,
+        Audio,
+        SpecialView //für das Wimmelbild
     }
 }

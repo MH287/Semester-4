@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using DG.Tweening;
 using static UnityEditor.Progress;
+using static Item;
 
 public class InventoryManager : ManagerModule
 {
@@ -85,7 +86,7 @@ public class InventoryManager : ManagerModule
         RefreshUI();
     }
 
-    private void InteractWithInvItem(Item item)
+    /*private void InteractWithInvItem(Item item)
     {
         _interactionTarget = item.Prefab.GetComponent<Interactable>();
 
@@ -94,9 +95,9 @@ public class InventoryManager : ManagerModule
             return;
         }
 
-        switch (_interactionTarget.InteractionTypInv)
+        switch (_interactionTarget.InteractionInv)
         {
-            case InteractionTypInv.View:
+            case InteractionTypInv.Inspectable:
                 Debug.Log("Item View");
                 ShowPicture();
                 //_itemViewer.InspectItem(_interactionTarget.ItemReference);
@@ -111,11 +112,47 @@ public class InventoryManager : ManagerModule
             case InteractionTypInv.Audio:
                 PlayWalkieTalkie();
                 break;
+            case InteractionTypInv.SpecialView:
+                Debug.Log("Show Storyelement");
+                    break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
 
 
+    }*/
+
+    private void InteractWithInvItemTest(Item item)
+    {
+        _interactionTarget = item.Prefab.GetComponent<Interactable>();
+
+        if (_interactionTarget == null)
+        {
+            return;
+        }
+
+        switch (_interactionTarget.ItemReference.InteractionInv)
+        {
+            case IntTypeInv.Inspectable:
+                Debug.Log("Item View");
+                //_itemViewer.InspectItem(_interactionTarget.ItemReference);
+                break;
+            case IntTypeInv.InvokeEvent:
+                Debug.Log("Event Invoke");
+                _interactionTarget.OnInteract.Invoke();
+                break;
+            case IntTypeInv.Useable:
+                Debug.Log("Item Use");
+                break;
+            case IntTypeInv.Audio:
+                PlayWalkieTalkie();
+                break;
+            case IntTypeInv.SpecialView:
+                ShowPicture();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     public void ShowPicture()
@@ -148,19 +185,23 @@ public class InventoryManager : ManagerModule
     {
         if(_keyOne.action.IsPressed())
         {
-            InteractWithInvItem(InventoryItems[0]);
+            //InteractWithInvItem(InventoryItems[0]); --> Falls Teständerung nicht klappt.
+            InteractWithInvItemTest(InventoryItems[0]);
         }
         else if(_keyTwo.action.IsPressed())
         {
-            InteractWithInvItem(InventoryItems[1]);
+            //InteractWithInvItem(InventoryItems[1]); --> Falls Teständerung nicht klappt.
+            InteractWithInvItemTest(InventoryItems[1]);
         }
         else if (_keyThree.action.IsPressed())
         {
-            InteractWithInvItem(InventoryItems[2]);
+            //InteractWithInvItem(InventoryItems[2]); --> Falls Teständerung nicht klappt.
+            InteractWithInvItemTest(InventoryItems[2]);
         }
         else if (_audioAdvice.action.IsPressed())
         {
-            InteractWithInvItem(_audioAdviceItem);
+            //InteractWithInvItem(InventoryItems[3]); --> Falls Teständerung nicht klappt.
+            InteractWithInvItemTest(_audioAdviceItem);
         }
     }
     public void DestroyItemInWorld(GameObject item)

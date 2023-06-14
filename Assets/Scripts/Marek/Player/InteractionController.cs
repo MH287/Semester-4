@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Item;
 
 [RequireComponent(typeof(Camera))]
 public class InteractionController : MonoBehaviour
@@ -19,7 +20,8 @@ public class InteractionController : MonoBehaviour
 
     void Awake()
     {
-        _interactionAction.action.performed += InteractWithTarget;
+        //_interactionAction.action.performed += InteractWithTarget; --> Falls Teständerung nicht klappt
+        _interactionAction.action.performed += InteractWithTargetTest;
         _interactionAction.action.Enable();
         _camera = GetComponent<Camera>();
     }
@@ -50,29 +52,54 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    private void InteractWithTarget(InputAction.CallbackContext obj)
+    /*private void InteractWithTarget(InputAction.CallbackContext obj) --> Falls Teständerung nicht klappt.
     {
         if (InteractionTarget == null)
         {
             return;
         }
 
-        switch (InteractionTarget.InteractionTypeWorld)
+        switch (InteractionTarget.InteractionWorld)
         {
-            case InteractionTypeWorld.View:
+            case InteractionTypeWorld.Inspectable:
                 _itemViewer.InspectItem(InteractionTarget.ItemReference);
                 break;
             case InteractionTypeWorld.InvokeEvent:
                 InteractionTarget.OnInteract.Invoke();
                 break;
-            case InteractionTypeWorld.Item:
+            case InteractionTypeWorld.Collectable:
                 Manager.Use<InventoryManager>().AddItem(InteractionTarget.ItemReference);
                 Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
+        }    
+    }*/
+    private void InteractWithTargetTest(InputAction.CallbackContext obj)
+    {
+        if (InteractionTarget == null)
+        {
+            return;
         }
 
-        
+        switch (InteractionTarget.ItemReference.InteractionWorld)
+        {
+            case IntTypeWorld.Inspectable:
+                _itemViewer.InspectItem(InteractionTarget.ItemReference);
+                break;
+            case IntTypeWorld.InvokeEvent:
+                InteractionTarget.OnInteract.Invoke();
+                break;
+            case IntTypeWorld.Collectable:
+                //Inspect Item mit Add zum Inv
+                Manager.Use<InventoryManager>().AddItem(InteractionTarget.ItemReference);
+                Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
+                break;
+            case IntTypeWorld.SpecialView:
+                Debug.Log("Show Story Element");
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }
