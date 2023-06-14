@@ -13,7 +13,8 @@ public class Ladder : MonoBehaviour
     [SerializeField] private Vector3 _ladderPos1;
     [SerializeField] private Vector3 _ladderPos2;
     [SerializeField] private Vector3 _ladderPos3;
-    [SerializeField] private float _ladderSpeed;
+    [SerializeField] private float _ladderSpeedFixPosition;
+    [SerializeField, Range(1, 50)] private float _ladderSpeedFreePosition = 25f;
 
     [SerializeField] private Vector3 _moveDirection;
     [SerializeField] private InputActionReference _ladder;
@@ -23,29 +24,34 @@ public class Ladder : MonoBehaviour
     public void Start()
     {
         _ladder.action.Enable();
-        _ladder.action.performed += MoveLedder;
+        _ladder.action.performed += MoveLedderPerformed;
+        _ladder.action.canceled += MoveLedderCanceled;
+    }
+    public void FixedUpdate()
+    {
+
     }
 
     public void MoveLedderFixPosition()
     {
         if (transform.position == _ladderPos1)
         {
-            transform.DOMove(_ladderPos2, _ladderSpeed);
+            transform.DOMove(_ladderPos2, _ladderSpeedFixPosition);
             _lastPosition = _ladderPos1;
         }
         else if (transform.position == _ladderPos2 && _lastPosition == _ladderPos1)
         {
-            transform.DOMove(_ladderPos3, _ladderSpeed);
+            transform.DOMove(_ladderPos3, _ladderSpeedFixPosition);
             _lastPosition = _ladderPos2;
         }
         else if (transform.position == _ladderPos2 && _lastPosition == _ladderPos3)
         {
-            transform.DOMove(_ladderPos1, _ladderSpeed);
+            transform.DOMove(_ladderPos1, _ladderSpeedFixPosition);
             _lastPosition = _ladderPos2;
         }
         else
         {
-            transform.DOMove(_ladderPos2, _ladderSpeed);
+            transform.DOMove(_ladderPos2, _ladderSpeedFixPosition);
             _lastPosition = _ladderPos3;
         }
     }
@@ -55,12 +61,44 @@ public class Ladder : MonoBehaviour
         if(_controller.InteractionTarget.GetComponent<Ladder>() != null)
         {
             Debug.Log("LadderMove");
-            transform.Translate(_moveDirection, Space.Self);
+            transform.position = GetComponent<Transform>().position;
+            _ladder.action.performed += MoveLedderPerformed;
+
         }
 
     }
-    public void MoveLedder(InputAction.CallbackContext obj)
+    public void MoveLedderPerformed(InputAction.CallbackContext obj)
     {
-        //während E gedrückt ist (Move Leddder Free)
+
+        if (transform.position.x >= _ladderPos3.x && transform.position.x <= _ladderPos1.x)
+        {
+            _moveDirection.x = _moveDirection.x * 1;
+            GetComponent<Rigidbody>().AddForce(_moveDirection * _ladderSpeedFreePosition, ForceMode.Force);
+            Debug.Log(_moveDirection.x);
+        }
+        else if (transform.position.x <= _ladderPos3.x)
+        {
+            _moveDirection.x = _moveDirection.x * -1;
+            GetComponent<Rigidbody>().AddForce(_moveDirection * _ladderSpeedFreePosition, ForceMode.Force);
+            Debug.Log(_moveDirection.x);
+        }
+        else if (transform.position.x >= -_ladderPos1.x)
+        {
+            _moveDirection.x = _moveDirection.x * -1;
+            GetComponent<Rigidbody>().AddForce(_moveDirection * _ladderSpeedFreePosition, ForceMode.Force);
+            Debug.Log(_moveDirection.x);
+        }
+
+
+    }
+    public void MoveLedderCanceled(InputAction.CallbackContext obj)
+    {
+        double j = obj.duration;
+        if(j > 1)
+        {
+            j = 0;
+        }
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
     }
 }

@@ -7,98 +7,127 @@ using UnityEngine.Pool;
 public class NumberLock : MonoBehaviour
 {
     [SerializeField] private InteractionController _controller;
+    [SerializeField] private GameObject _lockBody;
+    [SerializeField] private List<Transform> _numberElementList = new List<Transform>();
     [SerializeField, Range(0.5f, 10f)] private float _rotateDuration = 1f;
-    [SerializeField] private int _unlockNumber;
+    [SerializeField] private int _unlockNumberOne;
+    [SerializeField] private int _unlockNumberTwo;
+    [SerializeField] private int _unlockNumberThree;
+    [SerializeField] private int _unlockNumberFour;
 
     private Vector3 _rotateDirection;
-    private Vector3 _angle = new Vector3(0,0,36);
-    private Transform _numberElement;
-    private int UnlockNumberAxis;
-    private int _count;
+    private Vector3 _angleElementOne = new Vector3(0,0,36);
+    private Vector3 _angleElementTwo = new Vector3(0, 0, 36);
+    private Vector3 _angleElementThree = new Vector3(0, 0, 36);
+    private Vector3 _angleElementFour = new Vector3(0, 0, 36);
+    [SerializeField] private Transform _numberElement;
+    private Transform _numberElementOne;
+    private Transform _numberElementTwo;
+    private Transform _numberElementThree;
+    private Transform _numberElementFour;
+    private int _countElementOne;
+    private int _countElementTwo;
+    private int _countElementThree;
+    private int _countElementFour;
 
 
-    /* 0 = O
-     * 1 = 36
-     * 2 = 72
-     * 3 = 108
-     * 4 = 144
-     * 5 = 180
-     * 6 = 216
-     * 7 = 252
-     * 8 = 288
-     * 9 = 324
-     * */
 
     public void Awake()
     {
+        _numberElementOne = _lockBody.gameObject.transform.GetChild(0);
+        _numberElementTwo = _lockBody.gameObject.transform.GetChild(1);
+        _numberElementThree = _lockBody.gameObject.transform.GetChild(2);
+        _numberElementFour = _lockBody.gameObject.transform.GetChild(3);
+
+        _numberElementList.Add(_numberElementOne);
+        _numberElementList.Add(_numberElementTwo);
+        _numberElementList.Add(_numberElementThree);
+        _numberElementList.Add(_numberElementFour);
     }
+
     public void RotateElement()
     {
-
         _numberElement = _controller.InteractionTarget.GetComponent<Transform>();
-        _numberElement.transform.DOLocalRotate((_rotateDirection + _angle),_rotateDuration, RotateMode.Fast);
-        _rotateDirection = new Vector3(0,0,0);
-        _angle += new Vector3(0,0,36);
 
-        CountRotation();
-
-        CheckRightNumber();
-        Debug.Log(CheckRightNumber());
-        //Debug.Log(Mathf.RoundToInt(_numberElement.transform.localEulerAngles.z));
-
-    }
-
-    public void SetNumberToAxis()
-    {
-
-        switch (_unlockNumber)
+        switch (_numberElementList.IndexOf(_numberElement))
         {
             case 0:
-                UnlockNumberAxis = 0;
+                _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementOne), _rotateDuration, RotateMode.Fast);
+                _rotateDirection = new Vector3(0, 0, 0);
+                _angleElementOne += new Vector3(0, 0, 36);
+                _countElementOne += 1;
+                CountRotation(_countElementOne);
+                CheckRightNumber(_countElementOne, _unlockNumberOne);
+                CheckUnlock();
+
+                Debug.Log("Right Number = " + CheckRightNumber(_countElementOne, _unlockNumberOne));
+                Debug.Log("Unlock?" + CheckUnlock());
+
                 break;
             case 1:
-                UnlockNumberAxis = 36;
+                _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementTwo), _rotateDuration, RotateMode.Fast);
+                _rotateDirection = new Vector3(0, 0, 0);
+                _angleElementTwo += new Vector3(0, 0, 36);
+                _countElementTwo += 1;
+                CountRotation(_countElementTwo);
+                CheckRightNumber(_countElementTwo, _unlockNumberTwo);
+                CheckUnlock();
+
+                Debug.Log("Right Number = " + CheckRightNumber(_countElementTwo, _unlockNumberTwo));
+                Debug.Log("Unlock?" + CheckUnlock());
+
                 break;
             case 2:
-                UnlockNumberAxis = 72;
+                _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementThree), _rotateDuration, RotateMode.Fast);
+                _rotateDirection = new Vector3(0, 0, 0);
+                _angleElementThree += new Vector3(0, 0, 36);
+                _countElementThree += 1;
+                CountRotation(_countElementThree);
+                CheckRightNumber(_countElementThree, _unlockNumberThree);
+                CheckUnlock();
+
+                    Debug.Log("Right Number = " + CheckRightNumber(_countElementThree, _unlockNumberThree));
+                Debug.Log("Unlock?" + CheckUnlock());
+
                 break;
             case 3:
-                UnlockNumberAxis = 108;
-                break;
-            case 4:
-                UnlockNumberAxis = 144;
-                break;
-            case 5:
-                UnlockNumberAxis = 180;
-                break;
-            case 6:
-                UnlockNumberAxis = 216;
-                break;
-            case 7:
-                UnlockNumberAxis = 252;
-                break;
-            case 8:
-                UnlockNumberAxis = 288;
-                break;
-            case 9:
-                UnlockNumberAxis = 324;
+                _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementFour), _rotateDuration, RotateMode.Fast);
+                _rotateDirection = new Vector3(0, 0, 0);
+                _angleElementFour += new Vector3(0, 0, 36);
+                _countElementFour += 1;
+                CountRotation(_countElementFour);
+                CheckRightNumber(_countElementFour, _unlockNumberFour);
+                CheckUnlock();
+
+                Debug.Log("Right Number = " + CheckRightNumber(_countElementFour, _unlockNumberFour));
+                Debug.Log("Unlock?" + CheckUnlock());
+
                 break;
         }
     }
 
-    public void CountRotation()
+    public void CountRotation(int count)
     {
-        _count += 1;
-        if(_count > 9)
+        if(count > 9)
         {
-            _count = 0;
+            count = 0;
         }
     }
 
-    public bool CheckRightNumber()
+    public bool CheckRightNumber(int count, int unlockNumber)
     {
-        SetNumberToAxis();
-        if (Mathf.RoundToInt(_numberElement.transform.localEulerAngles.z) == UnlockNumberAxis) return true;
-                return false;
+        if(count != unlockNumber) { return false; }
+        return true;
+    }
+
+    public bool CheckUnlock()
+    {
+        if(CheckRightNumber(_countElementOne, _unlockNumberOne) && CheckRightNumber(_countElementTwo, _unlockNumberTwo) 
+            && CheckRightNumber(_countElementThree, _unlockNumberThree) && CheckRightNumber(_countElementFour, _unlockNumberFour))
+        {
+            Debug.Log("Play Open Animation");
+            return true;
+        }
+        else return false;
     }
 }
