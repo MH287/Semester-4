@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: NumberLock
   m_EditorClassIdentifier: 
-  ItemName: 'NUmber 1 '
+  ItemName: NumberLockElement
   Icon: {fileID: 0}
   Prefab: {fileID: 0}
   ItemDescription: Blah

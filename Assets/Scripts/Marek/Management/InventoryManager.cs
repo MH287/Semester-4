@@ -12,6 +12,8 @@ using static Item;
 
 public class InventoryManager : ManagerModule
 {
+    [SerializeField] private InteractionController _interactionController;
+
     [Header("Hotbar")]
     [SerializeField] private GameObject _slotHolder;
     [SerializeField] private InputActionReference _keyOne;
@@ -36,6 +38,7 @@ public class InventoryManager : ManagerModule
 
     private GameObject[] _slots;
     private Interactable _interactionTarget;
+
 
     private bool _isActive = false;
     
@@ -77,6 +80,16 @@ public class InventoryManager : ManagerModule
 
             }
         }
+    }
+
+    public void AddItemOutOfInspect()
+    {
+        InventoryItems.Add(_interactionController.InteractionTarget.ItemReference);
+    }
+    public void DestroyItemInWorldTest()
+    {
+        //Debug.Log(_interactionController.InteractionTarget.ItemReference);
+        Destroy(_interactionController.InteractionTarget.gameObject);
     }
 
     public void AddItem(Item item)

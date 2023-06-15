@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class ItemViewer : MonoBehaviour, IDragHandler
 {
     [SerializeField] private GameObject _itemCamera;
-    [SerializeField] private int _offset = 1;
+    [SerializeField, Range(1,2)] private float _offset = 1.5f;
     [SerializeField] private Item _item;
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
@@ -22,6 +22,12 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         Manager.Use<MouseController>().FreeMouse();
     }
 
+    public void CloseInspectWindow()
+    {
+        gameObject.SetActive(false);
+        Manager.Use<MouseController>().LockMouse(); 
+    }
+
     public void Spawn3DItem()
      {
          if(_itemPrefab != null)
@@ -30,6 +36,7 @@ public class ItemViewer : MonoBehaviour, IDragHandler
          }
 
          _itemPrefab = Instantiate(_item.Prefab, _itemCamera.transform);
+        _itemPrefab.gameObject.layer = LayerMask.NameToLayer("ItemViewer");
         _itemPrefab.transform.localPosition = new Vector3(0,0,_offset);
      }
 
