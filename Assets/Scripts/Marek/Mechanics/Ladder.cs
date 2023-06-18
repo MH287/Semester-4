@@ -6,10 +6,14 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using DG.Tweening;
 using StarterAssets;
+using System.Security.Cryptography;
 
 public class Ladder : MonoBehaviour
 {
-    [SerializeField] private Vector3 _lastPosition;
+    [SerializeField] private InteractionController _controller;
+    [SerializeField] private InputActionReference _ladder;
+
+
     [SerializeField] private Vector3 _ladderPos1;
     [SerializeField] private Vector3 _ladderPos2;
     [SerializeField] private Vector3 _ladderPos3;
@@ -17,19 +21,18 @@ public class Ladder : MonoBehaviour
     [SerializeField, Range(1, 50)] private float _ladderSpeedFreePosition = 25f;
 
     [SerializeField] private Vector3 _moveDirection;
-    [SerializeField] private InputActionReference _ladder;
 
-    [SerializeField] private InteractionController _controller;
+    private Vector3 _lastPosition;
+
+
+
+
 
     public void Start()
     {
         _ladder.action.Enable();
         _ladder.action.performed += MoveLedderPerformed;
         _ladder.action.canceled += MoveLedderCanceled;
-    }
-    public void FixedUpdate()
-    {
-
     }
 
     public void MoveLedderFixPosition()

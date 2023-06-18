@@ -86,12 +86,17 @@ public class InteractionController : MonoBehaviour
         {
             case IntTypeWorld.Inspectable:
                 _itemViewer.InspectItem(InteractionTarget.ItemReference);
+                _itemViewer.AddButton.gameObject.SetActive(false);
+                _itemViewer.CloseInspectorButton.gameObject.SetActive(true);
                 break;
             case IntTypeWorld.InvokeEvent:
                 InteractionTarget.OnInteract.Invoke();
                 break;
             case IntTypeWorld.Collectable:
                 //Inspect Item mit Add zum Inv
+                _itemViewer.InspectItem(InteractionTarget.ItemReference);
+                _itemViewer.AddButton.gameObject.SetActive(true);
+                _itemViewer.CloseInspectorButton.gameObject.SetActive(false);
                 Manager.Use<InventoryManager>().AddItem(InteractionTarget.ItemReference);
                 Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
                 break;

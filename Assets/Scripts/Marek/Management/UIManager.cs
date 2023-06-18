@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIManager : ManagerModule
 {
     [SerializeField] private GameObject _quizCanvas;
-    [SerializeField] private GameObject _interactWithE;
+    [SerializeField] public GameObject _interactWithE;
 
     public void OpenWindow()
     {

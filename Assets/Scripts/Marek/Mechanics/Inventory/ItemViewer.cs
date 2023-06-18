@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ItemViewer : MonoBehaviour, IDragHandler
 {
@@ -14,6 +15,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
 
     [SerializeField] private InputActionReference _interactionAction;
 
+    [SerializeField] public Button AddButton;
+    [SerializeField] public Button CloseInspectorButton;
     public void InspectItem(Item target)
     {
         _item = target;
@@ -22,9 +25,9 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         Manager.Use<MouseController>().FreeMouse();
     }
 
-    public void CloseInspectWindow()
+    public void CloseInspectWindow(GameObject canvas)
     {
-        gameObject.SetActive(false);
+        canvas.SetActive(false);
         Manager.Use<MouseController>().LockMouse(); 
     }
 
