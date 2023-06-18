@@ -42,6 +42,7 @@ public class NumberLock : MonoBehaviour
 
 
 
+
     public void Awake()
     {
         _numberElementOne = _lockBody.gameObject.transform.GetChild(0);
@@ -62,7 +63,6 @@ public class NumberLock : MonoBehaviour
     public void RotateElement()
     {
         _numberElement = _controller.InteractionTarget.GetComponent<Transform>();
-
         switch (_numberElementList.IndexOf(_numberElement))
         {
             case 0:
@@ -158,8 +158,8 @@ public class NumberLock : MonoBehaviour
 
     public bool CheckRightNumber(int count, int unlockNumber)
     {
-        if(count != unlockNumber) { return false; }
-        return true;
+        if (count != unlockNumber) { return false; }
+        else { return true; }
     }
 
     public bool CheckUnlock()
