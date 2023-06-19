@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "item",
+                    "type": "Button",
+                    "id": "d62ae6c9-b600-4ab1-83cc-1cc8516025a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -325,6 +334,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Ladder",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7c4bf10-366c-4d9e-a569-2ef479d0afac",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "Scale",
+                    "groups": "KeyboardMouse",
+                    "action": "item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d6c387b-0328-4f43-a77e-bfcea74a188b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "Scale(factor=2)",
+                    "groups": "KeyboardMouse",
+                    "action": "item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33125e58-89ad-4b99-ac8c-ff6272e09505",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "Scale(factor=3)",
+                    "groups": "KeyboardMouse",
+                    "action": "item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

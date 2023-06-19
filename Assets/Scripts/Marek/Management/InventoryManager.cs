@@ -199,6 +199,8 @@ public class InventoryManager : ManagerModule
     }
     public void UseItem(InputAction.CallbackContext obj)
     {
+        //obj.ReadValue<int>();
+
         if(_keyOne.action.IsPressed())
         {
             //InteractWithInvItem(InventoryItems[0]); --> Falls Teständerung nicht klappt.
