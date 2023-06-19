@@ -15,7 +15,10 @@ public class InventoryManager : ManagerModule
     [SerializeField] private InteractionController _interactionController;
 
     [Header("Hotbar")]
-    [SerializeField] private GameObject _slotHolder;
+    [SerializeField] private GameObject _hotbar;
+    [SerializeField] private GameObject _slotPrefab;
+    private Sprite _image;
+
     [SerializeField] private InputActionReference _keyOne;
     [SerializeField] private InputActionReference _keyTwo;
     [SerializeField] private InputActionReference _keyThree;
@@ -34,7 +37,6 @@ public class InventoryManager : ManagerModule
     [SerializeField] private float _startPosition;
     [SerializeField] private float _endPosition;
 
-    private GameObject[] _slots;
     private Interactable _interactionTarget;
 
 
@@ -51,33 +53,12 @@ public class InventoryManager : ManagerModule
         _keyTwo.action.performed += UseItem;
         _keyThree.action.performed += UseItem;
         _audioAdvice.action.performed += UseItem;
-
-        _slots = new GameObject[_slotHolder.transform.childCount];
-        for(int i = 0; i < _slotHolder.transform.childCount; i++) //_slotHolder.transform.childCount == _slots.Lenght
-        {
-            _slots[i] = _slotHolder.transform.GetChild(i).gameObject;
-        }
-
-        RefreshUI();
+        UiUpdate();
     }
 
-    public void RefreshUI()
+    public void UiUpdate()
     {
-        for(int i = 0; i < _slots.Length; i++)
-        {
-            
-            try
-            {
-                _slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                _slots[i].transform.GetChild(0).GetComponent<Image>().sprite = InventoryItems[i].Icon;
-            }
-            catch
-            {
-                _slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                _slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-
-            }
-        }
+        Instantiate(_slotPrefab, _hotbar.transform);
     }
 
     public void AddItemOutOfInspect()
@@ -93,13 +74,11 @@ public class InventoryManager : ManagerModule
     public void AddItem(Item item)
     {
         InventoryItems.Add(item);
-        RefreshUI();
     }
 
     public void RemoveItem(Item item) 
     {
         InventoryItems.Remove(item);
-        RefreshUI();
     }
 
     /*private void InteractWithInvItem(Item item)
