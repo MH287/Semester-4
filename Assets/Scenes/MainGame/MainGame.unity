@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3075,7 +3075,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: MaxSize
         m_Overridden: 1
-      - m_Value: 3.21
+      - m_Value: 1.98
         m_Name: Noise Frequency
         m_Overridden: 1
       - m_Value: 0.55
@@ -3102,7 +3102,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 41.549744, y: 32.90411, z: 0, w: 0}
+      - m_Value: {x: 23.968628, y: 19.07451, z: 0, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -17627,7 +17627,7 @@ MonoBehaviour:
   _audioAdvice: {fileID: 3369401045372306966, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _itemViewer: {fileID: 1076054995456406490}
-  _audioAdviceItem: {fileID: 0}
+  _audioAdviceItem: {fileID: 11400000, guid: 0fa8620236fb6fb4ea8d04420e5e27eb, type: 2}
   InventoryItems: []
   _generatorConsole: {fileID: 1840894711}
   _picMoveSpeed: 0
@@ -29660,7 +29660,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 41.549744, y: 32.90411, z: 0, w: 0}
+      - m_Value: {x: 23.968628, y: 19.07451, z: 0, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -34568,7 +34568,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 41.549744, y: 32.90411, z: 0, w: 0}
+      - m_Value: {x: 23.968628, y: 19.07451, z: 0, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
