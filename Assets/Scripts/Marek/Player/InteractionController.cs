@@ -11,9 +11,12 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private LayerMask _interactionLayerMask;
     [SerializeField] private float _interactionRange = 1.5f;
     [SerializeField] private InputActionReference _interactionAction;
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private ItemViewer _itemViewer;
 
     public  Interactable InteractionTarget;
+
+    private GameObject _interactionTargetGO;
     private Outline _targetOutline;
     private Camera _camera;
     private RaycastHit hit;
@@ -85,6 +88,9 @@ public class InteractionController : MonoBehaviour
         switch (InteractionTarget.ItemReference.InteractionWorld)
         {
             case IntTypeWorld.Inspectable:
+                _playerInput.DeactivateInput();
+                InteractionTarget.gameObject.SetActive(false);
+                _interactionTargetGO = InteractionTarget.gameObject;
                 _itemViewer.InspectItem(InteractionTarget.ItemReference);
                 _itemViewer.AddButton.gameObject.SetActive(false);
                 _itemViewer.CloseInspectorButton.gameObject.SetActive(true);
@@ -94,6 +100,8 @@ public class InteractionController : MonoBehaviour
                 break;
             case IntTypeWorld.Collectable:
                 //Inspect Item mit Add zum Inv
+                _playerInput.DeactivateInput();
+                DestroyItemInWorld();
                 _itemViewer.InspectItem(InteractionTarget.ItemReference);
                 _itemViewer.AddButton.gameObject.SetActive(true);
                 _itemViewer.CloseInspectorButton.gameObject.SetActive(false);
@@ -106,5 +114,19 @@ public class InteractionController : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+    public void DestroyItemInWorld()
+    {
+        _playerInput.ActivateInput();
+        //Debug.Log(_interactionController.InteractionTarget.ItemReference);
+        Destroy(InteractionTarget.gameObject);
+    }
+
+    public void SpawnItemOnWorldPlace()
+    {
+        Manager.Use<MouseController>().LockMouse();
+        _playerInput.ActivateInput();
+        _itemViewer.gameObject.SetActive(false);
+        _interactionTargetGO.SetActive(true);
     }
 }

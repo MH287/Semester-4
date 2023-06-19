@@ -13,6 +13,7 @@ using static Item;
 public class InventoryManager : ManagerModule
 {
     [SerializeField] private InteractionController _interactionController;
+    [SerializeField] private PlayerInput _playerInput;
 
     [Header("Hotbar")]
     [SerializeField] private GameObject _hotbar;
@@ -64,11 +65,7 @@ public class InventoryManager : ManagerModule
     public void AddItemOutOfInspect()
     {
         InventoryItems.Add(_interactionController.InteractionTarget.ItemReference);
-    }
-    public void DestroyItemInWorldTest()
-    {
-        //Debug.Log(_interactionController.InteractionTarget.ItemReference);
-        Destroy(_interactionController.InteractionTarget.gameObject);
+        _playerInput.ActivateInput();
     }
 
     public void AddItem(Item item)
