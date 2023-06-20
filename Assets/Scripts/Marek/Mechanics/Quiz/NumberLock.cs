@@ -16,14 +16,17 @@ public class NumberLock : MonoBehaviour
     [SerializeField] private int _unlockNumberFour;
     [SerializeField] private int _unlockNumberFive;
     [SerializeField] private int _unlockNumberSix;
+    [SerializeField] private float _angleX = 0f;
+    [SerializeField] private float _angleY = 0f;
+    [SerializeField] private float _angleZ = 36f;
 
     private Vector3 _rotateDirection;
-    private Vector3 _angleElementOne = new Vector3(36,0, 0);
-    private Vector3 _angleElementTwo = new Vector3(36, 0, 0);
-    private Vector3 _angleElementThree = new Vector3(36, 0, 0);
-    private Vector3 _angleElementFour = new Vector3(36, 0, 0);
-    private Vector3 _angleElementFive = new Vector3(36, 0, 0);
-    private Vector3 _angleElementSix = new Vector3(36, 0, 0);
+    private Vector3 _angleElementOne = new Vector3(0,0,0);
+    private Vector3 _angleElementTwo = new Vector3(0, 0, 0);
+    private Vector3 _angleElementThree = new Vector3(0, 0, 0);
+    private Vector3 _angleElementFour = new Vector3(0, 0, 0);
+    private Vector3 _angleElementFive = new Vector3(0, 0, 0);
+    private Vector3 _angleElementSix = new Vector3(0, 0, 0);
 
     [SerializeField] private Transform _numberElement;
     
@@ -45,6 +48,13 @@ public class NumberLock : MonoBehaviour
 
     public void Awake()
     {
+        _angleElementOne = new Vector3(_angleX, _angleY, _angleZ);
+        _angleElementTwo = new Vector3(_angleX, _angleY, _angleZ);
+        _angleElementThree = new Vector3(_angleX, _angleY, _angleZ);
+        _angleElementFour = new Vector3(_angleX, _angleY, _angleZ);
+        _angleElementFive = new Vector3(_angleX, _angleY, _angleZ);
+        _angleElementSix = new Vector3(_angleX, _angleY, _angleZ);
+
         _numberElementOne = _lockBody.gameObject.transform.GetChild(0);
         _numberElementTwo = _lockBody.gameObject.transform.GetChild(1);
         _numberElementThree = _lockBody.gameObject.transform.GetChild(2);
@@ -62,13 +72,14 @@ public class NumberLock : MonoBehaviour
 
     public void RotateElement()
     {
+
         _numberElement = _controller.InteractionTarget.GetComponent<Transform>();
         switch (_numberElementList.IndexOf(_numberElement))
         {
             case 0:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementOne), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementOne += new Vector3(36, 0, 0);
+                _angleElementOne += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementOne += 1;
                 CountRotation(_countElementOne);
                 CheckRightNumber(_countElementOne, _unlockNumberOne);
@@ -81,7 +92,7 @@ public class NumberLock : MonoBehaviour
             case 1:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementTwo), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementTwo += new Vector3(36, 0, 0);
+                _angleElementTwo += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementTwo += 1;
                 CountRotation(_countElementTwo);
                 CheckRightNumber(_countElementTwo, _unlockNumberTwo);
@@ -94,7 +105,7 @@ public class NumberLock : MonoBehaviour
             case 2:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementThree), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementThree += new Vector3(36, 0, 0);
+                _angleElementThree += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementThree += 1;
                 CountRotation(_countElementThree);
                 CheckRightNumber(_countElementThree, _unlockNumberThree);
@@ -107,7 +118,7 @@ public class NumberLock : MonoBehaviour
             case 3:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementFour), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementFour += new Vector3(36, 0, 0);
+                _angleElementFour += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementFour += 1;
                 CountRotation(_countElementFour);
                 CheckRightNumber(_countElementFour, _unlockNumberFour);
@@ -121,7 +132,7 @@ public class NumberLock : MonoBehaviour
             case 4:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementFive), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementFive += new Vector3(36, 0, 0);
+                _angleElementFive += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementFive += 1;
                 CountRotation(_countElementFive);
                 CheckRightNumber(_countElementFive, _unlockNumberFive);
@@ -135,7 +146,7 @@ public class NumberLock : MonoBehaviour
             case 5:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementSix), _rotateDuration, RotateMode.Fast);
                 _rotateDirection = new Vector3(0, 0, 0);
-                _angleElementSix += new Vector3(36, 0, 0);
+                _angleElementSix += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementSix += 1;
                 CountRotation(_countElementSix);
                 CheckRightNumber(_countElementSix, _unlockNumberSix);
