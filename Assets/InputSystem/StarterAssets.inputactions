@@ -42,15 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Maus Anzeigen",
-                    "type": "Button",
-                    "id": "b2fb600a-b37f-48aa-9907-bb6dad4d41ee",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Item1",
                     "type": "Button",
                     "id": "967b098c-503c-4533-8e14-627ac24ec68a",
@@ -88,9 +79,9 @@
                 },
                 {
                     "name": "Ladder",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "6f7865bd-da0f-4437-ab42-558c24903622",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -99,6 +90,15 @@
                     "name": "item",
                     "type": "Button",
                     "id": "d62ae6c9-b600-4ab1-83cc-1cc8516025a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Journal",
+                    "type": "Button",
+                    "id": "47795552-303a-48d7-b6d2-b78b3daec6da",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -266,19 +266,8 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3aefb9a7-7681-46b1-841a-4cd7963df7c3",
-                    "path": "<Keyboard>/alt",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Maus Anzeigen",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -288,7 +277,7 @@
                     "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Item1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -299,7 +288,7 @@
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Item2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -310,7 +299,7 @@
                     "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Item3",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -321,7 +310,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "AudioAdvice",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -332,7 +321,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
                     "action": "Ladder",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -367,6 +356,17 @@
                     "processors": "Scale(factor=3)",
                     "groups": "KeyboardMouse",
                     "action": "item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7d343c7-885c-425e-98e5-2f1ce0bd5080",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
