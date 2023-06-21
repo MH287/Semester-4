@@ -54,7 +54,7 @@ public class InventoryManager : ManagerModule
         _keyTwo.action.performed += UseItem;
         _keyThree.action.performed += UseItem;
         _audioAdvice.action.performed += UseItem;
-        UiUpdate();
+
     }
 
     public void UiUpdate()
@@ -64,8 +64,10 @@ public class InventoryManager : ManagerModule
 
     public void AddItemOutOfInspect()
     {
-        InventoryItems.Add(_interactionController.InteractionTarget.ItemReference);
+        InventoryItems.Add(_interactionController.InteractionItem);
         _playerInput.ActivateInput();
+        _itemViewer.gameObject.SetActive(false);
+        Manager.Use<MouseController>().LockMouse();
     }
 
     public void AddItem(Item item)

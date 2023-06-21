@@ -15,6 +15,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private ItemViewer _itemViewer;
 
     public  Interactable InteractionTarget;
+    public Item InteractionItem;
 
     private GameObject _interactionTargetGO;
     private Outline _targetOutline;
@@ -101,12 +102,13 @@ public class InteractionController : MonoBehaviour
             case IntTypeWorld.Collectable:
                 //Inspect Item mit Add zum Inv
                 _playerInput.DeactivateInput();
+                InteractionTarget.gameObject.SetActive(false);
+                InteractionItem = InteractionTarget.ItemReference;
                 DestroyItemInWorld();
                 _itemViewer.InspectItem(InteractionTarget.ItemReference);
                 _itemViewer.AddButton.gameObject.SetActive(true);
                 _itemViewer.CloseInspectorButton.gameObject.SetActive(false);
-                Manager.Use<InventoryManager>().AddItem(InteractionTarget.ItemReference);
-                Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
+                //Manager.Use<InventoryManager>().DestroyItemInWorld(InteractionTarget.gameObject);
                 break;
             case IntTypeWorld.SpecialView:
                 Debug.Log("Show Story Element");
