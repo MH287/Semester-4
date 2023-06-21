@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemSlot : MonoBehaviour
 {
-    [SerializeField] private Item _itemReference;
+    public Item Item;
     public int Keybinding;
+
 }

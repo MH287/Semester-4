@@ -100,7 +100,6 @@ public class InteractionController : MonoBehaviour
                 InteractionTarget.OnInteract.Invoke();
                 break;
             case IntTypeWorld.Collectable:
-                //Inspect Item mit Add zum Inv
                 _playerInput.DeactivateInput();
                 InteractionTarget.gameObject.SetActive(false);
                 InteractionItem = InteractionTarget.ItemReference;

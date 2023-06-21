@@ -18,7 +18,7 @@ public class InventoryManager : ManagerModule
     [Header("Hotbar")]
     [SerializeField] private GameObject _hotbar;
     [SerializeField] private GameObject _slotPrefab;
-    private Sprite _image;
+    [SerializeField] private ItemSlot _slot;
 
     [SerializeField] private InputActionReference _keyOne;
     [SerializeField] private InputActionReference _keyTwo;
@@ -38,9 +38,8 @@ public class InventoryManager : ManagerModule
     [SerializeField] private float _startPosition;
     [SerializeField] private float _endPosition;
 
+
     private Interactable _interactionTarget;
-
-
     private bool _isActive = false;
     
 
@@ -57,17 +56,24 @@ public class InventoryManager : ManagerModule
 
     }
 
-    public void UiUpdate()
+    public void UpdateUI()
     {
         Instantiate(_slotPrefab, _hotbar.transform);
+        
     }
 
     public void AddItemOutOfInspect()
     {
         InventoryItems.Add(_interactionController.InteractionItem);
+        _slot.Item = _interactionController.InteractionItem;
+        int i = InventoryItems.IndexOf(_slot.Item);
+        _slot.Keybinding = i + 1;
+
         _playerInput.ActivateInput();
         _itemViewer.gameObject.SetActive(false);
         Manager.Use<MouseController>().LockMouse();
+
+        UpdateUI();
     }
 
     public void AddItem(Item item)
