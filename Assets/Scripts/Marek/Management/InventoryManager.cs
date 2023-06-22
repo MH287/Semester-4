@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 using static UnityEditor.Progress;
 using static Item;
 
@@ -41,7 +42,6 @@ public class InventoryManager : ManagerModule
 
     private Interactable _interactionTarget;
     private bool _isActive = false;
-    
 
     public void Start()
     {
@@ -58,8 +58,15 @@ public class InventoryManager : ManagerModule
 
     public void UpdateUI()
     {
-        Instantiate(_slotPrefab, _hotbar.transform);
         
+        GameObject obj = Instantiate(_slotPrefab, _hotbar.transform);
+        ItemSlot objItemSlot = obj.GetComponent<ItemSlot>();
+        objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
+        objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
+
+        TMP_Text keyb = objItemSlot.GetComponent<TMP_Text>();
+        keyb.SetText(objItemSlot.Keybinding.ToString());
+
     }
 
     public void AddItemOutOfInspect()

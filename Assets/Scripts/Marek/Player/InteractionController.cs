@@ -118,7 +118,6 @@ public class InteractionController : MonoBehaviour
     }
     public void DestroyItemInWorld()
     {
-        _playerInput.ActivateInput();
         //Debug.Log(_interactionController.InteractionTarget.ItemReference);
         Destroy(InteractionTarget.gameObject);
     }
