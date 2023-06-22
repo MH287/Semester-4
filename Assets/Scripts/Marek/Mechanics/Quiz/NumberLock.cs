@@ -19,6 +19,9 @@ public class NumberLock : MonoBehaviour
     [SerializeField] private float _angleX = 0f;
     [SerializeField] private float _angleY = 0f;
     [SerializeField] private float _angleZ = 36f;
+    [SerializeField] private Transform _numberElement;
+
+    [SerializeField] private Animator _doorAnimator;
 
     private Vector3 _rotateDirection;
     private Vector3 _angleElementOne = new Vector3(0,0,0);
@@ -27,9 +30,7 @@ public class NumberLock : MonoBehaviour
     private Vector3 _angleElementFour = new Vector3(0, 0, 0);
     private Vector3 _angleElementFive = new Vector3(0, 0, 0);
     private Vector3 _angleElementSix = new Vector3(0, 0, 0);
-
-    [SerializeField] private Transform _numberElement;
-    
+        
     private Transform _numberElementOne;
     private Transform _numberElementTwo;
     private Transform _numberElementThree;
@@ -179,6 +180,8 @@ public class NumberLock : MonoBehaviour
             && CheckRightNumber(_countElementThree, _unlockNumberThree) && CheckRightNumber(_countElementFour, _unlockNumberFour)
             && CheckRightNumber(_countElementFive, _unlockNumberFive) && CheckRightNumber(_countElementSix, _unlockNumberSix))
         {
+
+            _doorAnimator.Play("LE_Laboratory_door");
             Debug.Log("Play Open Animation");
             return true;
         }

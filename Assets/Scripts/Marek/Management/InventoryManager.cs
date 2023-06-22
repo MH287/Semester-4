@@ -41,7 +41,7 @@ public class InventoryManager : ManagerModule
     private float _startPosition;
 
 
-    private Interactable _interactionTarget;
+    //private Interactable _interactionTarget;
     private bool _isActive = false;
 
     public void Start()
@@ -151,7 +151,7 @@ public class InventoryManager : ManagerModule
     private void InteractWithInvItemTest(Item item)
     {
 
-        _interactionTarget = item.Prefab.GetComponent<Interactable>();
+        //_interactionTarget = item.Prefab.GetComponent<Interactable>();
 
         /*if (_interactionTarget == null)
         {
