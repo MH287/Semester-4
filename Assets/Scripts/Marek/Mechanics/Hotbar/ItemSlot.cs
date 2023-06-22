@@ -9,5 +9,5 @@ public class ItemSlot : MonoBehaviour
     public Image Icon;
     public AspectRatioFitter Fitter;
     public int Keybinding;
-    public GameObject KeybindingText;
+    public TMP_Text KeybindingText;
 }

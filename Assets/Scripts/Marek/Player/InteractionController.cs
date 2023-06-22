@@ -122,11 +122,16 @@ public class InteractionController : MonoBehaviour
         Destroy(InteractionTarget.gameObject);
     }
 
-    public void SpawnItemOnWorldPlace()
+    public void SpawnItemOnWorldPlace() // in use on Button
     {
         Manager.Use<MouseController>().LockMouse();
         _playerInput.ActivateInput();
         _itemViewer.gameObject.SetActive(false);
-        _interactionTargetGO.SetActive(true);
+        
+        if(_interactionTargetGO != null)
+        {
+            _interactionTargetGO.SetActive(true);
+        }
+
     }
 }

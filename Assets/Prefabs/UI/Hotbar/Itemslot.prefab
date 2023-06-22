@@ -57,7 +57,7 @@ MonoBehaviour:
   Icon: {fileID: 1873950535525480304}
   Fitter: {fileID: 1234952552753025164}
   Keybinding: 2
-  KeybindingText: {fileID: 3485747256336218469}
+  KeybindingText: {fileID: 2731580921704179893}
 --- !u!1 &1873950534863507421
 GameObject:
   m_ObjectHideFlags: 0

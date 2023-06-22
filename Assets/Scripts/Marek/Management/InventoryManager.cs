@@ -10,6 +10,7 @@ using DG.Tweening;
 using TMPro;
 using static UnityEditor.Progress;
 using static Item;
+using System.Linq;
 
 public class InventoryManager : ManagerModule
 {
@@ -36,8 +37,8 @@ public class InventoryManager : ManagerModule
     [Header("Wimmelbild")]
     [SerializeField] private float _picMoveSpeed;
     [SerializeField] private Transform _picTransform;
-    [SerializeField] private float _startPosition;
     [SerializeField] private float _endPosition;
+    private float _startPosition;
 
 
     private Interactable _interactionTarget;
@@ -54,33 +55,51 @@ public class InventoryManager : ManagerModule
         _keyThree.action.performed += UseItem;
         _audioAdvice.action.performed += UseItem;
 
+        _startPosition = _picTransform.transform.localPosition.y;
+
     }
 
-    public void UpdateUI()
-    {
-        
+    public void AddUIElement()
+    {    
         GameObject obj = Instantiate(_slotPrefab, _hotbar.transform);
         ItemSlot objItemSlot = obj.GetComponent<ItemSlot>();
         objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
         objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
+        objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());
+    }
 
-        TMP_Text keyb = objItemSlot.GetComponent<TMP_Text>();
-        keyb.SetText(objItemSlot.Keybinding.ToString());
+    public void RemoveUIElement()
+    {
 
     }
 
-    public void AddItemOutOfInspect()
+    public void AddItemOutOfInspect() //in Use for Button
     {
-        InventoryItems.Add(_interactionController.InteractionItem);
+
         _slot.Item = _interactionController.InteractionItem;
-        int i = InventoryItems.IndexOf(_slot.Item);
-        _slot.Keybinding = i + 1;
+
+        /*int i = InventoryItems.IndexOf(_slot.Item);
+        if (!InventoryItems.Contains(_slot.Item))
+        {
+            int i = InventoryItems.IndexOf(_slot.Item);
+            int l = InventoryItems.Count();
+            _slot.Keybinding = l + 1;
+        }
+        else
+        {
+            IndexHelper();
+        }*/
+
+        int l = InventoryItems.Count();
+        _slot.Keybinding = l + 1;
+
+        InventoryItems.Add(_interactionController.InteractionItem);
 
         _playerInput.ActivateInput();
         _itemViewer.gameObject.SetActive(false);
         Manager.Use<MouseController>().LockMouse();
 
-        UpdateUI();
+        AddUIElement();
     }
 
     public void AddItem(Item item)
@@ -131,37 +150,46 @@ public class InventoryManager : ManagerModule
 
     private void InteractWithInvItemTest(Item item)
     {
+
         _interactionTarget = item.Prefab.GetComponent<Interactable>();
 
-        if (_interactionTarget == null)
+        /*if (_interactionTarget == null)
+        {
+            return;
+        }*/
+
+        if (item == null)
         {
             return;
         }
-
-        switch (_interactionTarget.ItemReference.InteractionInv)
+        else
         {
-            case IntTypeInv.Inspectable:
-                Debug.Log("Item View");
-                //_itemViewer.InspectItem(_interactionTarget.ItemReference);
-                break;
-            case IntTypeInv.InvokeEvent:
-                Debug.Log("Event Invoke");
-                _interactionTarget.OnInteract.Invoke();
-                break;
-            case IntTypeInv.Useable:
-                Debug.Log("Item Use");
-                break;
-            case IntTypeInv.Audio:
-                PlayWalkieTalkie();
-                break;
-            case IntTypeInv.SpecialView:
-                ShowPicture();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            switch (item.InteractionInv)
+            {
+                case IntTypeInv.Inspectable:
+                    _itemViewer.InspectItem(item);
+                    _playerInput.DeactivateInput();
+                    _itemViewer.AddButton.gameObject.SetActive(false);
+                    _itemViewer.CloseInspectorButton.gameObject.SetActive(true);
+                    break;
+                case IntTypeInv.InvokeEvent:
+                    item.OnInteract.Invoke();
+                    break;
+                case IntTypeInv.Useable:
+                    Debug.Log("Item Use");
+                    //RemoveUIElement();
+                    break;
+                case IntTypeInv.Audio:
+                    PlayWalkieTalkie();
+                    break;
+                case IntTypeInv.SpecialView:
+                    ShowPicture();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
-
     public void ShowPicture()
     {
         if (_isActive == false)
@@ -199,17 +227,14 @@ public class InventoryManager : ManagerModule
         }
         else if(_keyTwo.action.IsPressed())
         {
-            //InteractWithInvItem(InventoryItems[1]); --> Falls Teständerung nicht klappt.
             InteractWithInvItemTest(InventoryItems[1]);
         }
         else if (_keyThree.action.IsPressed())
         {
-            //InteractWithInvItem(InventoryItems[2]); --> Falls Teständerung nicht klappt.
             InteractWithInvItemTest(InventoryItems[2]);
         }
         else if (_audioAdvice.action.IsPressed())
         {
-            //InteractWithInvItem(InventoryItems[3]); --> Falls Teständerung nicht klappt.
             InteractWithInvItemTest(_audioAdviceItem);
         }
     }
