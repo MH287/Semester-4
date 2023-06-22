@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Notebook
   Icon: {fileID: 0}
-  Prefab: {fileID: 4521230376933738027, guid: 94ee4031d60eb234aa1c4eee64e55307, type: 3}
+  Prefab: {fileID: 123115633888771299, guid: 23b5236d817428c4fa30cbb9f979a535, type: 3}
   ItemDescription: 
   itemType: 1
   InteractionWorld: 2
