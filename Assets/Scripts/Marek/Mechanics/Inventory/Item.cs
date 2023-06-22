@@ -11,18 +11,18 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public GameObject Prefab;
     public string ItemDescription;
-    //public ItemType itemType;
+    public ItemType itemType;
     public IntTypeWorld InteractionWorld;
     public IntTypeInv InteractionInv;
 
     public UnityEvent OnInteract;
 
 
-    /*public enum ItemType
+    public enum ItemType
     {
-        Collectable,
-        NotCollectable
-    }*/
+        Normal,
+        Special
+    }
     public enum IntTypeWorld
     {
         Inspectable,

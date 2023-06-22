@@ -26,8 +26,16 @@ public class InventoryManager : ManagerModule
     [SerializeField] private InputActionReference _keyTwo;
     [SerializeField] private InputActionReference _keyThree;
     [SerializeField] private InputActionReference _audioAdvice;
+    [SerializeField] private InputActionReference _noteBook;
     [SerializeField] private ItemViewer _itemViewer;
     [SerializeField] private Item _audioAdviceItem;
+    [SerializeField] private Item _noteBookItem;
+
+    [Header("Special Items")]
+    [SerializeField] private GameObject _noteBookGO;
+    [SerializeField] private GameObject _audioDeviceGO;
+    [SerializeField] private GameObject _slotPrefab1;
+    [SerializeField] private GameObject _hotbar1;
 
     public List<Item> InventoryItems = new List<Item>();
 
@@ -41,7 +49,7 @@ public class InventoryManager : ManagerModule
     private float _startPosition;
 
 
-    //private Interactable _interactionTarget;
+    private Interactable _interactionTarget;
     private bool _isActive = false;
 
     public void Start()
@@ -50,10 +58,12 @@ public class InventoryManager : ManagerModule
         _keyTwo.action.Enable();
         _keyThree.action.Enable();
         _audioAdvice.action.Enable();
+        _noteBook.action.Enable();
         _keyOne.action.performed += UseItem;
         _keyTwo.action.performed += UseItem;
         _keyThree.action.performed += UseItem;
         _audioAdvice.action.performed += UseItem;
+        _noteBook.action.performed += UseItem;
 
         _startPosition = _picTransform.transform.localPosition.y;
 
@@ -73,7 +83,44 @@ public class InventoryManager : ManagerModule
 
     }
 
-    public void AddItemOutOfInspect() //in Use for Button
+    public void AddUIElementSpecialItem(Item item)
+    {
+        /*GameObject obj = Instantiate(_slotPrefab1, _hotbar1.transform);
+        ItemSlot objItemSlot = obj.GetComponent<ItemSlot>();
+        objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
+        objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
+        objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());*/
+
+        if (item == _noteBookItem)
+        {
+            _noteBookGO.SetActive(true);
+        }
+        else
+        {
+            _audioDeviceGO.SetActive(true);
+        }
+
+    }
+
+    public void CheckItemTypeForAdd() //in Use for Button
+    {
+        if (_interactionController.InteractionItem.itemType == ItemType.Normal)
+        {
+            AddItemOutOfInspectNormal();
+        }
+        else
+        {
+            AddItemOutOfInspectSpecial();
+        }
+    }
+    public void AddItemOutOfInspectSpecial()
+    {
+        _playerInput.ActivateInput();
+        _itemViewer.gameObject.SetActive(false);
+        Manager.Use<MouseController>().LockMouse();
+        AddUIElementSpecialItem(_interactionController.InteractionItem);
+    }
+    public void AddItemOutOfInspectNormal() 
     {
 
         _slot.Item = _interactionController.InteractionItem;
@@ -151,7 +198,7 @@ public class InventoryManager : ManagerModule
     private void InteractWithInvItemTest(Item item)
     {
 
-        //_interactionTarget = item.Prefab.GetComponent<Interactable>();
+        _interactionTarget = item.Prefab.GetComponent<Interactable>();
 
         /*if (_interactionTarget == null)
         {
@@ -236,6 +283,10 @@ public class InventoryManager : ManagerModule
         else if (_audioAdvice.action.IsPressed())
         {
             InteractWithInvItemTest(_audioAdviceItem);
+        }
+        else if(_noteBook.action.IsPressed())
+        {
+            InteractWithInvItemTest(_noteBookItem);
         }
     }
     public void DestroyItemInWorld(GameObject item)
