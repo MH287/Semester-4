@@ -1499,19 +1499,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bae76944352ca499f4d68338da89d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotHolder: {fileID: 621598865}
+  _interactionController: {fileID: 0}
+  _playerInput: {fileID: 0}
+  _hotbar: {fileID: 0}
+  _slotPrefab: {fileID: 0}
+  _slot: {fileID: 0}
   _keyOne: {fileID: 3409371333616110576, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   _keyTwo: {fileID: 101874857241803583, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
   _keyThree: {fileID: -5192212092548536411, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
   _audioAdvice: {fileID: 3369401045372306966, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  _noteBook: {fileID: 0}
   _itemViewer: {fileID: 1236972324612537807}
   _audioAdviceItem: {fileID: 11400000, guid: 11f0d068aa3555c4888aff0c31d94aba, type: 2}
+  _noteBookItem: {fileID: 0}
+  _noteBookGO: {fileID: 0}
+  _audioDeviceGO: {fileID: 0}
+  _slotPrefab1: {fileID: 0}
+  _hotbar1: {fileID: 0}
   InventoryItems: []
+  _generatorConsole: {fileID: 0}
   _picMoveSpeed: 2
   _picTransform: {fileID: 831710873}
-  _startPosition: -984
   _endPosition: 57
 --- !u!4 &350888092 stripped
 Transform:
@@ -1603,13 +1613,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a653491b40c9674cae4e937d5b5fd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lastPosition: {x: 0, y: 0, z: 0}
+  _controller: {fileID: 0}
+  _ladder: {fileID: 0}
   _ladderPos1: {x: 0, y: 0, z: 0}
   _ladderPos2: {x: 0, y: 0, z: 0}
   _ladderPos3: {x: 0, y: 0, z: 0}
-  _ladderSpeed: 0
+  _ladderSpeedFixPosition: 0
+  _ladderSpeedFreePosition: 25
   _moveDirection: {x: 0, y: 0, z: 0}
-  _ladder: {fileID: 0}
 --- !u!65 &419609909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2371,8 +2382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 22128e23a9edb6d43b0b5faa1b19d9cb, type: 2}
-  InteractionTypeWorld: 2
-  InteractionTypInv: 2
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -2730,39 +2739,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60889539378096550}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &670281110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670281105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!114 &670281111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,7 +2757,10 @@ MonoBehaviour:
   _interactionRange: 1.5
   _interactionAction: {fileID: -5593323959137350953, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  _playerInput: {fileID: 0}
   _itemViewer: {fileID: 1236972324612537807}
+  InteractionTarget: {fileID: 0}
+  InteractionItem: {fileID: 0}
 --- !u!1 &679026249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,8 +4446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: a025e80bfa2c54d48a0c31421b953333, type: 2}
-  InteractionTypeWorld: 2
-  InteractionTypInv: 1
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4585,8 +4562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 69178caf56ff5a5498b691ca84a23085, type: 2}
-  InteractionTypeWorld: 2
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -4743,8 +4718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemReference: {fileID: 11400000, guid: 69178caf56ff5a5498b691ca84a23085, type: 2}
-  InteractionTypeWorld: 0
-  InteractionTypInv: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -7392,6 +7365,8 @@ MonoBehaviour:
   _rotateSensetivity: 0.5
   _interactionAction: {fileID: 455917025679247091, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  AddButton: {fileID: 0}
+  CloseInspectorButton: {fileID: 0}
 --- !u!1 &1236972325217925040
 GameObject:
   m_ObjectHideFlags: 0
