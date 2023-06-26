@@ -16,6 +16,12 @@ public class NumberLock : MonoBehaviour
     [SerializeField] private int _unlockNumberFour;
     [SerializeField] private int _unlockNumberFive;
     [SerializeField] private int _unlockNumberSix;
+    [SerializeField] private Transform _numberElementOne;
+    [SerializeField] private Transform _numberElementTwo;
+    [SerializeField] private Transform _numberElementThree;
+    [SerializeField] private Transform _numberElementFour;
+    [SerializeField] private Transform _numberElementFive;
+    [SerializeField] private Transform _numberElementSix;
     [SerializeField] private float _angleX = 0f;
     [SerializeField] private float _angleY = 0f;
     [SerializeField] private float _angleZ = 36f;
@@ -31,18 +37,21 @@ public class NumberLock : MonoBehaviour
     private Vector3 _angleElementFive = new Vector3(0, 0, 0);
     private Vector3 _angleElementSix = new Vector3(0, 0, 0);
         
-    private Transform _numberElementOne;
-    private Transform _numberElementTwo;
-    private Transform _numberElementThree;
-    private Transform _numberElementFour;
-    private Transform _numberElementFive;
-    private Transform _numberElementSix;
+
     private int _countElementOne;
     private int _countElementTwo;
     private int _countElementThree;
     private int _countElementFour;
     private int _countElementFive;
     private int _countElementSix;
+
+    private bool _checkElementOne;
+    private bool _checkElementTwo;
+    private bool _checkElementThree;
+    private bool _checkElementFour;
+    private bool _checkElementFive;
+    private bool _checkElementSix;
+    private bool _unlock;
 
 
 
@@ -56,12 +65,12 @@ public class NumberLock : MonoBehaviour
         _angleElementFive = new Vector3(_angleX, _angleY, _angleZ);
         _angleElementSix = new Vector3(_angleX, _angleY, _angleZ);
 
-        _numberElementOne = _lockBody.gameObject.transform.GetChild(0);
-        _numberElementTwo = _lockBody.gameObject.transform.GetChild(1);
-        _numberElementThree = _lockBody.gameObject.transform.GetChild(2);
-        _numberElementFour = _lockBody.gameObject.transform.GetChild(3);
-        _numberElementFive = _lockBody.gameObject.transform.GetChild(4);
-        _numberElementSix = _lockBody.gameObject.transform.GetChild(5);
+        //_numberElementOne = _lockBody.gameObject.transform.GetChild(0);
+        //_numberElementTwo = _lockBody.gameObject.transform.GetChild(1);
+        //_numberElementThree = _lockBody.gameObject.transform.GetChild(2);
+        //_numberElementFour = _lockBody.gameObject.transform.GetChild(3);
+        //_numberElementFive = _lockBody.gameObject.transform.GetChild(4);
+        //_numberElementSix = _lockBody.gameObject.transform.GetChild(5);
 
         _numberElementList.Add(_numberElementOne);
         _numberElementList.Add(_numberElementTwo);
@@ -83,11 +92,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementOne += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementOne += 1;
                 CountRotation(_countElementOne);
-                CheckRightNumber(_countElementOne, _unlockNumberOne);
+                CheckRightNumber(_countElementOne, _unlockNumberOne, _checkElementOne);
                 CheckUnlock();
 
-                Debug.Log("Right Number = " + CheckRightNumber(_countElementOne, _unlockNumberOne));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementOne, _unlockNumberOne));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
             case 1:
@@ -96,11 +105,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementTwo += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementTwo += 1;
                 CountRotation(_countElementTwo);
-                CheckRightNumber(_countElementTwo, _unlockNumberTwo);
+                CheckRightNumber(_countElementTwo, _unlockNumberTwo, _checkElementTwo);
                 CheckUnlock();
 
-                Debug.Log("Right Number = " + CheckRightNumber(_countElementTwo, _unlockNumberTwo));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementTwo, _unlockNumberTwo));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
             case 2:
@@ -109,11 +118,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementThree += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementThree += 1;
                 CountRotation(_countElementThree);
-                CheckRightNumber(_countElementThree, _unlockNumberThree);
+                CheckRightNumber(_countElementThree, _unlockNumberThree, _checkElementThree);
                 CheckUnlock();
 
-                    Debug.Log("Right Number = " + CheckRightNumber(_countElementThree, _unlockNumberThree));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementThree, _unlockNumberThree));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
             case 3:
@@ -122,11 +131,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementFour += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementFour += 1;
                 CountRotation(_countElementFour);
-                CheckRightNumber(_countElementFour, _unlockNumberFour);
+                CheckRightNumber(_countElementFour, _unlockNumberFour, _checkElementFour);
                 CheckUnlock();
 
-                Debug.Log("Right Number = " + CheckRightNumber(_countElementFour, _unlockNumberFour));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementFour, _unlockNumberFour));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
 
@@ -136,11 +145,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementFive += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementFive += 1;
                 CountRotation(_countElementFive);
-                CheckRightNumber(_countElementFive, _unlockNumberFive);
+                CheckRightNumber(_countElementFive, _unlockNumberFive, _checkElementFive);
                 CheckUnlock();
 
-                Debug.Log("Right Number = " + CheckRightNumber(_countElementFive, _unlockNumberFive));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementFive, _unlockNumberFive));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
 
@@ -150,11 +159,11 @@ public class NumberLock : MonoBehaviour
                 _angleElementSix += new Vector3(_angleX, _angleY, _angleZ);
                 _countElementSix += 1;
                 CountRotation(_countElementSix);
-                CheckRightNumber(_countElementSix, _unlockNumberSix);
+                CheckRightNumber(_countElementSix, _unlockNumberSix, _checkElementSix);
                 CheckUnlock();
 
-                Debug.Log("Right Number = " + CheckRightNumber(_countElementSix, _unlockNumberSix));
-                Debug.Log("Unlock?" + CheckUnlock());
+                //Debug.Log("Right Number = " + CheckRightNumber(_countElementSix, _unlockNumberSix));
+                //Debug.Log("Unlock?" + CheckUnlock());
 
                 break;
         }
@@ -168,19 +177,27 @@ public class NumberLock : MonoBehaviour
         }
     }
 
-    public bool CheckRightNumber(int count, int unlockNumber)
+    public bool CheckRightNumber(int count, int unlockNumber, bool state)
     {
-        if (count != unlockNumber) { return false; }
-        else { return true; }
+        if (count != unlockNumber)
+        {
+            state = false;
+            return _unlock = false; 
+        }
+        else
+        {
+            state = true;
+            return _unlock = true; 
+        }
     }
 
     public bool CheckUnlock()
     {
-        if(CheckRightNumber(_countElementOne, _unlockNumberOne) && CheckRightNumber(_countElementTwo, _unlockNumberTwo) 
-            && CheckRightNumber(_countElementThree, _unlockNumberThree) && CheckRightNumber(_countElementFour, _unlockNumberFour)
-            && CheckRightNumber(_countElementFive, _unlockNumberFive) && CheckRightNumber(_countElementSix, _unlockNumberSix))
+        if(CheckRightNumber(_countElementOne, _unlockNumberOne, _checkElementOne) && CheckRightNumber(_countElementTwo, _unlockNumberTwo, _checkElementTwo) 
+            && CheckRightNumber(_countElementThree, _unlockNumberThree, _checkElementThree) && CheckRightNumber(_countElementFour, _unlockNumberFour, _checkElementFour)
+            && CheckRightNumber(_countElementFive, _unlockNumberFive, _checkElementFive) && CheckRightNumber(_countElementSix, _unlockNumberSix, _checkElementSix))
         {
-
+            Debug.Log("Unlocked");
             _doorAnimator.Play("LE_Laboratory_door");
             Debug.Log("Play Open Animation");
             return true;
