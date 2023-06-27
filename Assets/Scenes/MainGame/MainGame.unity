@@ -5795,7 +5795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6caec8fd09ec48d48a4a1da9e50cf315, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44ac3a2c6f9eceb4fa70335513d55372, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30856,7 +30856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 40eba7f0a0c56e84ead47e990c934af6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5c91e1f2f2f1d54398810a47099d4fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32232,6 +32232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2191
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -32243,7 +32248,7 @@ PrefabInstance:
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.948
+      value: -8.932
       objectReference: {fileID: 0}
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
@@ -32268,12 +32273,12 @@ PrefabInstance:
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.701
+      value: -10.785
       objectReference: {fileID: 0}
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.435
+      value: 0.445
       objectReference: {fileID: 0}
     - target: {fileID: 8842772329030824854, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
@@ -32294,6 +32299,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UV Code_StorageRoom_txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842772329295144089, guid: d16a54aafd4d0414ab74cf9771ca50e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842772329295144089, guid: d16a54aafd4d0414ab74cf9771ca50e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8842772329295144094, guid: d16a54aafd4d0414ab74cf9771ca50e6,
         type: 3}
