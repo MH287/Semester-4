@@ -52,6 +52,8 @@ public class InventoryManager : ManagerModule
     private Interactable _interactionTarget;
     private bool _isActive = false;
 
+    public Dictionary<Item, ItemSlot> Slots = new Dictionary<Item, ItemSlot>();
+
     public void Start()
     {
         _keyOne.action.Enable();
@@ -76,21 +78,23 @@ public class InventoryManager : ManagerModule
         objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
         objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
         objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());
+
+        //_slots.Add(objItemSlot);
+        Item item = objItemSlot.Item;
+
+        Slots.Add(item, objItemSlot);
     }
 
-    public void RemoveUIElement()
+    public void RemoveUIElement(Item item)
     {
-
+        if (Slots.ContainsKey(item))
+        {
+            Destroy(Slots[item].gameObject);
+            Slots.Remove(item);
+        }
     }
-
     public void AddUIElementSpecialItem(Item item)
     {
-        /*GameObject obj = Instantiate(_slotPrefab1, _hotbar1.transform);
-        ItemSlot objItemSlot = obj.GetComponent<ItemSlot>();
-        objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
-        objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
-        objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());*/
-
         if (item == _noteBookItem)
         {
             _noteBookGO.SetActive(true);
@@ -99,7 +103,6 @@ public class InventoryManager : ManagerModule
         {
             _audioDeviceGO.SetActive(true);
         }
-
     }
 
     public void CheckItemTypeForAdd() //in Use for Button
@@ -224,7 +227,8 @@ public class InventoryManager : ManagerModule
                     break;
                 case IntTypeInv.Useable:
                     Debug.Log("Item Use");
-                    //RemoveUIElement();
+                    InventoryItems.Remove(item);
+                    RemoveUIElement(item);
                     break;
                 case IntTypeInv.Audio:
                     PlayWalkieTalkie();

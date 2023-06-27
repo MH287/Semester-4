@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: FuseHint
   Icon: {fileID: 0}
-  Prefab: {fileID: 2608123068206972589, guid: 91126c46383aa6741aec6a6edde05938, type: 3}
+  Prefab: {fileID: 5940541271945779842, guid: b02e2e8caea7d59448a0bef39bf230f9, type: 3}
   ItemDescription: Das ist ein Tipp
   itemType: 0
   InteractionWorld: 0
