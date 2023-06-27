@@ -266,6 +266,7 @@ public class InventoryManager : ManagerModule
     public void PlayWalkieTalkie()
     {
         Debug.Log("Play Audio");
+
     }
     public void UseItem(InputAction.CallbackContext obj)
     {
