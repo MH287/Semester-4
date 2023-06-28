@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -18,6 +19,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
 
     [SerializeField] public Button AddButton;
     [SerializeField] public Button CloseInspectorButton;
+
+    [SerializeField] private Item _globe;
     public void InspectItem(Item target)
     {
         _item = target;
@@ -42,7 +45,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
          _itemPrefab = Instantiate(_item.Prefab, _itemCamera.transform);
         _itemPrefab.gameObject.layer = LayerMask.NameToLayer("ItemViewer");
         _itemPrefab.transform.localPosition = new Vector3(0,0,_offset);
-     }
+        _itemPrefab.transform.localRotation = Quaternion.Euler(-90, 0,90);
+    }
 
     public void SpawnSpecialView(GameObject interactionTarget, float eulerX, float eulerY, float eulerZ )
     {
@@ -64,10 +68,14 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     }
      public void OnDrag(PointerEventData eventData)
      {
-        if(_itemPrefab != null)
+        if(_itemPrefab != null && _item != _globe)
         {
             _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
             _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+        }
+        else if(_itemPrefab != null && _item == _globe)
+        {
+            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
         }
         else
         {
