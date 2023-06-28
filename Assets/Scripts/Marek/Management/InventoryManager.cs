@@ -52,7 +52,7 @@ public class InventoryManager : ManagerModule
     private Interactable _interactionTarget;
     private bool _isActive = false;
 
-    [SerializeField] private Dictionary<Item, ItemSlot> _slotsDict = new Dictionary<Item, ItemSlot>();
+    public List<ItemSlot> InventorySlots = new List<ItemSlot>();
 
     public void Start()
     {
@@ -79,19 +79,26 @@ public class InventoryManager : ManagerModule
         objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
         objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());
 
-        //_slots.Add(objItemSlot);
-        Item item = objItemSlot.Item;
-
-        _slotsDict.Add(item, objItemSlot);
+        InventorySlots.Add(objItemSlot);
     }
 
-    public void RemoveUIElement(Item item)
+    public void RefreshUI()
     {
-        if (_slotsDict.ContainsKey(item))
+        //List<ItemSlot> slots = InventorySlots;
+        foreach (ItemSlot slot in InventorySlots)
         {
-            Destroy(_slotsDict[item].gameObject);
-            _slotsDict.Remove(item);
+            slot.Icon.sprite = slot.Item.Icon;
+            slot.Fitter.aspectRatio = slot.Item.Icon.texture.width / (float)slot.Item.Icon.texture.height;
+            slot.KeybindingText.SetText((InventorySlots.IndexOf(slot) + 1).ToString());
         }
+    }
+
+
+    public void RemoveUIElement(ItemSlot itemSlot)
+    {
+        InventorySlots.Remove(itemSlot);
+        Destroy(itemSlot.gameObject);
+
     }
     public void AddUIElementSpecialItem(Item item)
     {
@@ -104,6 +111,7 @@ public class InventoryManager : ManagerModule
             _audioDeviceGO.SetActive(true);
         }
     }
+
 
     public void CheckItemTypeForAdd() //in Use for Button
     {
@@ -198,7 +206,7 @@ public class InventoryManager : ManagerModule
 
     }*/
 
-    private void InteractWithInvItemTest(Item item)
+    private void InteractWithInvItemTest(Item item, ItemSlot itemSlot)
     {
 
         _interactionTarget = item.Prefab.GetComponent<Interactable>();
@@ -228,7 +236,8 @@ public class InventoryManager : ManagerModule
                 case IntTypeInv.Useable:
                     Debug.Log("Item Use");
                     InventoryItems.Remove(item);
-                    RemoveUIElement(item);
+                    RemoveUIElement(itemSlot);
+                    RefreshUI();
                     break;
                 case IntTypeInv.Audio:
                     PlayWalkieTalkie();
@@ -275,23 +284,23 @@ public class InventoryManager : ManagerModule
         if(_keyOne.action.IsPressed())
         {
             //InteractWithInvItem(InventoryItems[0]); --> Falls Teständerung nicht klappt.
-            InteractWithInvItemTest(InventoryItems[0]);
+            InteractWithInvItemTest(InventoryItems[0], InventorySlots[0]);
         }
         else if(_keyTwo.action.IsPressed())
         {
-            InteractWithInvItemTest(InventoryItems[1]);
+            InteractWithInvItemTest(InventoryItems[1], InventorySlots[1]);
         }
         else if (_keyThree.action.IsPressed())
         {
-            InteractWithInvItemTest(InventoryItems[2]);
+            InteractWithInvItemTest(InventoryItems[2], InventorySlots[2]);
         }
         else if (_audioAdvice.action.IsPressed())
         {
-            InteractWithInvItemTest(_audioAdviceItem);
+            InteractWithInvItemTest(_audioAdviceItem, _audioDeviceGO.GetComponent<ItemSlot>());
         }
         else if(_noteBook.action.IsPressed())
         {
-            InteractWithInvItemTest(_noteBookItem);
+            InteractWithInvItemTest(_noteBookItem, _noteBookGO.GetComponent<ItemSlot>());
         }
     }
     public void DestroyItemInWorld(GameObject item)
