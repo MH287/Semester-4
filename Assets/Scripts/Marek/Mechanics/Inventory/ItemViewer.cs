@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -43,10 +44,35 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         _itemPrefab.transform.localPosition = new Vector3(0,0,_offset);
      }
 
+    public void SpawnSpecialView(GameObject interactionTarget, float eulerX, float eulerY, float eulerZ )
+    {
+        gameObject.SetActive(true);
+        Manager.Use<MouseController>().FreeMouse();
+
+        if (_itemPrefab != null)
+        {
+            Destroy(_itemPrefab.gameObject);
+        }
+
+        Interactable itemPrefab = interactionTarget.GetComponent<Interactable>();
+        interactionTarget = Instantiate(itemPrefab.ItemReference.Prefab, _itemCamera.transform);
+        interactionTarget.layer = LayerMask.NameToLayer("ItemViewer");
+        interactionTarget.transform.localPosition = new Vector3(0, 0, _offset);
+        interactionTarget.transform.localRotation = Quaternion.Euler(eulerX,eulerY,eulerZ);
+
+
+    }
      public void OnDrag(PointerEventData eventData)
      {
-         _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-         _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+        if(_itemPrefab != null)
+        {
+            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+            _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+        }
+        else
+        {
+            Debug.Log("Wir drehen nicht");
+        }
     }
 }
 

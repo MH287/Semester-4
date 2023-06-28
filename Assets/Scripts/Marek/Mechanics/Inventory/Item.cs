@@ -15,6 +15,10 @@ public class Item : ScriptableObject
     public IntTypeWorld InteractionWorld;
     public IntTypeInv InteractionInv;
 
+    public float eulerXForInspect;
+    public float eulerYForInspect;
+    public float eulerZForInspect;
+
     public UnityEvent OnInteract;
 
 

@@ -17,8 +17,11 @@ MonoBehaviour:
   Prefab: {fileID: 5940541271945779842, guid: b02e2e8caea7d59448a0bef39bf230f9, type: 3}
   ItemDescription: Das ist ein Tipp
   itemType: 0
-  InteractionWorld: 0
+  InteractionWorld: 3
   InteractionInv: 5
+  eulerXForInspect: -170
+  eulerYForInspect: 0
+  eulerZForInspect: 180
   OnInteract:
     m_PersistentCalls:
       m_Calls: []

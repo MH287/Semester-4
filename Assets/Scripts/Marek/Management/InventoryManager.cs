@@ -52,7 +52,7 @@ public class InventoryManager : ManagerModule
     private Interactable _interactionTarget;
     private bool _isActive = false;
 
-    public Dictionary<Item, ItemSlot> Slots = new Dictionary<Item, ItemSlot>();
+    [SerializeField] private Dictionary<Item, ItemSlot> _slotsDict = new Dictionary<Item, ItemSlot>();
 
     public void Start()
     {
@@ -82,15 +82,15 @@ public class InventoryManager : ManagerModule
         //_slots.Add(objItemSlot);
         Item item = objItemSlot.Item;
 
-        Slots.Add(item, objItemSlot);
+        _slotsDict.Add(item, objItemSlot);
     }
 
     public void RemoveUIElement(Item item)
     {
-        if (Slots.ContainsKey(item))
+        if (_slotsDict.ContainsKey(item))
         {
-            Destroy(Slots[item].gameObject);
-            Slots.Remove(item);
+            Destroy(_slotsDict[item].gameObject);
+            _slotsDict.Remove(item);
         }
     }
     public void AddUIElementSpecialItem(Item item)
