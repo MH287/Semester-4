@@ -13061,7 +13061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnloadLastScene: 1
-  Player: {fileID: 0}
+  Player: {fileID: 926662890}
 --- !u!1001 &884147519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21319,6 +21319,7 @@ MonoBehaviour:
   _inventoryManager: {fileID: 1137572059}
   _showUVCode: {fileID: 1577053704}
   Fuse: {fileID: 11400000, guid: 22128e23a9edb6d43b0b5faa1b19d9cb, type: 2}
+  Slot: {fileID: 0}
   _fuseOne: {fileID: 46750994}
   _fuseTwo: {fileID: 1474496638}
   _spectatorCode: {fileID: 1778028737}

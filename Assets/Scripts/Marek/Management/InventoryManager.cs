@@ -1,16 +1,11 @@
-using StarterAssets;
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using DG.Tweening;
-using TMPro;
-using static UnityEditor.Progress;
 using static Item;
-using System.Linq;
 
 public class InventoryManager : ManagerModule
 {
