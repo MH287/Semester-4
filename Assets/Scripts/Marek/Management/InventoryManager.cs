@@ -22,9 +22,9 @@ public class InventoryManager : ManagerModule
     [SerializeField] private GameObject _slotPrefab;
     [SerializeField] private ItemSlot _slot;
 
-    [SerializeField] private InputActionReference _keyOne;
-    [SerializeField] private InputActionReference _keyTwo;
-    [SerializeField] private InputActionReference _keyThree;
+    [SerializeField] public InputActionReference _keyOne;
+    [SerializeField] public InputActionReference _keyTwo;
+    [SerializeField] public InputActionReference _keyThree;
     [SerializeField] private InputActionReference _audioAdvice;
     [SerializeField] private InputActionReference _noteBook;
     [SerializeField] private ItemViewer _itemViewer;
@@ -35,7 +35,7 @@ public class InventoryManager : ManagerModule
     [SerializeField] private GameObject _noteBookGO;
     [SerializeField] private GameObject _audioDeviceGO;
     [SerializeField] private GameObject _slotPrefab1;
-    [SerializeField] private GameObject _hotbar1;
+    [SerializeField] private GameObject _specialItems;
 
     public List<Item> InventoryItems = new List<Item>();
 
@@ -85,14 +85,13 @@ public class InventoryManager : ManagerModule
     public void RefreshUI()
     {
         //List<ItemSlot> slots = InventorySlots;
-        foreach (ItemSlot slot in InventorySlots)
-        {
-            slot.Icon.sprite = slot.Item.Icon;
-            slot.Fitter.aspectRatio = slot.Item.Icon.texture.width / (float)slot.Item.Icon.texture.height;
-            slot.KeybindingText.SetText((InventorySlots.IndexOf(slot) + 1).ToString());
-        }
+            foreach (ItemSlot slot in InventorySlots)
+            {
+                slot.Icon.sprite = slot.Item.Icon;
+                slot.Fitter.aspectRatio = slot.Item.Icon.texture.width / (float)slot.Item.Icon.texture.height;
+                slot.KeybindingText.SetText((InventorySlots.IndexOf(slot) + 1).ToString());
+            }
     }
-
 
     public void RemoveUIElement(ItemSlot itemSlot)
     {
@@ -104,10 +103,17 @@ public class InventoryManager : ManagerModule
     {
         if (item == _noteBookItem)
         {
+            ItemSlot objItemSlot = _noteBookGO.GetComponent<ItemSlot>();
+            objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
+            objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
+            //objItemSlot.KeybindingText.SetText(objItemSlot.Keybinding.ToString());
             _noteBookGO.SetActive(true);
         }
         else
         {
+            ItemSlot objItemSlot = _audioDeviceGO.GetComponent<ItemSlot>();
+            objItemSlot.Icon.sprite = objItemSlot.Item.Icon;
+            objItemSlot.Fitter.aspectRatio = objItemSlot.Item.Icon.texture.width / (float)objItemSlot.Item.Icon.texture.height;
             _audioDeviceGO.SetActive(true);
         }
     }
@@ -126,6 +132,7 @@ public class InventoryManager : ManagerModule
     }
     public void AddItemOutOfInspectSpecial()
     {
+
         _playerInput.ActivateInput();
         _itemViewer.gameObject.SetActive(false);
         Manager.Use<MouseController>().LockMouse();

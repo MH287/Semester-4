@@ -111,11 +111,11 @@ public class InteractionController : MonoBehaviour
                 break;
             case IntTypeWorld.SpecialView:
                 Debug.Log("Show Story Element");
-                InteractionItem = InteractionTarget.ItemReference;
+                //InteractionItem = InteractionTarget.ItemReference;
                 _playerInput.DeactivateInput();
                 InteractionTarget.gameObject.SetActive(false);
                 _interactionTargetGO = InteractionTarget.gameObject;
-                _itemViewer.SpawnSpecialView(_interactionTargetGO, InteractionItem.eulerXForInspect, InteractionItem.eulerYForInspect, InteractionItem.eulerZForInspect);
+                _itemViewer.InspectSpecialItem(InteractionTarget.ItemReference);
                 _itemViewer.AddButton.gameObject.SetActive(false);
                 _itemViewer.CloseInspectorButton.gameObject.SetActive(true);
 

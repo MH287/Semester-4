@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: WalkieTalkie
   Icon: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
-  Prefab: {fileID: 3951622768303792146, guid: 77799d4ea04fd694688e6074c5e72ea7, type: 3}
+  Prefab: {fileID: 6064119190624939792, guid: 3ba936931c060b4469df619d63558ea4, type: 3}
   ItemDescription: 
   itemType: 1
   InteractionWorld: 2
   InteractionInv: 3
+  eulerXForInspect: -90
+  eulerYForInspect: 180
+  eulerZForInspect: 0
   OnInteract:
     m_PersistentCalls:
       m_Calls: []

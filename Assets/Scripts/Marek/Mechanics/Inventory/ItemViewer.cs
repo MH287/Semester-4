@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static Item;
 
 public class ItemViewer : MonoBehaviour, IDragHandler
 {
@@ -21,10 +23,20 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] public Button CloseInspectorButton;
 
     [SerializeField] private Item _globe;
+
+    Interactable _onDraginteractable;
     public void InspectItem(Item target)
     {
         _item = target;
         Spawn3DItem();
+        gameObject.SetActive(true);
+        Manager.Use<MouseController>().FreeMouse();
+    }
+
+    public void InspectSpecialItem(Item target)
+    {
+        _item = target;
+        SpawnSpecialView(_item.Prefab, _item.eulerXForInspect, _item.eulerYForInspect, _item.eulerZForInspect);
         gameObject.SetActive(true);
         Manager.Use<MouseController>().FreeMouse();
     }
@@ -39,23 +51,20 @@ public class ItemViewer : MonoBehaviour, IDragHandler
      {
          if(_itemPrefab != null)
          {
-             Destroy(_itemPrefab.gameObject);
+             Destroy(_itemPrefab);
          }
 
          _itemPrefab = Instantiate(_item.Prefab, _itemCamera.transform);
         _itemPrefab.gameObject.layer = LayerMask.NameToLayer("ItemViewer");
         _itemPrefab.transform.localPosition = new Vector3(0,0,_offset);
-        _itemPrefab.transform.localRotation = Quaternion.Euler(-90, 0,90);
+        _itemPrefab.transform.localRotation = Quaternion.Euler(_item.eulerXForInspect, _item.eulerYForInspect, _item.eulerZForInspect);
     }
 
     public void SpawnSpecialView(GameObject interactionTarget, float eulerX, float eulerY, float eulerZ )
     {
-        gameObject.SetActive(true);
-        Manager.Use<MouseController>().FreeMouse();
-
         if (_itemPrefab != null)
         {
-            Destroy(_itemPrefab.gameObject);
+            Destroy(_itemPrefab);
         }
 
         Interactable itemPrefab = interactionTarget.GetComponent<Interactable>();
@@ -64,22 +73,51 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         interactionTarget.transform.localPosition = new Vector3(0, 0, _offset);
         interactionTarget.transform.localRotation = Quaternion.Euler(eulerX,eulerY,eulerZ);
 
-
+        _itemPrefab = interactionTarget.gameObject;
     }
      public void OnDrag(PointerEventData eventData)
      {
-        if(_itemPrefab != null && _item != _globe)
+        _onDraginteractable = _itemPrefab.GetComponent<Interactable>();
+
+        if(_onDraginteractable != null )
         {
-            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-            _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
-        }
-        else if(_itemPrefab != null && _item == _globe)
-        {
-            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+            switch (_onDraginteractable.ItemReference.InteractionWorld)
+            {
+                case IntTypeWorld.SpecialView:
+                    Debug.Log("Wir drehen nicht");
+                    break;
+                default:
+                    if (_itemPrefab != null && _item != _globe)
+                    {
+                        _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+                        _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+                    }
+                    else if (_itemPrefab != null && _item == _globe)
+                    {
+                        _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+                    }
+                    else
+                    {
+                        Debug.Log("Wir drehen nicht");
+                    }
+                    break;
+            }
         }
         else
         {
-            Debug.Log("Wir drehen nicht");
+            if (_itemPrefab != null && _item != _globe)
+            {
+                _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+                _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+            }
+            else if (_itemPrefab != null && _item == _globe)
+            {
+                _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+            }
+            else
+            {
+                Debug.Log("Wir drehen nicht");
+            }
         }
     }
 }

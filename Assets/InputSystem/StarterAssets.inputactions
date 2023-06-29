@@ -78,18 +78,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Ladder",
-                    "type": "PassThrough",
-                    "id": "6f7865bd-da0f-4437-ab42-558c24903622",
-                    "expectedControlType": "",
+                    "name": "Journal",
+                    "type": "Button",
+                    "id": "47795552-303a-48d7-b6d2-b78b3daec6da",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Journal",
+                    "name": "Ladder",
                     "type": "Button",
-                    "id": "47795552-303a-48d7-b6d2-b78b3daec6da",
+                    "id": "1d5d6602-44e0-4134-9550-891245dd0dcb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -308,23 +308,23 @@
                 },
                 {
                     "name": "",
-                    "id": "4c0f1ab8-0953-4088-bc8a-ff27fabe2464",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Ladder",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d7d343c7-885c-425e-98e5-2f1ce0bd5080",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Journal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8da5eacb-c4a2-4af0-952b-77c3cd2f26ce",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ladder",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

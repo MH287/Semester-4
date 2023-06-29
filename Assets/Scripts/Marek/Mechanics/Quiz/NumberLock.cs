@@ -50,6 +50,13 @@ public class NumberLock : MonoBehaviour
     private int _countElementFive;
     private int _countElementSix;
 
+    private int _unlockNumberOneRR = 4;
+    private int _unlockNumberTwoRR = 2;
+    private int _unlockNumberThreeRR = 0;
+    private int _unlockNumberFourRR = 4;
+    private int _unlockNumberFiveRR = 2;
+    private int _unlockNumberSixRR = 0;
+
     public void Awake()
     {
         _angleElementOne = new Vector3(_angleX, _angleY, _angleZ);
@@ -80,6 +87,7 @@ public class NumberLock : MonoBehaviour
                 _countElementOne = ++_countElementOne % 10;
                 CheckRightNumber(_countElementOne, _unlockNumberOne);
                 CheckUnlock();
+                RickRoll();
                 Debug.Log(_countElementOne);
                 //Debug.Log(CountRotation(_countElementOne));
                 break;
@@ -98,6 +106,7 @@ public class NumberLock : MonoBehaviour
                 _countElementThree = ++_countElementThree % 10;
                 CheckRightNumber(_countElementThree, _unlockNumberThree);
                 CheckUnlock();
+                RickRoll();
                 break;
             case 3:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementFour), _rotateDuration, RotateMode.Fast);
@@ -106,6 +115,7 @@ public class NumberLock : MonoBehaviour
                 _countElementFour = ++_countElementFour % 10;
                 CheckRightNumber(_countElementFour, _unlockNumberFour);
                 CheckUnlock();
+                RickRoll();
                 break;
 
             case 4:
@@ -115,6 +125,7 @@ public class NumberLock : MonoBehaviour
                 _countElementFive = ++_countElementFive % 10;
                 CheckRightNumber(_countElementFive, _unlockNumberFive);
                 CheckUnlock();
+                RickRoll();
                 break;
 
             case 5:
@@ -124,6 +135,7 @@ public class NumberLock : MonoBehaviour
                 _countElementSix = ++_countElementSix % 10;
                 CheckRightNumber(_countElementSix, _unlockNumberSix);
                 CheckUnlock();
+                RickRoll();
                 break;
         }
     }
@@ -152,6 +164,30 @@ public class NumberLock : MonoBehaviour
         }
         else return false;
     }
+
+    public bool RickRoll()
+    {
+        if (CheckRickRoll(_countElementOne, _unlockNumberOneRR) && CheckRickRoll(_countElementTwo, _unlockNumberTwoRR) 
+            && CheckRickRoll(_countElementThree, _unlockNumberThreeRR) && CheckRickRoll(_countElementFour, _unlockNumberFourRR) 
+            && CheckRickRoll(_countElementFive, _unlockNumberFiveRR) && CheckRickRoll(_countElementSix, _unlockNumberSixRR))
+        {
+            Debug.Log("Play RickRoll");
+            return true;
+        }
+        else return false;
+    }
+    public bool CheckRickRoll(int count, int unlockNumber)
+    {
+        if (count != unlockNumber)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
 
     IEnumerator DoorAnimation()
     {

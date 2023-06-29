@@ -8,6 +8,7 @@ public class GeneratorConsole : MonoBehaviour
     [SerializeField] private InventoryManager _inventoryManager;
     [SerializeField] private ShowUVCode _showUVCode;
     [SerializeField] public Item Fuse;
+    [SerializeField] public ItemSlot Slot;
     [SerializeField] private GameObject _fuseOne;
     [SerializeField] private GameObject _fuseTwo;
 
@@ -16,6 +17,7 @@ public class GeneratorConsole : MonoBehaviour
     [SerializeField] private GameObject _storageCode;
     [SerializeField] private GameObject _storageLight;
 
+    int i;
 
     public void Awake()
     {
@@ -29,8 +31,12 @@ public class GeneratorConsole : MonoBehaviour
     {
         if (_inventoryManager.CheckInvForFuse() && _fuseOne.activeSelf == false)
         {
+
             _fuseOne.SetActive(true);
             _inventoryManager.InventoryItems.Remove(Fuse);
+            Destroy(_inventoryManager.InventorySlots[0].gameObject);
+            _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
+            _inventoryManager.RefreshUI();
             _showUVCode.ShowCode(_spectatorCode, _spectatorLight);
             Debug.Log("Fuse vorhanden");
 
@@ -39,6 +45,8 @@ public class GeneratorConsole : MonoBehaviour
         {
             _fuseTwo.SetActive(true);
             _inventoryManager.InventoryItems.Remove(Fuse);
+            Destroy(_inventoryManager.InventorySlots[0].gameObject);
+            _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
             _showUVCode.ShowCode(_storageCode, _storageLight);
             Debug.Log("Fuse vorhanden");
         }
@@ -46,5 +54,24 @@ public class GeneratorConsole : MonoBehaviour
         {
             Debug.Log("Keine Fuse vorhanden");
         }
+    }
+
+    public int GetFuseUI()
+    {
+        if (_inventoryManager._keyOne.action.IsPressed())
+        {
+            return i = 0;
+        }
+        else if (_inventoryManager._keyTwo.action.IsPressed())
+        {
+            return i = 1;
+        }
+        else if (_inventoryManager._keyThree.action.IsPressed())
+        {
+            return i = 2;
+        }
+        else return -1;
+
+
     }
 }
