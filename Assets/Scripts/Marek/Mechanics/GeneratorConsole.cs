@@ -37,7 +37,7 @@ public class GeneratorConsole : MonoBehaviour
             Destroy(_inventoryManager.InventorySlots[0].gameObject);
             _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
             _inventoryManager.RefreshUI();
-            _showUVCode.ShowCode(_spectatorCode, _spectatorLight);
+            _showUVCode.ShowCode(_storageCode, _storageLight);
             Debug.Log("Fuse vorhanden");
 
         }
@@ -47,7 +47,7 @@ public class GeneratorConsole : MonoBehaviour
             _inventoryManager.InventoryItems.Remove(Fuse);
             Destroy(_inventoryManager.InventorySlots[0].gameObject);
             _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
-            _showUVCode.ShowCode(_storageCode, _storageLight);
+            _showUVCode.ShowCode(_spectatorCode, _spectatorLight);
             Debug.Log("Fuse vorhanden");
         }
         else
