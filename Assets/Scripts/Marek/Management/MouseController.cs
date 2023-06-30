@@ -7,6 +7,11 @@ public class MouseController : ManagerModule
 {
     [SerializeField] private StarterAssetsInputs _starterAssetsInputs;
 
+    public void Start()
+    {
+        Manager.Use<MouseController>().LockMouse();
+    }
+
     public void LockMouse()
     {
         _starterAssetsInputs.cursorInputForLook = true;

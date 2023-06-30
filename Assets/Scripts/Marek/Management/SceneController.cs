@@ -2,12 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class SceneController : ManagerModule
 {
     public int NextSceneIndex;
     public static bool loaaad;
     public GameObject Player;
+
+    public void LoadSceneStart(int i)
+    {
+        SceneManager.LoadScene(i);
+    }
+
+    public void EndGame()
+    {
+#if UNITY_EDITOR
+EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
+    }
 
     public void LoadScene()
     {
