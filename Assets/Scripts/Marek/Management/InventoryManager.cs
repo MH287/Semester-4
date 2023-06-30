@@ -26,13 +26,14 @@ public class InventoryManager : ManagerModule
     [SerializeField] private Item _audioAdviceItem;
     [SerializeField] private Item _noteBookItem;
 
+    public List<Item> InventoryItems = new List<Item>();
+
     [Header("Special Items")]
     [SerializeField] private GameObject _noteBookGO;
     [SerializeField] private GameObject _audioDeviceGO;
     [SerializeField] private GameObject _slotPrefab1;
     [SerializeField] private GameObject _specialItems;
-
-    public List<Item> InventoryItems = new List<Item>();
+    [SerializeField] public List<Item> _specialItemList;
 
     [Header("Fuse + Console")]
     [SerializeField] private GeneratorConsole _generatorConsole;
@@ -127,7 +128,7 @@ public class InventoryManager : ManagerModule
     }
     public void AddItemOutOfInspectSpecial()
     {
-
+        _specialItemList.Add(_interactionController.InteractionItem);
         _playerInput.ActivateInput();
         _itemViewer.gameObject.SetActive(false);
         Manager.Use<MouseController>().LockMouse();

@@ -22,9 +22,6 @@ public class GeneratorConsole : MonoBehaviour
     [Header("Lights")]
     [SerializeField] private List<GameObject> _lights;
     
-
-    int i;
-
     public void Awake()
     {
         _firstCode.SetActive(false);
@@ -68,7 +65,7 @@ public class GeneratorConsole : MonoBehaviour
         }
     }
 
-    public int GetFuseUI()
+    /*public int GetFuseUI()
     {
         if (_inventoryManager._keyOne.action.IsPressed())
         {
@@ -82,8 +79,6 @@ public class GeneratorConsole : MonoBehaviour
         {
             return i = 2;
         }
-        else return -1;
-
-
-    }
+        else return -
+    }*/
 }
