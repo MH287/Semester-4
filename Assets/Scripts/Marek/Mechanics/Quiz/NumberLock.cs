@@ -35,9 +35,6 @@ public class NumberLock : MonoBehaviour
     [SerializeField] private Animator _doorAnimator;
     [SerializeField, Range(0,1)] private float _doorAnimationOffset = 0.5f;
 
-    [Header("Floor Light")]
-    [SerializeField] private GameObject _floorLight;
-
     private Vector3 _rotateDirection;
     private Vector3 _angleElementOne = new Vector3(0,0,0);
     private Vector3 _angleElementTwo = new Vector3(0, 0, 0);
@@ -161,7 +158,6 @@ public class NumberLock : MonoBehaviour
             && CheckRightNumber(_countElementFive, _unlockNumberFive) && CheckRightNumber(_countElementSix, _unlockNumberSix))
         {
             StartCoroutine(DoorAnimation());
-            _floorLight.SetActive(true);
             return true;
         }
         else return false;
