@@ -90,7 +90,27 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f142cacb53c95c54f9037109cf0f4276,
         type: 3}
       propertyPath: m_Name
-      value: SM_Barrel (8)
+      value: SM_BarrelRound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f142cacb53c95c54f9037109cf0f4276, type: 3}
+--- !u!1 &5735689421742845539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f142cacb53c95c54f9037109cf0f4276,
+    type: 3}
+  m_PrefabInstance: {fileID: 4852675818318435122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7866216650486952467
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735689421742845539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3210007739743137746, guid: f142cacb53c95c54f9037109cf0f4276, type: 3}

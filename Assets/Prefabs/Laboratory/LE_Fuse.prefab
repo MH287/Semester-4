@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 674912300339942063}
   - component: {fileID: 3366777587125528165}
   - component: {fileID: 4141244305014828009}
+  - component: {fileID: 4714566428386640175}
   m_Layer: 0
   m_Name: LE_Fuse
   m_TagString: Untagged
@@ -113,3 +114,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &4714566428386640175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871351925248264112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0026225355, y: 0.0069826264, z: 0.002622535}
+  m_Center: {x: 0, y: -0.00011658946, z: -1.164153e-10}
