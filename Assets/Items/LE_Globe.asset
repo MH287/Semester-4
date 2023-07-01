@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Globe
   Icon: {fileID: 0}
-  Prefab: {fileID: 8021306824688587860, guid: 02f4b9e15c6ea2a48b41fb4d6af92965, type: 3}
+  Prefab: {fileID: 4189403274919528087, guid: f331d2f8a2e4d8740a098611dd073af7, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0
   InteractionInv: 5
-  eulerXForInspect: -90
-  eulerYForInspect: 0
-  eulerZForInspect: 90
+  eulerXForInspect: 275
+  eulerYForInspect: 208
+  eulerZForInspect: 54
   OnInteract:
     m_PersistentCalls:
       m_Calls: []

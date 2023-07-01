@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: Capsule
   m_EditorClassIdentifier: 
-  ID: 2
   ItemName: Zylinder
   Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   Prefab: {fileID: 7587627865818154150, guid: 6698dbe03cb838d4bbfc357d9a313590, type: 3}
   ItemDescription: Das its ein Zylinder
   itemType: 0
+  InteractionWorld: 0
+  InteractionInv: 0
+  eulerXForInspect: 270
+  eulerYForInspect: 116
+  eulerZForInspect: 350
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
