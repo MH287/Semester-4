@@ -15,8 +15,8 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.4401633, g: 0.6320754, b: 0.32498217, a: 1}
-  m_FogMode: 3
+  m_FogColor: {r: 0.35257208, g: 0.5377358, b: 0.46301097, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -29,7 +29,7 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
-  m_FlareFadeSpeed: 3
+  m_FlareFadeSpeed: 4
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
@@ -16023,6 +16023,16 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7381267401975075828, guid: 0126c6a2a5691e244b4007947f271d65,
         type: 3}
       propertyPath: m_RootOrder
@@ -24014,6 +24024,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366104261}
     m_Modifications:
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7381267401975075828, guid: 0126c6a2a5691e244b4007947f271d65,
         type: 3}
       propertyPath: m_RootOrder
@@ -38247,6 +38267,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366104261}
     m_Modifications:
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661050559652414590, guid: 0126c6a2a5691e244b4007947f271d65,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7381267401975075828, guid: 0126c6a2a5691e244b4007947f271d65,
         type: 3}
       propertyPath: m_RootOrder
