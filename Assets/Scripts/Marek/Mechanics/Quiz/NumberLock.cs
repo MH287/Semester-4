@@ -57,7 +57,7 @@ public class NumberLock : MonoBehaviour
     private int _unlockNumberFiveRR = 2;
     private int _unlockNumberSixRR = 0;
 
-    public void Awake()
+    public void Start()
     {
         _angleElementOne = new Vector3(_angleX, _angleY, _angleZ);
         _angleElementTwo = new Vector3(_angleX, _angleY, _angleZ);
