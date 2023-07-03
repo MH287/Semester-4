@@ -14,7 +14,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private ItemViewer _itemViewer;
 
-    public  Interactable InteractionTarget;
+    public Interactable InteractionTarget;
     public Item InteractionItem;
 
     private GameObject _interactionTargetGO;

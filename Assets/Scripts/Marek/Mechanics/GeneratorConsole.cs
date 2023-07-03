@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GeneratorConsole : MonoBehaviour
 {
@@ -19,6 +21,16 @@ public class GeneratorConsole : MonoBehaviour
     [SerializeField] private GameObject _firstElectricity;
     [SerializeField] private GameObject _secondElectricity;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource _audioSourceGenerator;
+    [SerializeField] private AudioClip _audioClipStart;
+    [SerializeField] private AudioClip _audioClipRunning;
+    [SerializeField] private float _runningDelay;
+
+    [SerializeField] private AudioSource _electroAudioSource;
+    [SerializeField] private AudioClip _electricShot;
+
+
     [Header("Lights")]
     [SerializeField] private List<GameObject> _lights;
     
@@ -34,15 +46,16 @@ public class GeneratorConsole : MonoBehaviour
     {
         if (_inventoryManager.CheckInvForFuse() && _fuseOne.activeSelf == false)
         {
-
             _fuseOne.SetActive(true);
             _firstElectricity.SetActive(true);
             _inventoryManager.InventoryItems.Remove(Fuse);
             Destroy(_inventoryManager.InventorySlots[0].gameObject);
             _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
             _inventoryManager.RefreshUI();
-            _showUVCode.ShowCode(_firstCode, _firstLight);
-            Debug.Log("Fuse vorhanden");
+            _firstCode.SetActive(true);
+            _firstLight.SetActive(true);
+            _electroAudioSource.clip = _electricShot;
+            _electroAudioSource.Play();
 
         }
         else if (_inventoryManager.CheckInvForFuse() && _fuseOne.activeSelf)
@@ -53,16 +66,33 @@ public class GeneratorConsole : MonoBehaviour
             Destroy(_inventoryManager.InventorySlots[0].gameObject);
             _inventoryManager.InventorySlots.Remove(_inventoryManager.InventorySlots[0]);
             _showUVCode.ShowCode(_secondCode, _secondLight);
+
+            _electroAudioSource.clip = _electricShot;
+            _electroAudioSource.Play();
+
             foreach(GameObject light in _lights)
             {
                 light.SetActive(true);
             }
+
+            StartCoroutine(GeneratorSound());
             Debug.Log("Fuse vorhanden");
         }
         else
         {
             Debug.Log("Keine Fuse vorhanden");
         }
+    }
+
+    IEnumerator GeneratorSound()
+    {
+        _audioSourceGenerator.clip = _audioClipStart;
+        _audioSourceGenerator.Play();
+        yield return new WaitForSeconds(_runningDelay);
+        _audioSourceGenerator.Stop();
+        _audioSourceGenerator.loop = true;
+        _audioSourceGenerator.clip = _audioClipRunning;
+        _audioSourceGenerator.Play();
     }
 
     /*public int GetFuseUI()

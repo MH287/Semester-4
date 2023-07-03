@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: Misc_Candle
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Candle
   Icon: {fileID: 0}
   Prefab: {fileID: 7123800171199040941, guid: 058c209aa91b5e84c87895ebe38c676e, type: 3}
   ItemDescription: 
