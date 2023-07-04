@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using static Item;
 
 [RequireComponent(typeof(Camera))]
-public class InteractionController : MonoBehaviour
+public class InteractionController : ManagerModule
 {
     [SerializeField] private LayerMask _interactionLayerMask;
     [SerializeField] private float _interactionRange = 1.5f;
@@ -22,7 +22,7 @@ public class InteractionController : MonoBehaviour
     private Camera _camera;
     private RaycastHit hit;
 
-    void Awake()
+    protected override void OnAwake()
     {
         //_interactionAction.action.performed += InteractWithTarget; --> Falls Teständerung nicht klappt
         _interactionAction.action.performed += InteractWithTargetTest;

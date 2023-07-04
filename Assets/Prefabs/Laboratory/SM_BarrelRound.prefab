@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_BarrelRound
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f142cacb53c95c54f9037109cf0f4276,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f142cacb53c95c54f9037109cf0f4276, type: 3}
 --- !u!1 &5735689421742845539 stripped

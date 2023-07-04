@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GeneratorConsole : MonoBehaviour
 {
     [Header("Fuse + Console")]
-    [SerializeField] private InventoryManager _inventoryManager;
+    private InventoryManager _inventoryManager;
     [SerializeField] private ShowUVCode _showUVCode;
     [SerializeField] public Item Fuse;
     [SerializeField] public ItemSlot Slot;
@@ -40,6 +40,11 @@ public class GeneratorConsole : MonoBehaviour
         _secondCode.SetActive(false);
         _firstLight.SetActive(false);
         _secondLight.SetActive(false);
+    }
+
+    private void Start()
+    {
+        _inventoryManager = Manager.Use<InventoryManager>();
     }
 
     public void UseFuseInConsole()

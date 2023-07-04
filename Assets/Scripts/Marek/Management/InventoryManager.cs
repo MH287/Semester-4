@@ -37,6 +37,7 @@ public class InventoryManager : ManagerModule
 
     [Header("Fuse + Console")]
     [SerializeField] private GeneratorConsole _generatorConsole;
+    [SerializeField] public Item Fuse;
 
     [Header("Wimmelbild")]
     [SerializeField] private float _picMoveSpeed;
@@ -313,6 +314,6 @@ public class InventoryManager : ManagerModule
 
     public bool CheckInvForFuse()
     {
-        if (InventoryItems.Contains(_generatorConsole.Fuse)) { return true; } else { return false; }
+        if (InventoryItems.Contains(Fuse)) { return true; } else { return false; }
     }
 }

@@ -7,6 +7,12 @@ public class ManagerModule : MonoBehaviour
     void Awake()
     {
         Manager.Instance.Register(this);
+        OnAwake();
+    }
+
+    protected virtual void OnAwake()
+    {
+
     }
 
     void OnDestroy()

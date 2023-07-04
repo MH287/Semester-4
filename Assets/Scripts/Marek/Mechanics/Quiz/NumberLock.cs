@@ -59,6 +59,8 @@ public class NumberLock : MonoBehaviour
 
     public void Start()
     {
+        _controller = Manager.Use<InteractionController>();
+
         _angleElementOne = new Vector3(_angleX, _angleY, _angleZ);
         _angleElementTwo = new Vector3(_angleX, _angleY, _angleZ);
         _angleElementThree = new Vector3(_angleX, _angleY, _angleZ);
