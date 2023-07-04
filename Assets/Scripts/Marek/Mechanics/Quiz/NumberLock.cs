@@ -6,7 +6,7 @@ using UnityEngine.Pool;
 
 public class NumberLock : MonoBehaviour
 {
-    [SerializeField] private InteractionController _controller;
+    private InteractionController _controller;
 
     [Header("Lock Element")]
     [SerializeField] private GameObject _lockBody;
@@ -91,6 +91,7 @@ public class NumberLock : MonoBehaviour
                 CheckUnlock();
                 RickRoll();
                 Debug.Log(_countElementOne);
+                Debug.Log(CheckUnlock());
                 //Debug.Log(CountRotation(_countElementOne));
                 break;
             case 1:
@@ -100,6 +101,8 @@ public class NumberLock : MonoBehaviour
                 _countElementTwo = ++_countElementTwo % 10;
                 CheckRightNumber(_countElementTwo, _unlockNumberTwo);
                 CheckUnlock();
+                RickRoll();
+                Debug.Log(CheckUnlock());
                 break;
             case 2:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementThree), _rotateDuration, RotateMode.Fast);
@@ -109,6 +112,7 @@ public class NumberLock : MonoBehaviour
                 CheckRightNumber(_countElementThree, _unlockNumberThree);
                 CheckUnlock();
                 RickRoll();
+                Debug.Log(CheckUnlock());
                 break;
             case 3:
                 _numberElement.transform.DOLocalRotate((_rotateDirection + _angleElementFour), _rotateDuration, RotateMode.Fast);
@@ -118,6 +122,7 @@ public class NumberLock : MonoBehaviour
                 CheckRightNumber(_countElementFour, _unlockNumberFour);
                 CheckUnlock();
                 RickRoll();
+                Debug.Log(CheckUnlock());
                 break;
 
             case 4:
@@ -128,6 +133,7 @@ public class NumberLock : MonoBehaviour
                 CheckRightNumber(_countElementFive, _unlockNumberFive);
                 CheckUnlock();
                 RickRoll();
+                Debug.Log(CheckUnlock());
                 break;
 
             case 5:
@@ -138,6 +144,7 @@ public class NumberLock : MonoBehaviour
                 CheckRightNumber(_countElementSix, _unlockNumberSix);
                 CheckUnlock();
                 RickRoll();
+                Debug.Log(CheckUnlock());
                 break;
         }
     }

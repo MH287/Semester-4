@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class SceneController : ManagerModule
+public class SceneController : MonoBehaviour
 {
     public int NextSceneIndex;
     public static bool loaaad;
@@ -35,7 +35,7 @@ EditorApplication.ExitPlaymode();
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == Player.layer && !SceneManager.GetSceneByBuildIndex(NextSceneIndex).isLoaded)
+        if (other.gameObject.layer == Player.layer && !SceneManager.GetSceneByBuildIndex(NextSceneIndex).isLoaded)
         {
             if (loaaad)
             {

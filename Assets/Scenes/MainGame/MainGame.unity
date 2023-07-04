@@ -23219,7 +23219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7235c82baa4117b4297bd84208235939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 0}
   _lockBody: {fileID: 1284346609}
   _numberElementList: []
   _numberElementOne: {fileID: 295695900}
@@ -25367,7 +25366,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ffd2c6a6f99726f4ab1b657860617d08,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffd2c6a6f99726f4ab1b657860617d08, type: 3}
