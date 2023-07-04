@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Broken Syringe
   Icon: {fileID: 0}
-  Prefab: {fileID: 2741150616171064267, guid: 85718f7fc9e062d49be2e09b330a6b56, type: 3}
+  Prefab: {fileID: 3317940505685108295, guid: ff109d0c440f86f4291387903f456f03, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0

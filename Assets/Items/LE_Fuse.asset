@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LE_Fuse
   m_EditorClassIdentifier: 
   ItemName: Fuse
-  Icon: {fileID: 21300000, guid: 00a2931837ede2f4babf61c49e9e6015, type: 3}
+  Icon: {fileID: 21300000, guid: f006ac4836a495041889491e9ab0f3ad, type: 3}
   Prefab: {fileID: 3871351925248264112, guid: 234289077d620f347a09b1086f221a71, type: 3}
   ItemDescription: test An old fuse
   itemType: 0

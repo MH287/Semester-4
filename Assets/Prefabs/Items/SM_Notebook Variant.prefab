@@ -14,6 +14,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1fa71579b1822f040ab6a4ca85af5a28,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1fa71579b1822f040ab6a4ca85af5a28,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1fa71579b1822f040ab6a4ca85af5a28,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1fa71579b1822f040ab6a4ca85af5a28,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.659
       objectReference: {fileID: 0}
@@ -65,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1fa71579b1822f040ab6a4ca85af5a28,
         type: 3}
       propertyPath: m_Name
-      value: SM_Notebook
+      value: SM_Notebook Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1fa71579b1822f040ab6a4ca85af5a28,
         type: 3}
