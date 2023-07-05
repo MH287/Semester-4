@@ -875,13 +875,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 33010499}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2973,7 +2973,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4a7d33f89d10a5f4193b296d38837e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4a7d33f89d10a5f4193b296d38837e0f,
         type: 3}
@@ -6266,13 +6266,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 295695900}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13558,13 +13558,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 768462538}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20998,13 +20998,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1086934251}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25281,7 +25281,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4a7d33f89d10a5f4193b296d38837e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4a7d33f89d10a5f4193b296d38837e0f,
         type: 3}
@@ -25367,7 +25367,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 478723163}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1284346610
+--- !u!114 &1284346613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25376,30 +25376,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284346609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7235c82baa4117b4297bd84208235939, type: 3}
+  m_Script: {fileID: 11500000, guid: c8781f545ff2ddd489a75aa96663b777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _lockBody: {fileID: 1284346609}
-  _numberElementList: []
-  _numberElementOne: {fileID: 295695900}
-  _numberElementTwo: {fileID: 768462538}
-  _numberElementThree: {fileID: 1086934251}
-  _numberElementFour: {fileID: 1535171077}
-  _numberElementFive: {fileID: 33010499}
-  _numberElementSix: {fileID: 1429670884}
-  _unlockNumberOne: 3
-  _unlockNumberTwo: 2
-  _unlockNumberThree: 1
-  _unlockNumberFour: 1
-  _unlockNumberFive: 8
-  _unlockNumberSix: 5
+  _numberElementList:
+  - {fileID: 295695900}
+  - {fileID: 768462538}
+  - {fileID: 1086934251}
+  - {fileID: 1535171077}
+  - {fileID: 33010499}
+  - {fileID: 1429670884}
+  _elements:
+  - Wheel: {fileID: 295695900}
+    Solution: 3
+    CurrentValue: 0
+    WheelSides: 10
+  - Wheel: {fileID: 768462538}
+    Solution: 2
+    CurrentValue: 0
+    WheelSides: 10
+  - Wheel: {fileID: 1086934251}
+    Solution: 1
+    CurrentValue: 0
+    WheelSides: 10
+  - Wheel: {fileID: 1535171077}
+    Solution: 1
+    CurrentValue: 0
+    WheelSides: 10
+  - Wheel: {fileID: 33010499}
+    Solution: 8
+    CurrentValue: 0
+    WheelSides: 10
+  - Wheel: {fileID: 1429670884}
+    Solution: 5
+    CurrentValue: 0
+    WheelSides: 10
   _rotateDuration: 1
-  _angleX: 36
-  _angleY: 0
-  _angleZ: 0
-  _numberElement: {fileID: 0}
   _doorAnimator: {fileID: 1385439591}
-  _doorAnimationOffset: 0.5
+  _doorAnimationDelay: 0.5
 --- !u!1001 &1285666212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29382,13 +29397,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1429670884}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31372,13 +31387,13 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284346610}
-        m_TargetAssemblyTypeName: NumberLock, Assembly-CSharp
+      - m_Target: {fileID: 1284346613}
+        m_TargetAssemblyTypeName: NumberLock_New, Assembly-CSharp
         m_MethodName: RotateElement
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1535171077}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
