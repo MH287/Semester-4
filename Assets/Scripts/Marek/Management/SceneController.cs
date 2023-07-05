@@ -9,7 +9,6 @@ public class SceneController : MonoBehaviour
     public int NextSceneIndex;
     public static bool loaaad;
     public GameObject Player;
-
     public void LoadSceneStart(int i)
     {
         SceneManager.LoadScene(i);
