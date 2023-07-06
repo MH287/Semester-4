@@ -9,9 +9,12 @@ public class SceneController : MonoBehaviour
     public int NextSceneIndex;
     public static bool loaaad;
     public GameObject Player;
-    public void LoadSceneStart(int i)
+
+
+    public void LoadSceneStart()
     {
-        SceneManager.LoadScene(i);
+        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2, LoadSceneMode.Additive);
     }
 
     public void EndGame()
@@ -23,13 +26,13 @@ EditorApplication.ExitPlaymode();
 #endif
     }
 
-    public void LoadScene()
+    /*public void LoadScene()
     {
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-    }
+    }*/
     public void UnloadScene()
     {
-        SceneManager.UnloadSceneAsync(1);
+        SceneManager.UnloadSceneAsync(0);
     }
 
     private void OnTriggerEnter(Collider other)

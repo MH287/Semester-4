@@ -70,51 +70,69 @@ public class ItemViewer : MonoBehaviour, IDragHandler
 
         _itemPrefab = interactionTarget.gameObject;
     }
-     public void OnDrag(PointerEventData eventData)
-     {
-        _onDraginteractable = _itemPrefab.GetComponent<Interactable>();
 
-        if(_onDraginteractable != null )
+    //On Drag zum differenziern, ob man alle Items drehen soll oder nicht
+    /*public void OnDrag(PointerEventData eventData)
+    {
+       _onDraginteractable = _itemPrefab.GetComponent<Interactable>();
+
+       if(_onDraginteractable != null )
+       {
+           switch (_onDraginteractable.ItemReference.InteractionWorld)
+           {
+               case IntTypeWorld.SpecialView:
+                   Debug.Log("Wir drehen nicht");
+                   break;
+               default:
+                   if (_itemPrefab != null && _item != _globe)
+                   {
+                       _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+                       _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+                   }
+                   else if (_itemPrefab != null && _item == _globe)
+                   {
+                       _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+                   }
+                   else
+                   {
+                       Debug.Log("Wir drehen nicht");
+                   }
+                   break;
+           }
+       }
+       else
+       {
+           if (_itemPrefab != null && _item != _globe)
+           {
+               _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+               _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+           }
+           else if (_itemPrefab != null && _item == _globe)
+           {
+               _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+           }
+           else
+           {
+               Debug.Log("Wir drehen nicht");
+           }
+       }*/
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (_itemPrefab != null && _item != _globe)
         {
-            switch (_onDraginteractable.ItemReference.InteractionWorld)
-            {
-                case IntTypeWorld.SpecialView:
-                    Debug.Log("Wir drehen nicht");
-                    break;
-                default:
-                    if (_itemPrefab != null && _item != _globe)
-                    {
-                        _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-                        _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
-                    }
-                    else if (_itemPrefab != null && _item == _globe)
-                    {
-                        _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-                    }
-                    else
-                    {
-                        Debug.Log("Wir drehen nicht");
-                    }
-                    break;
-            }
+            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+            _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
+        }
+        else if (_itemPrefab != null && _item == _globe)
+        {
+            _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
         }
         else
         {
-            if (_itemPrefab != null && _item != _globe)
-            {
-                _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-                _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
-            }
-            else if (_itemPrefab != null && _item == _globe)
-            {
-                _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
-            }
-            else
-            {
-                Debug.Log("Wir drehen nicht");
-            }
+            Debug.Log("Wir drehen nicht");
         }
     }
+    
 }
 
 

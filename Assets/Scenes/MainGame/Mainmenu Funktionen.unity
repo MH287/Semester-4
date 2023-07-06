@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -570,12 +570,12 @@ PrefabInstance:
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
@@ -600,7 +600,12 @@ PrefabInstance:
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: MousLock
+      value: LoadSceneStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
@@ -610,7 +615,17 @@ PrefabInstance:
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2373844037272140477, guid: 9548ac8af6c77fa408a431d671d0e927,
         type: 3}
