@@ -3964,7 +3964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 188579649}
+  - {fileID: 188579648}
+  - {fileID: 188579647}
+  - {fileID: 188579646}
   m_VisualEffect: {fileID: 188579652}
 --- !u!73398921 &188579651
 VFXRenderer:
@@ -28828,11 +28832,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 146297176764773069, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d7a39ef24f4f604c97a1e53bc87b857, type: 2}
     - target: {fileID: 377268367475420361, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 937812654154126570, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9948262758d0cde4b9fbd982496fea66, type: 2}
+    - target: {fileID: 1032873113712410510, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a415636375ceb24e8c8a7f516ab71a8, type: 2}
+    - target: {fileID: 1085142604833817820, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a415636375ceb24e8c8a7f516ab71a8, type: 2}
+    - target: {fileID: 1085959694056996895, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3d05aeac0981e84baca7a7471eca4b0, type: 2}
     - target: {fileID: 1166048586352230362, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_Name
@@ -28868,6 +28897,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1998774275052859404, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6154212c1dc534f4cbe7f907c6f9f38a, type: 2}
+    - target: {fileID: 2803056437325098826, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95a605276035ff042bc7ff26b4555254, type: 2}
     - target: {fileID: 3939902169993286693, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -28888,21 +28927,41 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5072998590418906651, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e0dbe81b7f278541a04f295df9c8ddf, type: 2}
     - target: {fileID: 5433064986959101056, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5793568254976892245, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e0dbe81b7f278541a04f295df9c8ddf, type: 2}
     - target: {fileID: 5821118812897274672, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6374424249875952159, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a415636375ceb24e8c8a7f516ab71a8, type: 2}
     - target: {fileID: 6730089951361650638, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6785777843660900317, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a415636375ceb24e8c8a7f516ab71a8, type: 2}
     - target: {fileID: 8666545133973431334, guid: fc79323e7b8db6c4d92d50ab9fb6cbe4,
         type: 3}
       propertyPath: m_RootOrder
@@ -34095,7 +34154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1660237662}
+  - {fileID: 1660237661}
+  - {fileID: 1660237660}
+  - {fileID: 1660237659}
   m_VisualEffect: {fileID: 1660237665}
 --- !u!73398921 &1660237664
 VFXRenderer:
@@ -40910,7 +40973,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1984717766}
+  - {fileID: 1984717765}
+  - {fileID: 1984717764}
+  - {fileID: 1984717763}
   m_VisualEffect: {fileID: 1984717769}
 --- !u!73398921 &1984717768
 VFXRenderer:
