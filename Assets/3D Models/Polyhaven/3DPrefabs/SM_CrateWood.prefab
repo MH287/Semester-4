@@ -62,10 +62,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2285641328262413455, guid: d09ea9143b7fb1d40b9d6bbfdba46d81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d09ea9143b7fb1d40b9d6bbfdba46d81,
         type: 3}
       propertyPath: m_Name
       value: SM_CrateWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d09ea9143b7fb1d40b9d6bbfdba46d81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015982489006147846, guid: d09ea9143b7fb1d40b9d6bbfdba46d81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09ea9143b7fb1d40b9d6bbfdba46d81, type: 3}

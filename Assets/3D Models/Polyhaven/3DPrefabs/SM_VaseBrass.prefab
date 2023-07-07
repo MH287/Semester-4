@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_VaseBrass
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bfd8cfcc0ea983f4cb53f8ff2a26a8d5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd8cfcc0ea983f4cb53f8ff2a26a8d5, type: 3}
 --- !u!1 &5919688408502775723 stripped

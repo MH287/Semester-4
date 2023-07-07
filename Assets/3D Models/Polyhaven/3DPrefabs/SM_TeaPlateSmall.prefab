@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_TeaPlateSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d48434d1fc063b34b9c156b899f354e9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d48434d1fc063b34b9c156b899f354e9, type: 3}
 --- !u!1 &4720866110725329791 stripped

@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_ChairGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a667ac02bbd404f46bf7c0282337c4fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a667ac02bbd404f46bf7c0282337c4fe, type: 3}
 --- !u!1 &335765252390499444 stripped

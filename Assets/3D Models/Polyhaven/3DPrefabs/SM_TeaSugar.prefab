@@ -62,10 +62,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6479098005810355284, guid: 6f577e5f30be6f54eaf7d5b22c3339e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -368590856642485781, guid: 6f577e5f30be6f54eaf7d5b22c3339e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f577e5f30be6f54eaf7d5b22c3339e6,
         type: 3}
       propertyPath: m_Name
       value: SM_TeaSugar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f577e5f30be6f54eaf7d5b22c3339e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f577e5f30be6f54eaf7d5b22c3339e6, type: 3}

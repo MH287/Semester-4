@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 705277bf49cc56b4a8bd66f0cfba927e,
         type: 3}
       propertyPath: m_Name
-      value: brass_vase_01_2k
+      value: SM_PokalBrass
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 705277bf49cc56b4a8bd66f0cfba927e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 705277bf49cc56b4a8bd66f0cfba927e, type: 3}

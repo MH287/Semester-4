@@ -62,10 +62,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1042462750878375895, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -453906453160923755, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 906f5149bef2b6147ada48bd33d8362d,
         type: 3}
       propertyPath: m_Name
-      value: food_pears_asian_01_2k
+      value: SM_Pears
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777971638674121944, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775303393406662517, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6955579138585547924, guid: 906f5149bef2b6147ada48bd33d8362d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906f5149bef2b6147ada48bd33d8362d, type: 3}

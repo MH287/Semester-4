@@ -62,10 +62,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3797883293675418579, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3511325464765373994, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 194385195481393103, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1230a31d618bd440808bf6d7c789553,
         type: 3}
       propertyPath: m_Name
       value: SM_TreasureChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010882975864398481, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688516189478039037, guid: a1230a31d618bd440808bf6d7c789553,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1230a31d618bd440808bf6d7c789553, type: 3}

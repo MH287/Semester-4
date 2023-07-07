@@ -62,10 +62,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4201206062736972349, guid: d0a5dd101a614a94a8bf225426d3618c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -874065332505860786, guid: d0a5dd101a614a94a8bf225426d3618c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d0a5dd101a614a94a8bf225426d3618c,
         type: 3}
       propertyPath: m_Name
       value: SM_CommodeGothic
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d0a5dd101a614a94a8bf225426d3618c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160549892324859025, guid: d0a5dd101a614a94a8bf225426d3618c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920819656167659607, guid: d0a5dd101a614a94a8bf225426d3618c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a5dd101a614a94a8bf225426d3618c, type: 3}

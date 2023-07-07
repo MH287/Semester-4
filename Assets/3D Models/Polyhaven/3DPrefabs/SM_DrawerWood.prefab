@@ -62,10 +62,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8255045870012660268, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5928919347479501233, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2193299127028522953, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1295987158995075047, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 522605212057377690, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1a6618f88f9b834b89a1290954ea7b0,
         type: 3}
       propertyPath: m_Name
       value: SM_DrawerWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314298898695297668, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536800112708351097, guid: b1a6618f88f9b834b89a1290954ea7b0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1a6618f88f9b834b89a1290954ea7b0, type: 3}
