@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4627713287370432006}
   - component: {fileID: 1677853007571188994}
   m_Layer: 17
-  m_Name: SM_Notebook
+  m_Name: LE_Notebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
