@@ -19,9 +19,9 @@ MonoBehaviour:
   itemType: 1
   InteractionWorld: 2
   InteractionInv: 4
-  eulerXForInspect: 0
+  eulerXForInspect: 180
   eulerYForInspect: 0
-  eulerZForInspect: 0
+  eulerZForInspect: 270
   OnInteract:
     m_PersistentCalls:
       m_Calls: []

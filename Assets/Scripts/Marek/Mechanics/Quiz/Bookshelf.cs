@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Bookshelf : MonoBehaviour
 {
     [SerializeField] private int[] _solution;
+
     private int _index;
 
     public UnityEvent OnSolved;
@@ -26,5 +27,10 @@ public class Bookshelf : MonoBehaviour
             Debug.Log("Wrong");
             _index = 0;
         }
+    }
+
+    public void TürAnimation()
+    {
+        Debug.Log("Tür öffnet sich");
     }
 }

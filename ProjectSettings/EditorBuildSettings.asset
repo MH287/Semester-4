@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainGame/Mainmenu Funktionen.unity
+    path: Assets/Scenes/MainGame/ScenenForGame/Mainmenu Funktionen.unity
     guid: cc8a554a93b863c4890aae258a5654e0
   - enabled: 1
-    path: Assets/Scenes/MainGame/BaseScene.unity
+    path: Assets/Scenes/MainGame/ScenenForGame/BaseScene.unity
     guid: e34f9acd78d3eb241bdeeee2c3e69a74
   - enabled: 1
-    path: Assets/Scenes/MainGame/MainGame.unity
+    path: Assets/Scenes/MainGame/ScenenForGame/Laboratorium.unity
     guid: a6806e8bd5225f74caeed889844a9f90
   - enabled: 1
-    path: Assets/Scenes/MainGame/Penthouse.unity
+    path: Assets/Scenes/MainGame/ScenenForGame/Penthouse.unity
     guid: 65d1931e6fe42d94abc0dbd4c1e9dd8e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,

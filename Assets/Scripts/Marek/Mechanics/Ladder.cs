@@ -10,9 +10,6 @@ using System.Security.Cryptography;
 
 public class Ladder : MonoBehaviour
 {
-    [SerializeField] private InteractionController _controller;
-    [SerializeField] private InputActionReference _ladder;
-
 
     [SerializeField] private Vector3 _ladderPos1;
     [SerializeField] private Vector3 _ladderPos2;
@@ -23,17 +20,6 @@ public class Ladder : MonoBehaviour
     [SerializeField] private Vector3 _moveDirection;
 
     private Vector3 _lastPosition;
-
-
-
-
-
-    public void Start()
-    {
-        _ladder.action.Enable();
-        _ladder.action.performed += MoveLedderPerformed;
-        _ladder.action.canceled += MoveLedderCanceled;
-    }
 
     public void MoveLedderFixPosition()
     {
@@ -59,17 +45,6 @@ public class Ladder : MonoBehaviour
         }
     }
     
-    public void MoveLedderFree()
-    {
-        if(_controller.InteractionTarget.GetComponent<Ladder>() != null)
-        {
-            Debug.Log("LadderMove");
-            transform.position = GetComponent<Transform>().position;
-            _ladder.action.performed += MoveLedderPerformed;
-
-        }
-
-    }
     public void MoveLedderPerformed(InputAction.CallbackContext obj)
     {
 
@@ -92,16 +67,6 @@ public class Ladder : MonoBehaviour
             Debug.Log(_moveDirection.x);
         }
 
-
-    }
-    public void MoveLedderCanceled(InputAction.CallbackContext obj)
-    {
-        double j = obj.duration;
-        if(j > 1)
-        {
-            j = 0;
-        }
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
 
     }
 }
