@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 4.38
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 4
@@ -3964,7 +3964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 188579649}
+  - {fileID: 188579648}
+  - {fileID: 188579647}
+  - {fileID: 188579646}
   m_VisualEffect: {fileID: 188579652}
 --- !u!73398921 &188579651
 VFXRenderer:
@@ -33834,7 +33838,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1660237662}
+  - {fileID: 1660237661}
+  - {fileID: 1660237660}
+  - {fileID: 1660237659}
   m_VisualEffect: {fileID: 1660237665}
 --- !u!73398921 &1660237664
 VFXRenderer:
@@ -40527,7 +40535,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 1984717766}
+  - {fileID: 1984717765}
+  - {fileID: 1984717764}
+  - {fileID: 1984717763}
   m_VisualEffect: {fileID: 1984717769}
 --- !u!73398921 &1984717768
 VFXRenderer:
