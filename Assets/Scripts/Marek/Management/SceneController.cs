@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.InputSystem;
 
-public class SceneController : MonoBehaviour
+public class SceneController : ManagerModule
 {
-    public int NextSceneIndex;
-    public static bool loaaad;
-    public GameObject Player;
+    [SerializeField] private InputActionReference _pauseMenu;
+    [SerializeField] private GameObject _pauseMenuPanel;
 
+    private void Start()
+    {
+        _pauseMenu.action.Enable();
+        _pauseMenu.action.performed += ShowPauseMenu;
+    }
+
+    public void ShowPauseMenu(InputAction.CallbackContext obj)
+    {
+        _pauseMenuPanel.SetActive(true);
+        Manager.Use<MouseController>().FreeMouse();
+    }
 
     public void LoadSceneStart()
     {
@@ -34,19 +45,4 @@ EditorApplication.ExitPlaymode();
     {
         SceneManager.UnloadSceneAsync(0);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == Player.layer && !SceneManager.GetSceneByBuildIndex(NextSceneIndex).isLoaded)
-        {
-            if (loaaad)
-            {
-                loaaad = false;
-                return;
-            }
-            SceneManager.LoadSceneAsync(NextSceneIndex, LoadSceneMode.Additive);
-            loaaad = true;
-        }
-    }
-
 }

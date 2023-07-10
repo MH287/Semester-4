@@ -18,7 +18,7 @@ MonoBehaviour:
   ItemDescription: test An old fuse
   itemType: 0
   InteractionWorld: 2
-  InteractionInv: 5
+  InteractionInv: 0
   eulerXForInspect: 0
   eulerYForInspect: 0
   eulerZForInspect: 0
