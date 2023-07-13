@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
 
 public class GeneratorConsole : MonoBehaviour
 {
     [Header("Fuse + Console")]
-    private InventoryManager _inventoryManager;
     [SerializeField] private ShowUVCode _showUVCode;
     [SerializeField] public Item Fuse;
     [SerializeField] public ItemSlot Slot;
@@ -33,7 +33,10 @@ public class GeneratorConsole : MonoBehaviour
 
     [Header("Lights")]
     [SerializeField] private List<GameObject> _lights;
-    
+
+    private InventoryManager _inventoryManager;
+    private MechanicStatusManager _mechanicStatusManager;
+
     public void Awake()
     {
         _firstCode.SetActive(false);
@@ -45,6 +48,7 @@ public class GeneratorConsole : MonoBehaviour
     private void Start()
     {
         _inventoryManager = Manager.Use<InventoryManager>();
+        _mechanicStatusManager = Manager.Use<MechanicStatusManager>();
     }
 
     public void UseFuseInConsole()
@@ -61,6 +65,10 @@ public class GeneratorConsole : MonoBehaviour
             _firstLight.SetActive(true);
             _electroAudioSource.clip = _electricShot;
             _electroAudioSource.Play();
+
+            //_mechanicStatusManager.FuseOneInConsole = true;
+            DialogueLua.SetVariable("FuseInConsole", true);
+
 
         }
         else if (_inventoryManager.CheckInvForFuse() && _fuseOne.activeSelf)

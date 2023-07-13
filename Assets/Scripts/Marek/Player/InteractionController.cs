@@ -1,3 +1,4 @@
+using EPOOutline;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ public class InteractionController : ManagerModule
     public Item InteractionItem;
 
     private GameObject _interactionTargetGO;
-    private Outline _targetOutline;
+    private Outlinable _targetOutline;
     private Camera _camera;
     private RaycastHit hit;
 
@@ -37,7 +38,7 @@ public class InteractionController : ManagerModule
                 _interactionLayerMask))
         {
             Manager.Use<UIManager>().ShowInteractWithE();
-            _targetOutline = hit.transform.gameObject.GetComponent<Outline>();
+            _targetOutline = hit.transform.gameObject.GetComponent<Outlinable>();
             if (_targetOutline != null)
             {
                 _targetOutline.enabled = true;

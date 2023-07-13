@@ -45,7 +45,6 @@ public class InventoryManager : ManagerModule
     [SerializeField] private float _endPosition;
     private float _startPosition;
 
-
     private Interactable _interactionTarget;
     private bool _isActive = false;
 
@@ -279,6 +278,7 @@ public class InventoryManager : ManagerModule
     public void PlayWalkieTalkie()
     {
         Debug.Log("Play Audio");
+
 
     }
     public void UseItem(InputAction.CallbackContext obj)
