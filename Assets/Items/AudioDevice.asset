@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AudioDevice
   m_EditorClassIdentifier: 
   ItemName: WalkieTalkie
-  Icon: {fileID: 21300000, guid: a2758afebfb90cd4fb6d0caaa3570b69, type: 3}
+  Icon: {fileID: 21300000, guid: b3e3d8b38582b2b4997cf1133ccc991e, type: 3}
   Prefab: {fileID: 6064119190624939792, guid: 3ba936931c060b4469df619d63558ea4, type: 3}
   ItemDescription: 
   itemType: 1

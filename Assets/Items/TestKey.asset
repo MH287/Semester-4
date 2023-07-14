@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: TestKey
   m_EditorClassIdentifier: 
   ItemName: Picture
-  Icon: {fileID: 21300000, guid: 1babbffa229508e4c9bb4d229c785cdf, type: 3}
+  Icon: {fileID: 21300000, guid: ed62ba942905dae4e814da7fac6b1e88, type: 3}
   Prefab: {fileID: 3951622768303792146, guid: 4c35696b132664441aea9ae536b6c7e0, type: 3}
   ItemDescription: test An old key
   itemType: 0
+  InteractionWorld: 0
+  InteractionInv: 0
+  eulerXForInspect: 0
+  eulerYForInspect: 0
+  eulerZForInspect: 0
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []

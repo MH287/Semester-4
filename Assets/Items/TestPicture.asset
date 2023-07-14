@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestPicture
   m_EditorClassIdentifier: 
   ItemName: Picture
-  Icon: {fileID: 21300000, guid: c03f338044dbd8d449f2297c8c3e22da, type: 3}
+  Icon: {fileID: 21300000, guid: 3c09bf2f929235045a7a6866c726afcd, type: 3}
   Prefab: {fileID: 276696081042639166, guid: 275d26525f86f6446ba37d35082e16fb, type: 3}
   ItemDescription: test An old picture
   itemType: 0
