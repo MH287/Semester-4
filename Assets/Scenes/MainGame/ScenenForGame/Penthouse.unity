@@ -36529,7 +36529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemCamera: {fileID: 0}
   _offset: 1.5
-  _item: {fileID: 0}
+  _item: {fileID: 11400000, guid: a58e4c7ec435afb4480cb41fca743a74, type: 2}
   _itemPrefab: {fileID: 919132148016380217}
   _rotateSensetivity: 0.5
   _interactionAction: {fileID: 0}
@@ -37959,6 +37959,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033943336479480674, guid: 8af23710cf51a0e418e0c2b710d776d1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 201.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033943336479480674, guid: 8af23710cf51a0e418e0c2b710d776d1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 201.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033943336479480674, guid: 8af23710cf51a0e418e0c2b710d776d1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 201.65
       objectReference: {fileID: 0}
     - target: {fileID: 5033943336479480674, guid: 8af23710cf51a0e418e0c2b710d776d1,
         type: 3}
