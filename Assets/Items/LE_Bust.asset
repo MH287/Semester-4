@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: LE_Bust
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Bust
   Icon: {fileID: 0}
-  Prefab: {fileID: 2589372011189143816, guid: 958ff0d8f0c547a4f9d9153cd82614fd, type: 3}
+  Prefab: {fileID: 3630059946619825510, guid: c7258c8c3bb4c1445a17f2f9bff1a1b2, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0

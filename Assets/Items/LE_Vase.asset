@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: LE_Vase
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Vase
   Icon: {fileID: 0}
   Prefab: {fileID: 5663268180877738456, guid: 8af23710cf51a0e418e0c2b710d776d1, type: 3}
   ItemDescription: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: Misc_HorseStatue
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Horsestatue
   Icon: {fileID: 0}
   Prefab: {fileID: 3726117489987494245, guid: b9f1fcc74af2f3f41a619ee3a863864a, type: 3}
   ItemDescription: 
