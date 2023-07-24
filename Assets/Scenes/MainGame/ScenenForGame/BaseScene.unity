@@ -3120,6 +3120,10 @@ MonoBehaviour:
   _picMoveSpeed: 1
   _picTransform: {fileID: 1195382688}
   _endPosition: 0
+  _keyItem: {fileID: 11400000, guid: a025e80bfa2c54d48a0c31421b953333, type: 2}
+  _keylock: {fileID: 4129202653795545262, guid: c64c033cfafea6d44be7a4ad9d2b84af,
+    type: 3}
+  _keyGO: {fileID: 938415440962848124, guid: 4da10bc5816bb264d9047c6a5425d93b, type: 3}
   InventorySlots: []
 --- !u!1 &1195382687
 GameObject:

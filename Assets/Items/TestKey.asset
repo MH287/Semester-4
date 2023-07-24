@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
   m_Name: TestKey
   m_EditorClassIdentifier: 
-  ItemName: Picture
+  ItemName: Key
   Icon: {fileID: 21300000, guid: ed62ba942905dae4e814da7fac6b1e88, type: 3}
   Prefab: {fileID: 8497462824958750862, guid: 3f2ab5f7650a5d546a1f7571ef429808, type: 3}
   ItemDescription: test An old key
   itemType: 0
   InteractionWorld: 2
-  InteractionInv: 0
+  InteractionInv: 2
   eulerXForInspect: 0
   eulerYForInspect: 0
   eulerZForInspect: 0

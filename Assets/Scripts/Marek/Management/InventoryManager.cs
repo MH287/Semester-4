@@ -43,6 +43,12 @@ public class InventoryManager : ManagerModule
     [SerializeField] private float _picMoveSpeed;
     [SerializeField] private Transform _picTransform;
     [SerializeField] private float _endPosition;
+
+    [Header("Game Finisher")]
+    [SerializeField] private Item _keyItem;
+    [SerializeField] private Interactable _keylock;
+    [SerializeField] private GameObject _keyGO;
+
     private float _startPosition;
 
     private Interactable _interactionTarget;
@@ -288,22 +294,31 @@ public class InventoryManager : ManagerModule
         if(_keyOne.action.IsPressed())
         {
             //InteractWithInvItem(InventoryItems[0]); --> Falls Teständerung nicht klappt.
-            InteractWithInvItemTest(InventoryItems[0], InventorySlots[0]);
+            if(CheckInteractiontarget() == true && CheckInvForKey() == true)
+            {
+                _keyGO.SetActive(true);
+                InteractWithInvItemTest(InventoryItems[0], InventorySlots[0]);
+            }
+
         }
         else if(_keyTwo.action.IsPressed())
         {
+            CheckInteractiontarget();
             InteractWithInvItemTest(InventoryItems[1], InventorySlots[1]);
         }
         else if (_keyThree.action.IsPressed())
         {
+            CheckInteractiontarget();
             InteractWithInvItemTest(InventoryItems[2], InventorySlots[2]);
         }
         else if (_audioAdvice.action.IsPressed())
         {
+            CheckInteractiontarget();
             InteractWithInvItemTest(_audioAdviceItem, _audioDeviceGO.GetComponent<ItemSlot>());
         }
         else if(_noteBook.action.IsPressed())
         {
+            CheckInteractiontarget();
             InteractWithInvItemTest(_noteBookItem, _noteBookGO.GetComponent<ItemSlot>());
         }
     }
@@ -315,5 +330,15 @@ public class InventoryManager : ManagerModule
     public bool CheckInvForFuse()
     {
         if (InventoryItems.Contains(Fuse)) { return true; } else { return false; }
+    }
+
+    public bool CheckInteractiontarget()
+    {
+        if ((_interactionController.InteractionTarget == _keylock)) { return true; } else { return false; }
+    }
+
+    public bool CheckInvForKey()
+    {
+        if (InventoryItems.Contains(_keyItem)) { return true; } else { return false; }
     }
 }
