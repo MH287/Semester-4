@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.Events;
 public class Bookshelf : MonoBehaviour
 {
     [SerializeField] private int[] _solution;
+
+    [SerializeField] private Animator _doorAnimator;
+    [SerializeField] private string _animation;
 
     private int _index;
 
@@ -31,6 +35,7 @@ public class Bookshelf : MonoBehaviour
 
     public void TürAnimation()
     {
+        _doorAnimator.Play(_animation);
         Debug.Log("Tür öffnet sich");
     }
 }
