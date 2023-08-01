@@ -10,6 +10,7 @@ public class SceneController : ManagerModule
     [SerializeField] private InputActionReference _pauseMenu;
     [SerializeField] private GameObject _pauseMenuPanel;
 
+
     private void Start()
     {
         _pauseMenu.action.Enable();
@@ -44,5 +45,10 @@ EditorApplication.ExitPlaymode();
     public void UnloadScene()
     {
         SceneManager.UnloadSceneAsync(0);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

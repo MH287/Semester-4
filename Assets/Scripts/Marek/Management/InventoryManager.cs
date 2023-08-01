@@ -62,12 +62,12 @@ public class InventoryManager : ManagerModule
         _keyTwo.action.Enable();
         _keyThree.action.Enable();
         _audioAdvice.action.Enable();
-        _noteBook.action.Enable();
+        //_noteBook.action.Enable();
         _keyOne.action.performed += UseItem;
         _keyTwo.action.performed += UseItem;
         _keyThree.action.performed += UseItem;
         _audioAdvice.action.performed += UseItem;
-        _noteBook.action.performed += UseItem;
+        //_noteBook.action.performed += UseItem;
 
         _startPosition = _picTransform.transform.localPosition.y;
 
@@ -294,11 +294,15 @@ public class InventoryManager : ManagerModule
         if(_keyOne.action.IsPressed())
         {
             //InteractWithInvItem(InventoryItems[0]); --> Falls Teständerung nicht klappt.
-            if(CheckInteractiontarget() == true && CheckInvForKey() == true)
+            /*if(CheckInteractiontarget() == true && CheckInvForKey() == true)
             {
                 _keyGO.SetActive(true);
                 InteractWithInvItemTest(InventoryItems[0], InventorySlots[0]);
-            }
+            }*/
+
+
+            CheckInteractiontarget();
+            InteractWithInvItemTest(InventoryItems[0], InventorySlots[0]);
 
         }
         else if(_keyTwo.action.IsPressed())

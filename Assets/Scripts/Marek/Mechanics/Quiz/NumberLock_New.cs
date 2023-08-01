@@ -28,6 +28,13 @@ using UnityEngine;
         [SerializeField] private Animator _doorAnimator;
         [SerializeField, Range(0, 1)] private float _doorAnimationDelay = 0.5f;
 
+        [SerializeField] private GameObject _gameObject;
+
+        [Header("Sound")]
+        [SerializeField] private AudioSource _audioSource;
+
+    
+
     public void RotateElement(Transform target) => RotateElement(_numberElementList.IndexOf(target));
 
     public void RotateElement(int index)
@@ -42,6 +49,7 @@ using UnityEngine;
             if (_elements.All(e => e.CurrentValue == e.Solution))
             {
                 Debug.Log("Unlocked");
+                _gameObject.SetActive(true);
                 StartCoroutine(DoorAnimation());
                 Debug.Log("Play Open Animation");
             }
@@ -50,6 +58,7 @@ using UnityEngine;
         private IEnumerator DoorAnimation()
         {
             yield return new WaitForSeconds(_doorAnimationDelay);
+            _audioSource.Play();
             _doorAnimator.Play("LE_Laboratory_door");
         }
 

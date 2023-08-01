@@ -78,15 +78,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Journal",
-                    "type": "Button",
-                    "id": "47795552-303a-48d7-b6d2-b78b3daec6da",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Ladder",
                     "type": "Button",
                     "id": "1d5d6602-44e0-4134-9550-891245dd0dcb",
@@ -312,17 +303,6 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "AudioAdvice",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d7d343c7-885c-425e-98e5-2f1ce0bd5080",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

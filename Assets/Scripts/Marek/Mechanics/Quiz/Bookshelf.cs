@@ -11,6 +11,10 @@ public class Bookshelf : MonoBehaviour
     [SerializeField] private Animator _doorAnimator;
     [SerializeField] private string _animation;
 
+    [SerializeField] private Animator _bookResetAnimator;
+    [SerializeField] private string _bookResetAnimationOne;
+    [SerializeField] private string _bookResetAnimationTwo;
+
     private int _index;
 
     public UnityEvent OnSolved;
@@ -29,6 +33,8 @@ public class Bookshelf : MonoBehaviour
         else
         {
             Debug.Log("Wrong");
+            //_bookResetAnimator.Play(_bookResetAnimationOne);
+            //_bookResetAnimator.Play(_bookResetAnimationTwo);
             _index = 0;
         }
     }

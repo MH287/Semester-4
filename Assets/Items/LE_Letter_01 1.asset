@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7e01dbca5708447a40aafcd19c3051, type: 3}
+  m_Name: LE_Letter_01 1
+  m_EditorClassIdentifier: 
+  ItemName: Letter 1
+  Icon: {fileID: 0}
+  Prefab: {fileID: 4367062076994372459, guid: 52c553d2aa35f2a4e8b74d9483573667, type: 3}
+  ItemDescription: 
+  itemType: 0
+  InteractionWorld: 0
+  InteractionInv: 0
+  eulerXForInspect: 180
+  eulerYForInspect: 0
+  eulerZForInspect: 180
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []

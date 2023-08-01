@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Picture
   Icon: {fileID: 21300000, guid: 3c09bf2f929235045a7a6866c726afcd, type: 3}
-  Prefab: {fileID: 276696081042639166, guid: 275d26525f86f6446ba37d35082e16fb, type: 3}
+  Prefab: {fileID: 6876083807338716416, guid: 5231b6ad6d6ce3445ad24a8c4d0dba34, type: 3}
   ItemDescription: test An old picture
   itemType: 0
   InteractionWorld: 2
@@ -24,4 +24,16 @@ MonoBehaviour:
   eulerZForInspect: 0
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

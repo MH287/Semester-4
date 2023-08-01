@@ -18,7 +18,7 @@ MonoBehaviour:
   ItemDescription: test An old key
   itemType: 0
   InteractionWorld: 2
-  InteractionInv: 2
+  InteractionInv: 0
   eulerXForInspect: 0
   eulerYForInspect: 0
   eulerZForInspect: 0

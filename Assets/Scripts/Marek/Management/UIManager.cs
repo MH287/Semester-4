@@ -6,6 +6,7 @@ public class UIManager : ManagerModule
 {
     [SerializeField] private GameObject _quizCanvas;
     [SerializeField] public GameObject _interactWithE;
+    [SerializeField] public GameObject _gameFinish;
 
     public void OpenWindow()
     {
@@ -23,5 +24,10 @@ public class UIManager : ManagerModule
     public void HideInteractWithE()
     {
         _interactWithE.SetActive(false);
+    }
+
+    public void ShowGameFinish()
+    {
+        _gameFinish.SetActive(true);
     }
 }
