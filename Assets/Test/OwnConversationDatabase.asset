@@ -257,7 +257,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: AudioWait(Audio Voicover/Zenith Dialog_01 1)
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -845,7 +845,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: AudioWait(Audio Voicover/Zenith Dialog _02 1)
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2

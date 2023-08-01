@@ -8,6 +8,8 @@ public class Loader : MonoBehaviour
     public int LoadNetxScene;
     public GameObject Player;
     public static bool loaaad;
+    [SerializeField] private AudioSource _audioManager;
+    [SerializeField] private AudioClip _nextAudioClip;
 
     [SerializeField] private GameObject _playerLight;
 
@@ -21,6 +23,8 @@ public class Loader : MonoBehaviour
                 return;
             }
             SceneManager.LoadSceneAsync(LoadNetxScene, LoadSceneMode.Additive);
+            _audioManager.clip = _nextAudioClip;
+            _audioManager.Play();
             loaaad = true;
         }
         if (LoadNetxScene == 2)
