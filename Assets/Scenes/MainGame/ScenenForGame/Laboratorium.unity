@@ -25609,6 +25609,7 @@ MonoBehaviour:
     WheelSides: 10
   _rotateDuration: 1
   _doorAnimator: {fileID: 1385439591}
+  _clipname: LE_Laboratory_door
   _doorAnimationDelay: 0.5
   _gameObject: {fileID: 279789220}
   _audioSource: {fileID: 1284346614}

@@ -26,6 +26,7 @@ using UnityEngine;
         [SerializeField, Range(0.5f, 10f)] private float _rotateDuration = 1f;
 
         [SerializeField] private Animator _doorAnimator;
+        [SerializeField] private string _clipname;
         [SerializeField, Range(0, 1)] private float _doorAnimationDelay = 0.5f;
 
         [SerializeField] private GameObject _gameObject;
@@ -59,7 +60,7 @@ using UnityEngine;
         {
             yield return new WaitForSeconds(_doorAnimationDelay);
             _audioSource.Play();
-            _doorAnimator.Play("LE_Laboratory_door");
+            _doorAnimator.Play(_clipname);
         }
 
         private void OnValidate()

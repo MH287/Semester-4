@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Lantern
   Icon: {fileID: 0}
-  Prefab: {fileID: 7381231911684600391, guid: 03484c148dc4a2d4e88c5db412e01eb7, type: 3}
+  Prefab: {fileID: 1596485537534706360, guid: 17b4377ad5c2cc74abba62aaec1e0038, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0

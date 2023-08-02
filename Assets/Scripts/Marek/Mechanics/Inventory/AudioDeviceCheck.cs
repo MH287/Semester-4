@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.InputSystem;
+using PixelCrushers.DialogueSystem;
 
 public class AudioDeviceCheck : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class AudioDeviceCheck : MonoBehaviour
     [SerializeField] private GameObject _cutscene;
     [SerializeField, Min(1)] private float _cutsceneLenght = 5;
     [SerializeField] private InputActionAsset _inputActionMap;
+
+    private void Start()
+    {
+        DialogueTime.Mode = DialogueTime.TimeMode.Gameplay;
+    }
 
     private void CheckAudioDevice()
     {
