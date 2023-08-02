@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Pocketwatch
   Icon: {fileID: 0}
-  Prefab: {fileID: 7924938013467503343, guid: 12fa5e7d59702a14cb9134add56d0a07, type: 3}
+  Prefab: {fileID: 3487159532598392059, guid: dbac9140bfcfccb4189a5b9b84fe6f12, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0
   InteractionInv: 0
-  eulerXForInspect: 0
-  eulerYForInspect: 0
+  eulerXForInspect: 270
+  eulerYForInspect: 180
   eulerZForInspect: 0
   OnInteract:
     m_PersistentCalls:

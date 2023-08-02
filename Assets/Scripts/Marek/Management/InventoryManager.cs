@@ -28,6 +28,9 @@ public class InventoryManager : ManagerModule
 
     public List<Item> InventoryItems = new List<Item>();
 
+    [Header("UI")]
+    [SerializeField] private GameObject _dot;
+
     [Header("Special Items")]
     [SerializeField] private GameObject _noteBookGO;
     [SerializeField] private GameObject _audioDeviceGO;
@@ -123,6 +126,8 @@ public class InventoryManager : ManagerModule
 
     public void CheckItemTypeForAdd() //in Use for Button
     {
+        _dot.SetActive(true);
+
         if (_interactionController.InteractionItem.itemType == ItemType.Normal)
         {
             AddItemOutOfInspectNormal();

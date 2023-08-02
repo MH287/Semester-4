@@ -1409,17 +1409,17 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.248
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.121
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.104
+      value: 20.07
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -1753,17 +1753,17 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.248
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5085001
+      value: 1.5075
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.104
+      value: 20.07
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -2750,7 +2750,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &880506613
 Transform:
   m_ObjectHideFlags: 0
@@ -2991,17 +2991,17 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.248
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5085001
+      value: 1.5075
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.104
+      value: 20.07
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -3263,6 +3263,7 @@ MonoBehaviour:
   _audioAdviceItem: {fileID: 11400000, guid: 11f0d068aa3555c4888aff0c31d94aba, type: 2}
   _noteBookItem: {fileID: 11400000, guid: e9fc39330f63d6e4ebfcd79c4ee5f985, type: 2}
   InventoryItems: []
+  _dot: {fileID: 816801757}
   _noteBookGO: {fileID: 1868036331}
   _audioDeviceGO: {fileID: 4576716661253777135}
   _slotPrefab1: {fileID: 0}
@@ -5707,6 +5708,7 @@ MonoBehaviour:
     type: 3}
   _playerInput: {fileID: 2120451789}
   _itemViewer: {fileID: 1076054995456406490}
+  _dot: {fileID: 816801757}
   InteractionTarget: {fileID: 0}
   InteractionItem: {fileID: 0}
 --- !u!4 &2091500093 stripped
@@ -6367,6 +6369,8 @@ MonoBehaviour:
   _item: {fileID: 0}
   _itemPrefab: {fileID: 0}
   _rotateSensetivity: 0.5
+  _interactionHint: {fileID: 187309482898014242}
+  _dot: {fileID: 816801757}
   _interactionAction: {fileID: 0}
   AddButton: {fileID: 819972791}
   CloseInspectorButton: {fileID: 2013856523}

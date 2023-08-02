@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Bust
   Icon: {fileID: 0}
-  Prefab: {fileID: 3630059946619825510, guid: c7258c8c3bb4c1445a17f2f9bff1a1b2, type: 3}
+  Prefab: {fileID: 6079269335080553593, guid: 3729c7f2c031bff4dbb5e7b81f8edf2b, type: 3}
   ItemDescription: 
   itemType: 0
   InteractionWorld: 0

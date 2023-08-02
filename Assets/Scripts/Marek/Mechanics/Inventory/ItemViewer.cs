@@ -12,6 +12,11 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] private GameObject _itemPrefab;
     [Range(0,1), SerializeField] private float _rotateSensetivity = 0.5f;
 
+    [Header("UI")]
+    [SerializeField] private GameObject _interactionHint;
+    [SerializeField] private GameObject _dot;
+
+
     [SerializeField] private InputActionReference _interactionAction;
 
     [SerializeField] public Button AddButton;
@@ -25,6 +30,8 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         _item = target;
         Spawn3DItem();
         gameObject.SetActive(true);
+        _interactionHint.SetActive(false);
+        _dot.SetActive(false);
         Manager.Use<MouseController>().FreeMouse();
     }
 
@@ -33,12 +40,15 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         _item = target;
         SpawnSpecialView(_item.Prefab, _item.eulerXForInspect, _item.eulerYForInspect, _item.eulerZForInspect);
         gameObject.SetActive(true);
+        _interactionHint.SetActive(false);
+        _dot.SetActive(false);
         Manager.Use<MouseController>().FreeMouse();
     }
 
     public void CloseInspectWindow(GameObject canvas)
     {
         canvas.SetActive(false);
+        _dot.SetActive(true);
         Manager.Use<MouseController>().LockMouse(); 
     }
 

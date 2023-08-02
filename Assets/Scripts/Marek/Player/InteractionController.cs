@@ -15,6 +15,8 @@ public class InteractionController : ManagerModule
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private ItemViewer _itemViewer;
 
+    [SerializeField] private GameObject _dot;
+
     public Interactable InteractionTarget;
     public Item InteractionItem;
 
@@ -134,7 +136,9 @@ public class InteractionController : ManagerModule
     public void SpawnItemOnWorldPlace() // in use on Button
     {
         Manager.Use<MouseController>().LockMouse();
+        _dot.SetActive(true);
         _playerInput.ActivateInput();
+
         _itemViewer.gameObject.SetActive(false);
         
         if(_interactionTargetGO != null)
