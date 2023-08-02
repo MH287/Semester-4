@@ -10,7 +10,7 @@ public class Loader : MonoBehaviour
     public static bool loaaad;
     [SerializeField] private AudioSource _audioManager;
     [SerializeField] private AudioClip _nextAudioClip;
-
+    [SerializeField] private Material _nextSkybox;
     [SerializeField] private GameObject _playerLight;
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +25,7 @@ public class Loader : MonoBehaviour
             SceneManager.LoadSceneAsync(LoadNetxScene, LoadSceneMode.Additive);
             _audioManager.clip = _nextAudioClip;
             _audioManager.Play();
+            RenderSettings.skybox = _nextSkybox;
             loaaad = true;
         }
         if (LoadNetxScene == 2)

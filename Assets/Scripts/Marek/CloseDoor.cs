@@ -7,7 +7,7 @@ public class CloseDoor : MonoBehaviour
 {
     public GameObject Player;
 
-    [SerializeField] private Animation _closeDoorAnimation;
+    [SerializeField] private Animator _closeDoorAnimation;
     [SerializeField] private string _closeDoorClip;
 
     private void OnTriggerEnter(Collider other)
