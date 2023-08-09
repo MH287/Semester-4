@@ -391,7 +391,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
+        x: 158.53165
         y: 229.27274
         width: 160
         height: 30
@@ -852,7 +852,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: AudioWait(Einzelne Abschnitte/Dialog02/Zenith Dialog02_PC005)
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
