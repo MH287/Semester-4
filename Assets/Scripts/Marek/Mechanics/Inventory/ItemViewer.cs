@@ -23,6 +23,7 @@ public class ItemViewer : MonoBehaviour, IDragHandler
     [SerializeField] public Button CloseInspectorButton;
 
     [SerializeField] private Item _globe;
+    [SerializeField] private Item _picture;
 
     Interactable _onDraginteractable;
     public void InspectItem(Item target)
@@ -128,7 +129,7 @@ public class ItemViewer : MonoBehaviour, IDragHandler
        }*/
     public void OnDrag(PointerEventData eventData)
     {
-        if (_itemPrefab != null && _item != _globe)
+        if (_itemPrefab != null && _item != _globe && _item != _picture)
         {
             _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
             _itemPrefab.transform.Rotate(Vector3.right, eventData.delta.y * _rotateSensetivity, Space.World);
@@ -136,6 +137,10 @@ public class ItemViewer : MonoBehaviour, IDragHandler
         else if (_itemPrefab != null && _item == _globe)
         {
             _itemPrefab.transform.Rotate(Vector3.up, -eventData.delta.x * _rotateSensetivity, Space.World);
+        }
+        else if (_itemPrefab != null && _item == _picture)
+        {
+            Debug.Log("Wir drehen nicht");
         }
         else
         {

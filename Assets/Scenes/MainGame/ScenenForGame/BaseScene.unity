@@ -6375,6 +6375,7 @@ MonoBehaviour:
   AddButton: {fileID: 819972791}
   CloseInspectorButton: {fileID: 2013856523}
   _globe: {fileID: 11400000, guid: 2cb9e9cc02257b54384216966f5b7baa, type: 2}
+  _picture: {fileID: 11400000, guid: 69178caf56ff5a5498b691ca84a23085, type: 2}
 --- !u!1 &1076054995456406491
 GameObject:
   m_ObjectHideFlags: 0
