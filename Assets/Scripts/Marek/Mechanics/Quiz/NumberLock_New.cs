@@ -50,7 +50,7 @@ using UnityEngine;
             if (_elements.All(e => e.CurrentValue == e.Solution))
             {
                 Debug.Log("Unlocked");
-                _gameObject.SetActive(true);
+                //_gameObject.SetActive(true);
                 StartCoroutine(DoorAnimation());
                 Debug.Log("Play Open Animation");
             }
